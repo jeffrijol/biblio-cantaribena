@@ -1,43 +1,49 @@
-# Astro Starter Kit: Minimal
+# 🎄 Biblioteca Cantaribeña - Cuenta Atrás
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+Este es el proyecto de cuenta atrás para la **Biblioteca Cantaribeña**, un regalo especial que se construye con historias y se revelará el Día de Reyes (6 de enero).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## ✨ Características
 
-## 🚀 Project Structure
+- **Diseño Premium**: Estética cuidada con tipografía elegante (`Playfair Display`, `Inter`, `Cormorant Garamond`).
+- **Interactividad**: Efecto de nieve dinámico, animaciones de paso de página y pistas que se revelan al interactuar con el temporizador.
+- **Pistas Pixeladas**: Libros secretos que se van "enfocando" a medida que se acerca la fecha de revelación.
+- **Astro 5**: Construido con las últimas tecnologías de Astro para un rendimiento óptimo.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Estructura del Proyecto
 
 ```text
 /
-├── public/
+├── public/              # Archivos estáticos
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/      # Componentes UI y específicos de la cuenta atrás
+│   ├── data/            # Contenido y configuración de pistas (JSON)
+│   ├── layouts/         # Estructuras de página base
+│   ├── lib/             # Utilidades y constantes (lógica del tiempo)
+│   ├── pages/           # Páginas y endpoints de API
+│   └── styles/          # Hojas de estilo globales
+├── astro.config.mjs     # Configuración de Astro
+└── package.json         # Dependencias y scripts
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🧞 Comandos
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Todos los comandos se ejecutan desde la raíz del proyecto usando `pnpm`:
 
-Any static assets, like images, can be placed in the `public/` directory.
+| Comando | Acción |
+| :--- | :--- |
+| `pnpm install` | Instala las dependencias necesarias |
+| `pnpm dev` | Inicia el servidor de desarrollo en `localhost:4321` |
+| `pnpm build` | Construye el sitio para producción en `./dist/` |
+| `pnpm preview` | Previsualiza la construcción localmente |
+| `pnpm astro check` | Verifica los tipos y el estado del código |
+| `pnpm format` | Formatea el código usando Prettier |
 
-## 🧞 Commands
+## 🛠️ Tecnologías
 
-All commands are run from the root of the project, from a terminal:
+- **Framework**: [Astro 5](https://astro.build/)
+- **Iconos**: [@lucide/astro](https://lucide.dev/)
+- **Estilos**: CSS nativo con variables y animaciones modernas.
+- **Fuentes**: Google Fonts (Playfair Display, Inter, Cormorant Garamond).
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+Con cariño, para la familia Cantaribeña. ✨

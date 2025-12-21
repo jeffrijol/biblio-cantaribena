@@ -7,10 +7,13 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "process-covers": "pnpm dlx tsx scripts/process-covers.ts",
+    "prebuild": "pnpm process-covers"
   },
   "dependencies": {
     "astro": "^5.16.6",
+    "csv-parse": "^5.2.0",
     "@lucide/astro": "latest"
   },
   "devDependencies": {

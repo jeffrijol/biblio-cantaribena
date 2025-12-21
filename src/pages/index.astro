@@ -1,6 +1,7 @@
 ---
 // src/pages/index.astro
 import CountdownLayout from "../layouts/CountdownLayout.astro";
+import BookAnimated from "../components/BookAnimated.astro";
 import CountdownTimer from "../components/Countdown/CountdownTimer.astro";
 import Snowflake from "../components/Countdown/Snowflake.astro";
 import BookPreview from "../components/Countdown/BookPreview.astro";
@@ -65,7 +66,7 @@ const currentHint = getHintForDay(timeLeft.days);
 		<!-- Sección de tres columnas -->
 		<div class="three-column-layout">
 			<!-- Columna 1: Libro animado -->
-			<div class="column book-column">
+			<!-- <div class="column book-column">
 				<div class="book-container page-turn">
 					<div class="book-cover">
 						<div class="book-spine"></div>
@@ -79,6 +80,11 @@ const currentHint = getHintForDay(timeLeft.days);
 				<Typography as="p" variant="caption" class="column-caption">
 					Cada día, una página se revela
 				</Typography>
+			</div> -->
+
+			<div class="column book-column">
+				<BookAnimated />
+				<p class="column-caption">Portadas reales de tu biblioteca</p>
 			</div>
 
 			<!-- Columna 2: Texto de Astrid Lindgren -->

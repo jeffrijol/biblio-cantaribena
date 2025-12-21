@@ -1,0 +1,36 @@
+[2m18:29:25[22m [34m[content][39m Syncing content
+[2m18:29:25[22m [34m[content][39m Synced content
+[2m18:29:25[22m [34m[types][39m Generated [2m93ms[22m
+[2m18:29:25[22m [34m[check][39m Getting diagnostics for Astro files in D:\desarrollo\biblio-cantaribena...
+[96mscripts/process-covers.js[0m:[93m102[0m:[93m33[0m - [91merror[0m[90m ts(18046): [0m'error' is of type 'unknown'.
+
+[7m102[0m         console.error('Stack:', error.stack);
+[7m   [0m [91m                                ~~~~~[0m
+[96mscripts/process-covers.js[0m:[93m101[0m:[93m50[0m - [91merror[0m[90m ts(18046): [0m'error' is of type 'unknown'.
+
+[7m101[0m         console.error('ÔØî Error procesando CSV:', error.message);
+[7m   [0m [91m                                                 ~~~~~[0m
+[96mscripts/process-covers.js[0m:[93m17[0m:[93m27[0m - [91merror[0m[90m ts(7006): [0mParameter 'isbn13' implicitly has an 'any' type.
+
+[7m17[0m function generateCoverURL(isbn13) {
+[7m  [0m [91m                          ~~~~~~[0m
+[96mscripts/process-covers.js[0m:[93m10[0m:[93m21[0m - [91merror[0m[90m ts(7006): [0mParameter 'isbn' implicitly has an 'any' type.
+
+[7m10[0m function formatISBN(isbn) {
+[7m  [0m [91m                    ~~~~[0m
+
+[96msrc/components/UI/Typography.astro[0m:[93m3[0m:[93m11[0m - [93mwarning[0m[90m ts(6196): [0m'Props' is declared but never used.
+
+[7m3[0m interface Props {
+[7m [0m [93m          ~~~~~[0m
+
+[96msrc/lib/utils.ts[0m:[93m21[0m:[93m47[0m - [93mwarning[0m[90m ts(6133): [0m'unit' is declared but its value is never read.
+
+[7m21[0m export function formatTimeUnit(value: number, unit: string) {
+[7m  [0m [93m                                              ~~~~[0m
+
+Result (15 files): 
+- 4 errors
+- 0 warnings
+- 2 hints
+

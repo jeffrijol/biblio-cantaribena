@@ -18,8 +18,8 @@ export function getTimeUntilReveal() {
     };
 }
 
-export function formatTimeUnit(value: number, unit: string) {
-    return `${value.toString().padStart(2, '0')}<span class="unit">${unit}</span>`;
+export function formatTimeUnit(value: number, _unit: string) {
+    return `${value.toString().padStart(2, '0')}`;
 }
 
 export function formatDate(date: Date, locale = 'es-ES'): string {
