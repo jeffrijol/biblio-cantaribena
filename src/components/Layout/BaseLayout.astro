@@ -1,0 +1,46 @@
+---
+// src/components/Layout/BaseLayout.astro
+import { SITE_METADATA } from "../../lib/constants";
+import "../../styles/global.css";
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const { title, description } = Astro.props;
+const pageTitle = title
+    ? `${title} | ${SITE_METADATA.title}`
+    : SITE_METADATA.title;
+const pageDescription = description || SITE_METADATA.description;
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:type" content="website" />
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" href="/favicon.ico" />
+
+        <slot name="head" />
+    </head>
+    <body>
+        <slot />
+
+        <script>
+            // Script para evitar FOUC (Flash of Unstyled Content)
+            document.documentElement.classList.remove("no-js");
+            document.documentElement.classList.add("js");
+        </script>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+[2m17:03:49[22m [34m[content][39m Syncing content
+[2m17:03:49[22m [34m[content][39m Synced content
+[2m17:03:49[22m [34m[types][39m Generated [2m98ms[22m
+[2m17:03:49[22m [34m[check][39m Getting diagnostics for Astro files in D:\desarrollo\biblio-cantaribena...
+[96msrc/components/Countdown/BookPreview.astro[0m:[93m47[0m:[93m29[0m - [91merror[0m[90m ts(2322): [0mType '{ class: string; key: number; }' is not assignable to type 'HTMLAttributes'.
+  Property 'key' does not exist on type 'HTMLAttributes'.
+
+[7m47[0m                             key={level}
+[7m  [0m [91m                            ~~~[0m
+[96msrc/components/Countdown/BookPreview.astro[0m:[93m28[0m:[93m29[0m - [91merror[0m[90m ts(2322): [0mType '{ class: string; key: number; style: string; }' is not assignable to type 'HTMLAttributes'.
+  Property 'key' does not exist on type 'HTMLAttributes'.
+
+[7m28[0m                             key={i}
+[7m  [0m [91m                            ~~~[0m
+[96msrc/components/Countdown/BookPreview.astro[0m:[93m9[0m:[93m50[0m - [93mwarning[0m[90m ts(6133): [0m'coverUrl' is declared but its value is never read.
+
+[7m9[0m const { pixelLevel = 4, title = "Libro secreto", coverUrl } = Astro.props;
+[7m [0m [93m                                                 ~~~~~~~~[0m
+
+[96msrc/components/UI/Typography.astro[0m:[93m20[0m:[93m16[0m - [91merror[0m[90m ts(7053): [0mElement implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ heading: string; subheading: string; body: string; decorative: string; caption: string; }'.
+
+[7m20[0m <Tag class={`${variantClasses[variant]} ${className}`}>
+[7m  [0m [91m               ~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/UI/Typography.astro[0m:[93m3[0m:[93m11[0m - [93mwarning[0m[90m ts(6196): [0m'Props' is declared but never used.
+
+[7m3[0m interface Props {
+[7m [0m [93m          ~~~~~[0m
+
+[96msrc/pages/index.astro[0m:[93m33[0m:[93m6[0m - [91merror[0m[90m ts(2322): [0mType '{ key: number; size: number; duration: number; delay: number; }' is not assignable to type 'IntrinsicAttributes & Props'.
+  Property 'key' does not exist on type 'IntrinsicAttributes & Props'.
+
+[7m33[0m      key={flake.id}
+[7m  [0m [91m     ~~~[0m
+[96msrc/pages/index.astro[0m:[93m8[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Button' is declared but its value is never read.
+
+[7m8[0m import Button from "../components/UI/Button.astro";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/index.astro[0m:[93m242[0m:[93m15[0m - [91merror[0m[90m ts(2339): [0mProperty 'style' does not exist on type 'Element'.
+
+[7m242[0m       preview.style.opacity = "1";
+[7m   [0m [91m              ~~~~~[0m
+[96msrc/pages/index.astro[0m:[93m230[0m:[93m34[0m - [91merror[0m[90m ts(2339): [0mProperty 'style' does not exist on type 'Element'.
+
+[7m230[0m       bookPreviews[previewIndex].style.opacity = "1";
+[7m   [0m [91m                                 ~~~~~[0m
+[96msrc/pages/index.astro[0m:[93m219[0m:[93m15[0m - [91merror[0m[90m ts(2339): [0mProperty 'style' does not exist on type 'Element'.
+
+[7m219[0m       preview.style.opacity = "0.3";
+[7m   [0m [91m              ~~~~~[0m
+[96msrc/pages/index.astro[0m:[93m213[0m:[93m8[0m - [91merror[0m[90m ts(7053): [0mElement implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ days: string; hours: string; minutes: string; seconds: string; }'.
+
+[7m213[0m        hints[unitType] || "Pronto descubrir├ís m├ís...";
+[7m   [0m [91m       ~~~~~~~~~~~~~~~[0m
+[96msrc/pages/index.astro[0m:[93m208[0m:[93m39[0m - [91merror[0m[90m ts(2339): [0mProperty 'dataset' does not exist on type 'EventTarget'.
+
+[7m208[0m      const unitType = e.currentTarget.dataset.unit;
+[7m   [0m [91m                                      ~~~~~~~[0m
+[96msrc/pages/index.astro[0m:[93m208[0m:[93m23[0m - [91merror[0m[90m ts(18047): [0m'e.currentTarget' is possibly 'null'.
+
+[7m208[0m      const unitType = e.currentTarget.dataset.unit;
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~[0m
+
+Result (13 files): 
+- 10 errors
+- 0 warnings
+- 3 hints
+

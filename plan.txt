@@ -1,0 +1,24 @@
+src/
+├── components/
+│   ├── Countdown/
+│   │   ├── CountdownTimer.astro
+│   │   ├── Snowflake.astro
+│   │   └── BookPreview.astro
+│   ├── Layout/
+│   │   └── BaseLayout.astro
+│   └── UI/
+│       ├── Typography.astro
+│       └── Button.astro
+├── layouts/
+│   └── CountdownLayout.astro
+├── pages/
+│   ├── index.astro              # Página de cuenta atrás
+│   └── api/
+│       └── reveal-date.json.ts  # Endpoint para fecha de revelación
+├── lib/
+│   ├── constants.ts
+│   └── utils.ts
+├── data/
+│   └── countdown-content.json   # Textos y configuración
+└── styles/
+    └── global.css

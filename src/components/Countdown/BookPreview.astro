@@ -1,0 +1,164 @@
+---
+// src/components/Countdown/BookPreview.astro
+interface Props {
+    pixelLevel?: number;
+    title?: string;
+    coverUrl?: string;
+}
+
+const { pixelLevel = 4, title = "Libro secreto" } = Astro.props;
+
+// En una implementación real, aquí usarías la coverUrl
+// Por ahora usamos un placeholder con efecto de pixelación
+const pixelSize = pixelLevel;
+---
+
+<div class="book-preview" data-pixel-level={pixelLevel}>
+    <div class="book-cover-preview">
+        <div
+            class="pixelated-cover"
+            style={`--pixel-size: ${pixelSize}px;`}
+            title={title}
+        >
+            <div class="pixel-grid">
+                {
+                    Array.from({ length: 64 }).map((_) => (
+                        <div
+                            class="pixel"
+                            style={`
+              background-color: hsl(${Math.random() * 360}, 70%, 70%);
+              opacity: ${0.3 + Math.random() * 0.7};
+            `}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+    <div class="book-info-preview">
+        <div class="pixel-level-indicator">
+            <span class="indicator-label">Nivel de pista:</span>
+            <div class="level-bars">
+                {
+                    [1, 2, 3, 4, 5, 6, 7, 8].map((level) => (
+                        <div
+                            class={`level-bar ${level <= pixelLevel ? "active" : ""}`}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .book-preview {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 12px;
+        transition: var(--transition-smooth);
+        cursor: help;
+        min-width: 120px;
+    }
+
+    .book-preview:hover {
+        background: rgba(255, 255, 255, 0.9);
+        transform: scale(1.05);
+    }
+
+    .book-cover-preview {
+        width: 80px;
+        height: 120px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .pixelated-cover {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .pixel-grid {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        width: 100%;
+        height: 100%;
+        gap: 1px;
+    }
+
+    .pixel {
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.3s ease;
+    }
+
+    .book-preview:hover .pixel {
+        opacity: 0.8;
+    }
+
+    .pixel-level-indicator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .indicator-label {
+        font-size: 0.7rem;
+        color: var(--color-ink);
+        opacity: 0.6;
+        text-align: center;
+    }
+
+    .level-bars {
+        display: flex;
+        gap: 2px;
+        height: 6px;
+        width: 100%;
+    }
+
+    .level-bar {
+        flex: 1;
+        background: var(--color-primary-light);
+        border-radius: 1px;
+        transition: all 0.3s ease;
+    }
+
+    .level-bar.active {
+        background: var(--color-accent-gold);
+    }
+
+    .level-bar.active:nth-child(1) {
+        opacity: 0.9;
+    }
+    .level-bar.active:nth-child(2) {
+        opacity: 0.8;
+    }
+    .level-bar.active:nth-child(3) {
+        opacity: 0.7;
+    }
+    .level-bar.active:nth-child(4) {
+        opacity: 0.6;
+    }
+    .level-bar.active:nth-child(5) {
+        opacity: 0.5;
+    }
+    .level-bar.active:nth-child(6) {
+        opacity: 0.4;
+    }
+    .level-bar.active:nth-child(7) {
+        opacity: 0.3;
+    }
+    .level-bar.active:nth-child(8) {
+        opacity: 0.2;
+    }
+</style>

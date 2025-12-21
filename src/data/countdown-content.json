@@ -1,0 +1,35 @@
+{
+    "astridLindgrenText": {
+        "title": "El Mundo Perdido",
+        "quote": "Los niños viven en un mundo distinto al de los adultos... un mundo donde los milagros son posibles y la fantasía es tan real como el pan de cada día. Escribir para ellos no es un juego de niños, sino un viaje de regreso a ese mundo perdido que todos llevamos dentro.",
+        "source": "Astrid Lindgren, 'Mi mundo perdido'",
+        "additionalText": "Pronto descubrirás un rincón especial donde las historias cobran vida y los recuerdos de lectura se entrelazan con nuevas aventuras. Una biblioteca no es solo una colección de libros, es un mapa de afectos, un diario de descubrimientos compartidos."
+    },
+    "countdownConfig": {
+        "title": "La magia se revelará en",
+        "revealMessage": "El 6 de enero, día de Reyes, se desvelará un regalo muy especial para toda la familia Cantaribeña.",
+        "hintText": "Pasa el cursor sobre el contador para descubrir pistas..."
+    },
+    "hints": [
+        {
+            "day": 12,
+            "text": "Hay libros que han viajado más que nosotros",
+            "pixelLevel": 8
+        },
+        {
+            "day": 6,
+            "text": "Algunas ilustraciones guardan secretos en sus trazos",
+            "pixelLevel": 6
+        },
+        {
+            "day": 3,
+            "text": "Las notas al margen cuentan historias paralelas",
+            "pixelLevel": 4
+        },
+        {
+            "day": 1,
+            "text": "Cada etiqueta es un recuerdo compartido",
+            "pixelLevel": 2
+        }
+    ]
+}

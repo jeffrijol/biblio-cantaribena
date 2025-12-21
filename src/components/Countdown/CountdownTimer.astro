@@ -1,0 +1,182 @@
+---
+// src/components/Countdown/CountdownTimer.astro
+import {
+    getTimeUntilReveal,
+    formatTimeUnit,
+    formatDate,
+} from "../../lib/utils";
+import { REVEAL_DATE } from "../../lib/constants";
+
+const timeLeft = getTimeUntilReveal();
+const revealDateFormatted = formatDate(REVEAL_DATE);
+---
+
+<div class="countdown-container">
+    <div class="countdown-grid">
+        <!-- Días -->
+        <div class="time-unit" data-unit="days">
+            <div
+                class="time-value"
+                set:html={formatTimeUnit(timeLeft.days, "días")}
+            />
+            <div class="time-label">Días</div>
+        </div>
+
+        <!-- Horas -->
+        <div class="time-unit" data-unit="hours">
+            <div
+                class="time-value"
+                set:html={formatTimeUnit(timeLeft.hours, "horas")}
+            />
+            <div class="time-label">Horas</div>
+        </div>
+
+        <!-- Minutos -->
+        <div class="time-unit" data-unit="minutes">
+            <div
+                class="time-value"
+                set:html={formatTimeUnit(timeLeft.minutes, "min")}
+            />
+            <div class="time-label">Minutos</div>
+        </div>
+
+        <!-- Segundos -->
+        <div class="time-unit" data-unit="seconds">
+            <div
+                class="time-value"
+                set:html={formatTimeUnit(timeLeft.seconds, "seg")}
+            />
+            <div class="time-label">Segundos</div>
+        </div>
+    </div>
+
+    <div class="reveal-date glass-effect">
+        <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+        >
+            <path
+                d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16v-2"
+            ></path>
+            <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
+            <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
+            <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        <span
+            >La magia se revelará el <strong>{revealDateFormatted}</strong
+            ></span
+        >
+    </div>
+</div>
+
+<style>
+    .countdown-container {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .countdown-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+    }
+
+    .time-unit {
+        position: relative;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 16px;
+        box-shadow: var(--shadow-soft);
+        transition: var(--transition-smooth);
+        overflow: hidden;
+    }
+
+    .time-unit::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+            90deg,
+            var(--color-primary-base),
+            var(--color-secondary-base)
+        );
+    }
+
+    .time-unit:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-elevated);
+    }
+
+    .time-unit:hover::before {
+        background: linear-gradient(
+            90deg,
+            var(--color-accent-gold),
+            var(--color-accent-warm)
+        );
+    }
+
+    .time-value {
+        font-family: var(--font-heading);
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--color-ink);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .time-value .unit {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--color-primary-dark);
+        margin-left: 0.25rem;
+    }
+
+    .time-label {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--color-ink);
+        opacity: 0.7;
+    }
+
+    .reveal-date {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        color: var(--color-ink);
+    }
+
+    .reveal-date svg {
+        color: var(--color-accent-gold);
+    }
+
+    @media (max-width: 768px) {
+        .countdown-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .time-value {
+            font-size: 2.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .countdown-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

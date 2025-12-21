@@ -1,16 +1,560 @@
 ---
+// src/pages/index.astro
+import CountdownLayout from "../layouts/CountdownLayout.astro";
+import CountdownTimer from "../components/Countdown/CountdownTimer.astro";
+import Snowflake from "../components/Countdown/Snowflake.astro";
+import BookPreview from "../components/Countdown/BookPreview.astro";
+import Typography from "../components/UI/Typography.astro";
+import content from "../data/countdown-content.json";
+import { getTimeUntilReveal, getHintForDay } from "../lib/utils";
 
+// Generar copos de nieve dinámicamente
+const snowflakes = Array.from({ length: 50 }, (_, i) => ({
+	id: i,
+	size: Math.random() * 5 + 3,
+	duration: Math.random() * 10 + 5,
+	delay: Math.random() * 5,
+}));
+
+const timeLeft = getTimeUntilReveal();
+const currentHint = getHintForDay(timeLeft.days);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<CountdownLayout
+	title="Cuenta Atrás"
+	description="La magia se revelará el Día de Reyes"
+>
+	<!-- Fondo con copos de nieve -->
+	<div class="snowfall-container">
+		{
+			snowflakes.map((flake) => (
+				<Snowflake
+					size={flake.size}
+					duration={flake.duration}
+					delay={flake.delay}
+				/>
+			))
+		}
+	</div>
+
+	<!-- Contenido principal -->
+	<main class="countdown-page">
+		<!-- Encabezado -->
+		<header class="page-header">
+			<div class="header-content float-animation">
+				<Typography as="h1" variant="heading" class="site-title">
+					<span class="title-line">Biblioteca</span>
+					<span class="title-line accent">Cantaribeña</span>
+				</Typography>
+				<Typography as="p" variant="decorative" class="site-subtitle">
+					Un regalo que se construye con historias
+				</Typography>
+				<div class="header-decoration">
+					<svg width="120" height="20" viewBox="0 0 120 20">
+						<path
+							d="M10,10 C30,5 90,15 110,10"
+							stroke="var(--color-accent-gold)"
+							stroke-width="2"
+							fill="none"
+							stroke-linecap="round"></path>
+					</svg>
+				</div>
+			</div>
+		</header>
+
+		<!-- Sección de tres columnas -->
+		<div class="three-column-layout">
+			<!-- Columna 1: Libro animado -->
+			<div class="column book-column">
+				<div class="book-container page-turn">
+					<div class="book-cover">
+						<div class="book-spine"></div>
+						<div class="book-pages">
+							<div class="page"></div>
+							<div class="page"></div>
+							<div class="page"></div>
+						</div>
+					</div>
+				</div>
+				<Typography as="p" variant="caption" class="column-caption">
+					Cada día, una página se revela
+				</Typography>
+			</div>
+
+			<!-- Columna 2: Texto de Astrid Lindgren -->
+			<div class="column text-column">
+				<div class="quote-card glass-effect">
+					<div class="quote-icon">
+						<svg
+							width="32"
+							height="32"
+							viewBox="0 0 24 24"
+							fill="var(--color-secondary-base)"
+						>
+							<path
+								d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+							></path>
+						</svg>
+					</div>
+					<Typography
+						as="h2"
+						variant="subheading"
+						class="quote-title"
+					>
+						{content.astridLindgrenText.title}
+					</Typography>
+					<blockquote class="quote-text">
+						<Typography as="p" variant="body">
+							{content.astridLindgrenText.quote}
+						</Typography>
+					</blockquote>
+					<Typography as="p" variant="caption" class="quote-source">
+						— {content.astridLindgrenText.source}
+					</Typography>
+					<div class="additional-text">
+						<Typography as="p" variant="body">
+							{content.astridLindgrenText.additionalText}
+						</Typography>
+					</div>
+				</div>
+			</div>
+
+			<!-- Columna 3: Cuenta atrás -->
+			<div class="column countdown-column">
+				<div class="countdown-wrapper">
+					<Typography
+						as="h2"
+						variant="subheading"
+						class="countdown-title"
+					>
+						{content.countdownConfig.title}
+					</Typography>
+					<CountdownTimer />
+					<Typography as="p" variant="caption" class="countdown-hint">
+						{content.countdownConfig.hintText}
+					</Typography>
+					<div class="hints-preview">
+						<BookPreview pixelLevel={8} />
+						<BookPreview pixelLevel={6} />
+						<BookPreview pixelLevel={4} />
+						<BookPreview pixelLevel={2} />
+					</div>
+					<div
+						id="live-hint"
+						class="live-hint glass-effect"
+						style="display: none;"
+					>
+						{currentHint}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mensaje de revelación -->
+		<section class="reveal-section">
+			<div class="reveal-message glass-effect">
+				<Typography as="h3" variant="subheading">
+					✨ Un Regalo Especial ✨
+				</Typography>
+				<Typography as="p" variant="body">
+					{content.countdownConfig.revealMessage}
+				</Typography>
+				<Typography as="p" variant="caption" class="reveal-note">
+					Mientras esperas, explora las pistas ocultas en el
+					contador...
+				</Typography>
+			</div>
+		</section>
+
+		<!-- Pie de página -->
+		<footer class="page-footer">
+			<div class="footer-content">
+				<Typography as="p" variant="decorative">
+					Con cariño, para la familia Cantaribeña
+				</Typography>
+				<div class="footer-decoration">
+					<svg width="200" height="40" viewBox="0 0 200 40">
+						<path
+							d="M20,20 Q100,0 180,20 T180,20"
+							stroke="var(--color-primary-base)"
+							stroke-width="1.5"
+							fill="none"
+							stroke-dasharray="5,5"></path>
+					</svg>
+				</div>
+			</div>
+		</footer>
+	</main>
+
+	<!-- Script para interactividad -->
+	<script>
+		// Interacción con las pistas
+		document.addEventListener("DOMContentLoaded", () => {
+			const timeUnits =
+				document.querySelectorAll<HTMLElement>(".time-unit");
+			const bookPreviews =
+				document.querySelectorAll<HTMLElement>(".book-preview");
+			const liveHint = document.getElementById("live-hint");
+
+			const hints: Record<string, string> = {
+				days: "Hay libros que han viajado más que nosotros",
+				hours: "Las ilustraciones guardan secretos en sus trazos",
+				minutes: "Las notas al margen cuentan historias paralelas",
+				seconds: "Cada etiqueta es un recuerdo compartido",
+			};
+
+			timeUnits.forEach((unit) => {
+				unit.addEventListener("mouseenter", (e) => {
+					const target = e.currentTarget as HTMLElement | null;
+					if (!target) return;
+
+					const unitType = target.dataset.unit || "";
+
+					// Mostrar pista correspondiente
+					if (liveHint) {
+						liveHint.textContent =
+							hints[unitType] || "Pronto descubrirás más...";
+						liveHint.style.display = "block";
+					}
+
+					// Resaltar preview correspondiente
+					bookPreviews.forEach((preview) => {
+						preview.style.opacity = "0.3";
+					});
+
+					// Resaltar el preview correspondiente según la unidad
+					const previewIndex = [
+						"days",
+						"hours",
+						"minutes",
+						"seconds",
+					].indexOf(unitType);
+					if (bookPreviews[previewIndex]) {
+						bookPreviews[previewIndex].style.opacity = "1";
+					}
+				});
+
+				unit.addEventListener("mouseleave", () => {
+					// Ocultar pista
+					if (liveHint) {
+						liveHint.style.display = "none";
+					}
+
+					// Restaurar opacidad de todos los previews
+					bookPreviews.forEach((preview) => {
+						preview.style.opacity = "1";
+					});
+				});
+			});
+
+			// Actualizar la cuenta atrás cada segundo
+			function updateCountdown() {
+				// Esta función se ejecuta en el componente CountdownTimer
+				// Aquí podrías añadir lógica adicional si es necesario
+				setTimeout(updateCountdown, 1000);
+			}
+
+			updateCountdown();
+		});
+	</script>
+
+	<style>
+		/* Estilos específicos de la página */
+		.countdown-page {
+			max-width: 1400px;
+			margin: 0 auto;
+			padding: 2rem;
+			position: relative;
+			z-index: 2;
+		}
+
+		.snowfall-container {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			z-index: 1;
+		}
+
+		.page-header {
+			text-align: center;
+			margin-bottom: 4rem;
+			padding: 2rem 0;
+		}
+
+		.site-title {
+			text-align: center;
+			margin-bottom: 1rem;
+		}
+
+		.title-line {
+			display: block;
+			line-height: 1.1;
+		}
+
+		.title-line.accent {
+			color: var(--color-secondary-dark);
+			position: relative;
+			display: inline-block;
+		}
+
+		.title-line.accent::after {
+			content: "";
+			position: absolute;
+			bottom: -5px;
+			left: 10%;
+			width: 80%;
+			height: 3px;
+			background: linear-gradient(
+				90deg,
+				transparent,
+				var(--color-accent-gold),
+				transparent
+			);
+		}
+
+		.site-subtitle {
+			text-align: center;
+			margin-bottom: 1.5rem;
+		}
+
+		.header-decoration {
+			display: flex;
+			justify-content: center;
+			margin-top: 1.5rem;
+		}
+
+		.three-column-layout {
+			display: grid;
+			grid-template-columns: 1fr 1.5fr 1fr;
+			gap: 3rem;
+			margin: 4rem 0;
+		}
+
+		.column {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+		}
+
+		.book-column {
+			align-items: center;
+			justify-content: center;
+		}
+
+		.book-container {
+			width: 200px;
+			height: 300px;
+			position: relative;
+		}
+
+		.book-cover {
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(
+				135deg,
+				var(--color-primary-base),
+				var(--color-secondary-base)
+			);
+			border-radius: 8px 16px 16px 8px;
+			position: relative;
+			box-shadow: var(--shadow-elevated);
+			transform-style: preserve-3d;
+		}
+
+		.book-spine {
+			position: absolute;
+			left: 0;
+			top: 10%;
+			width: 20px;
+			height: 80%;
+			background: var(--color-primary-dark);
+			border-radius: 4px 0 0 4px;
+		}
+
+		.book-pages {
+			position: absolute;
+			left: 20px;
+			top: 5%;
+			width: calc(100% - 25px);
+			height: 90%;
+			background: var(--color-paper);
+			border-radius: 0 8px 8px 0;
+			overflow: hidden;
+		}
+
+		.book-pages .page {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(
+				90deg,
+				transparent 95%,
+				rgba(0, 0, 0, 0.05) 100%
+			);
+		}
+
+		.column-caption {
+			text-align: center;
+		}
+
+		.text-column {
+			justify-content: center;
+		}
+
+		.quote-card {
+			padding: 2.5rem;
+			border-radius: 20px;
+			box-shadow: var(--shadow-soft);
+		}
+
+		.quote-icon {
+			margin-bottom: 1.5rem;
+			opacity: 0.8;
+		}
+
+		.quote-title {
+			margin-bottom: 1.5rem;
+		}
+
+		.quote-text {
+			margin-bottom: 1.5rem;
+			padding-left: 1rem;
+			border-left: 3px solid var(--color-accent-gold);
+		}
+
+		.quote-source {
+			text-align: right;
+			margin-bottom: 2rem;
+			padding-top: 1rem;
+			border-top: 1px solid rgba(0, 0, 0, 0.1);
+		}
+
+		.additional-text {
+			padding: 1rem;
+			background: rgba(255, 255, 255, 0.5);
+			border-radius: 10px;
+			border-left: 4px solid var(--color-accent-gold);
+		}
+
+		.countdown-column {
+			justify-content: center;
+		}
+
+		.countdown-wrapper {
+			text-align: center;
+			position: relative;
+		}
+
+		.countdown-title {
+			margin-bottom: 2rem;
+		}
+
+		.countdown-hint {
+			margin: 1.5rem 0;
+		}
+
+		.hints-preview {
+			display: flex;
+			gap: 0.5rem;
+			justify-content: center;
+			margin-top: 2rem;
+		}
+
+		.live-hint {
+			position: absolute;
+			bottom: -50px;
+			left: 50%;
+			transform: translateX(-50%);
+			padding: 0.75rem 1.5rem;
+			border-radius: 25px;
+			font-size: 0.9rem;
+			white-space: nowrap;
+			z-index: 10;
+		}
+
+		.reveal-section {
+			margin: 4rem 0;
+			text-align: center;
+		}
+
+		.reveal-message {
+			display: inline-block;
+			padding: 2rem 3rem;
+			border-radius: 20px;
+			max-width: 600px;
+		}
+
+		.reveal-message h3 {
+			margin-bottom: 1rem;
+		}
+
+		.reveal-message p {
+			margin-bottom: 1rem;
+		}
+
+		.reveal-note {
+			font-style: italic;
+		}
+
+		.page-footer {
+			text-align: center;
+			padding: 2rem 0;
+			margin-top: 4rem;
+			border-top: 1px solid rgba(0, 0, 0, 0.1);
+		}
+
+		.footer-content {
+			margin-bottom: 1rem;
+		}
+
+		.footer-decoration {
+			display: flex;
+			justify-content: center;
+		}
+
+		/* Responsive */
+		@media (max-width: 1200px) {
+			.three-column-layout {
+				grid-template-columns: 1fr;
+				gap: 4rem;
+			}
+
+			.book-column,
+			.text-column,
+			.countdown-column {
+				max-width: 600px;
+				margin: 0 auto;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.countdown-page {
+				padding: 1rem;
+			}
+
+			.quote-card {
+				padding: 1.5rem;
+			}
+
+			.book-container {
+				width: 150px;
+				height: 225px;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.three-column-layout {
+				gap: 3rem;
+			}
+
+			.hints-preview {
+				flex-wrap: wrap;
+			}
+		}
+	</style>
+</CountdownLayout>

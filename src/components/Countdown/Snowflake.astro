@@ -1,0 +1,38 @@
+---
+// src/components/Countdown/Snowflake.astro
+interface Props {
+    size?: number;
+    duration?: number;
+    delay?: number;
+}
+
+const { size = 5, duration = 10, delay = 0 } = Astro.props;
+const left = Math.random() * 100;
+const opacity = Math.random() * 0.5 + 0.3;
+const animationDuration = `${duration}s`;
+const animationDelay = `${delay}s`;
+---
+
+<div
+    class="snowflake snowfall"
+    style={`
+    width: ${size}px;
+    height: ${size}px;
+    left: ${left}vw;
+    opacity: ${opacity};
+    animation-duration: ${animationDuration};
+    animation-delay: ${animationDelay};
+  `}
+>
+</div>
+
+<style>
+    .snowflake {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        pointer-events: none;
+        filter: blur(0.5px);
+        z-index: 1;
+    }
+</style>
