@@ -11,41 +11,41 @@ const timeLeft = getTimeUntilReveal();
 const revealDateFormatted = formatDate(REVEAL_DATE);
 ---
 
-<div class="countdown-container">
+<div
+    class="countdown-container"
+    id="countdown-wrapper"
+    data-reveal-date={REVEAL_DATE.toISOString()}
+>
     <div class="countdown-grid">
         <!-- Días -->
         <div class="time-unit" data-unit="days">
-            <div
-                class="time-value"
-                set:html={formatTimeUnit(timeLeft.days, "días")}
-            />
+            <div class="time-value" id="days-val">
+                {formatTimeUnit(timeLeft.days, "días")}
+            </div>
             <div class="time-label">Días</div>
         </div>
 
         <!-- Horas -->
         <div class="time-unit" data-unit="hours">
-            <div
-                class="time-value"
-                set:html={formatTimeUnit(timeLeft.hours, "horas")}
-            />
+            <div class="time-value" id="hours-val">
+                {formatTimeUnit(timeLeft.hours, "horas")}
+            </div>
             <div class="time-label">Horas</div>
         </div>
 
         <!-- Minutos -->
         <div class="time-unit" data-unit="minutes">
-            <div
-                class="time-value"
-                set:html={formatTimeUnit(timeLeft.minutes, "min")}
-            />
+            <div class="time-value" id="minutes-val">
+                {formatTimeUnit(timeLeft.minutes, "min")}
+            </div>
             <div class="time-label">Minutos</div>
         </div>
 
         <!-- Segundos -->
         <div class="time-unit" data-unit="seconds">
-            <div
-                class="time-value"
-                set:html={formatTimeUnit(timeLeft.seconds, "seg")}
-            />
+            <div class="time-value" id="seconds-val">
+                {formatTimeUnit(timeLeft.seconds, "seg")}
+            </div>
             <div class="time-label">Segundos</div>
         </div>
     </div>
@@ -73,6 +73,48 @@ const revealDateFormatted = formatDate(REVEAL_DATE);
         >
     </div>
 </div>
+
+<script>
+    function updateCountdown() {
+        const wrapper = document.getElementById("countdown-wrapper");
+        if (!wrapper) return;
+
+        const revealDateStr = wrapper.dataset.revealDate;
+        if (!revealDateStr) return;
+
+        const revealDate = new Date(revealDateStr);
+        const now = new Date();
+        const diff = revealDate.getTime() - now.getTime();
+
+        if (diff <= 0) {
+            // Handle arrival if needed, or just show zeros
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+            (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const daysEl = document.getElementById("days-val");
+        const hoursEl = document.getElementById("hours-val");
+        const minutesEl = document.getElementById("minutes-val");
+        const secondsEl = document.getElementById("seconds-val");
+
+        if (daysEl) daysEl.innerText = days.toString().padStart(2, "0");
+        if (hoursEl) hoursEl.innerText = hours.toString().padStart(2, "0");
+        if (minutesEl)
+            minutesEl.innerText = minutes.toString().padStart(2, "0");
+        if (secondsEl)
+            secondsEl.innerText = seconds.toString().padStart(2, "0");
+    }
+
+    // Run immediately and then every second
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+</script>
 
 <style>
     .countdown-container {
