@@ -1,318 +1,377 @@
 ---
 // src/components/BookAnimated.astro
-import bookCovers from '../data/bookCovers.json';
+import bookCovers from "../data/bookCovers.json";
 
-// Si no hay datos, usar array vacío
 const covers = bookCovers || [];
-const hasCovers = covers.length > 0;
+const EXTERIOR_COVER = "/images/library-cover.svg";
 ---
 
-<div class="book-animated-container">
-  {hasCovers ? (
-    <div class="book-system">
-      <div class="book-depth-layer depth-1"></div>
-      <div class="book-depth-layer depth-2"></div>
-      <div class="book-depth-layer depth-3"></div>
-      
-      <div class="book-main" id="animated-book-container">
-        <!-- Lomo del libro -->
-        <div class="book-spine-3d"></div>
-        
-        <!-- Portada frontal (la que gira) -->
-        <div class="book-front" id="book-front-wing">
-          <div class="book-cover-image">
-             <img
-              id="animated-book-cover"
-              src={covers[0].coverUrl}
-              alt={`Portada de ${covers[0].title}`}
-              loading="lazy"
-              data-covers={JSON.stringify(covers.map(c => ({ url: c.coverUrl, title: c.title })))}
-            />
-            <div class="book-gloss"></div>
-          </div>
-          <div class="book-cover-back"></div>
-        </div>
+<div class="book-triple-container">
+  <div class="book-perspective-wrapper">
+    <!-- El libro en sí -->
+    <div class="book-entity" id="book-entity">
+      <!-- Lomo del libro -->
+      <div class="book-spine-real"></div>
 
-        <!-- Páginas interiores estáticas -->
-        <div class="book-pages-stack">
-          <div class="inner-page"></div>
+      <!-- PÁGINA IZQUIERDA -->
+      <div class="page page-left" id="page-left">
+        <div class="page-content">
+          <img
+            src={EXTERIOR_COVER}
+            alt="Biblioteca"
+            id="img-left"
+            class="page-img"
+          />
+          <div class="page-shadow-inner"></div>
         </div>
       </div>
-      
-      <!-- Indicador de progreso -->
-      <div class="cover-progress">
-        <div class="progress-bar">
-          <div class="progress-fill" id="cover-progress-fill"></div>
+
+      <!-- PÁGINA DERECHA -->
+      <div class="page page-right" id="page-right">
+        <div class="page-content">
+          <img
+            src={covers.length > 0 ? covers[0].localUrl : EXTERIOR_COVER}
+            alt="Siguiente"
+            id="img-right"
+            class="page-img"
+          />
+          <div class="page-shadow-inner"></div>
         </div>
-        <div class="progress-text" id="cover-progress-text">
-          Libro 1 de {covers.length}
+      </div>
+
+      <!-- PÁGINA VOLANTE (La que gira) -->
+      <div class="page page-middle" id="page-middle">
+        <!-- Cara A (Frontal de la hoja que vuela) -->
+        <div class="page-face face-front">
+          <div class="page-content">
+            <img
+              src={EXTERIOR_COVER}
+              alt="Flipping Front"
+              id="img-mid-front"
+              class="page-img"
+            />
+            <div class="page-gloss-effect"></div>
+          </div>
+        </div>
+        <!-- Cara B (Trasera de la hoja que vuela) -->
+        <div class="page-face face-back">
+          <div class="page-content">
+            <img
+              src={covers.length > 0 ? covers[0].localUrl : EXTERIOR_COVER}
+              alt="Flipping Back"
+              id="img-mid-back"
+              class="page-img"
+            />
+            <div class="page-gloss-effect"></div>
+          </div>
         </div>
       </div>
     </div>
-  ) : (
-    <div class="book-placeholder page-turn">
-      <div class="book-cover-fallback">
-        <div class="book-spine"></div>
-        <div class="book-pages">
-          <div class="page"></div>
-          <div class="page"></div>
-          <div class="page"></div>
-        </div>
-      </div>
-      <p class="placeholder-text">Cargando biblioteca...</p>
+  </div>
+
+  <!-- Controles e Información -->
+  <div class="book-info-panel">
+    <div class="progress-pill">
+      <span id="book-counter">Biblioteca</span>
     </div>
-  )}
+    <p class="click-hint">Haz clic para hojear la biblioteca</p>
+  </div>
 </div>
 
 <style>
-/* Contenedor principal */
-.book-animated-container {
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-  padding: 2rem 0;
-}
+  /* VARIABLES Y RESET LOCAL */
+  .book-triple-container {
+    --book-width: 280px;
+    --book-height: 420px;
+    --anim-speed: 1.2s;
+    --page-fold-color: #f4f4f4;
 
-.book-system {
-  position: relative;
-  width: 280px;
-  height: 420px;
-  margin: 0 auto;
-  perspective: 2000px;
-}
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
 
-/* Base del libro (cuerpo principal) */
-.book-main {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: bookIdle 6s ease-in-out infinite;
-}
+  .book-perspective-wrapper {
+    perspective: 2000px;
+    width: var(--book-width);
+    height: var(--book-height);
+    position: relative;
+    transition: transform 0.8s ease-in-out;
+  }
 
-/* Lomo 3D */
-.book-spine-3d {
-  position: absolute;
-  left: -15px;
-  width: 30px;
-  height: 100%;
-  background: var(--color-primary-dark);
-  transform: rotateY(-90deg);
-  transform-origin: right;
-  border-radius: 4px 0 0 4px;
-  box-shadow: inset -5px 0 10px rgba(0,0,0,0.3);
-}
+  .book-entity {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-/* Capa frontal (Portada que gira) */
-.book-front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform-origin: left;
-  transform-style: preserve-3d;
-  z-index: 10;
-  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
+  .book-spine-real {
+    position: absolute;
+    left: 0;
+    width: 12px;
+    height: 100%;
+    background: var(--color-ink);
+    transform: rotateY(-90deg);
+    transform-origin: right;
+    z-index: 5;
+  }
 
-.book-cover-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  background: #f0f0f0;
-  border-radius: 0 8px 8px 0;
-  overflow: hidden;
-  box-shadow: 10px 10px 20px rgba(0,0,0,0.15);
-}
+  .page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: transform var(--anim-speed) cubic-bezier(0.645, 0.045, 0.355, 1);
+    border-radius: 0 8px 8px 0;
+    overflow: hidden;
+    background: white;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
+  }
 
-.book-cover-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Cambiado para que encaje la URL */
-  background: #eee;
-}
+  .page-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
 
-.book-gloss {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    115deg,
-    rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.1) 40%,
-    rgba(255,255,255,0.2) 42%,
-    rgba(255,255,255,0.1) 44%,
-    rgba(255,255,255,0) 100%
-  );
-  pointer-events: none;
-}
+  .page-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: white;
+  }
 
-/* Reverso de la portada (papel blanco) */
-.book-cover-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: var(--color-paper);
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
-  border-radius: 8px 0 0 8px;
-  box-shadow: inset 5px 0 15px rgba(0,0,0,0.05);
-}
+  .page-shadow-inner {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0) 10%
+    );
+    pointer-events: none;
+  }
 
-/* Bloque de páginas (estático debajo) */
-.book-pages-stack {
-  position: absolute;
-  width: 98%;
-  height: 96%;
-  top: 2%;
-  left: 1%;
-  background: #fff;
-  border-radius: 0 4px 4px 0;
-  box-shadow: 
-    3px 0 0 -1px #eee,
-    6px 0 0 -2px #ddd,
-    9px 0 0 -3px #ccc;
-  z-index: 1;
-}
+  /* PÁGINAS ESPECÍFICAS */
+  .page-left {
+    z-index: 1;
+    transform: rotateY(0deg); /* Empieza cerrado */
+  }
 
-.inner-page {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #f9f9f9 0%, #fff 5%, #fff 95%, #f2f2f2 100%);
-}
+  .page-right {
+    z-index: 0;
+    transform: rotateY(0deg);
+  }
 
-/* Animación de apertura */
-.turning {
-  transform: rotateY(-160deg) !important;
-}
+  .page-middle {
+    z-index: 10;
+    cursor: pointer;
+    transform: rotateY(0deg);
+    display: none;
+  }
 
-/* Capas de profundidad visual adicionales */
-.book-depth-layer {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.03);
-  border-radius: 0 8px 8px 0;
-  pointer-events: none;
-}
-.depth-1 { transform: translateZ(-2px) translateX(2px); }
-.depth-2 { transform: translateZ(-4px) translateX(4px); }
-.depth-3 { transform: translateZ(-6px) translateX(6px); }
+  /* CARAS DE LA HOJA VOLANTE */
+  .page-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
 
-/* Progreso */
-.cover-progress {
-  margin-top: 3rem;
-  text-align: center;
-}
+  .face-back {
+    transform: rotateY(180deg);
+    background: var(--page-fold-color);
+  }
 
-.progress-bar {
-  width: 100%;
-  height: 4px;
-  background: rgba(0,0,0,0.1);
-  border-radius: 2px;
-  overflow: hidden;
-  margin-bottom: 8px;
-}
+  .page-gloss-effect {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      115deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 60%
+    );
+    pointer-events: none;
+  }
 
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--color-primary-base), var(--color-secondary-base));
-  width: 0%;
-  transition: width 0.4s ease;
-}
+  /* ESTADOS */
+  .book-triple-container.is-open .page-left {
+    transform: rotateY(-180deg);
+    z-index: 1;
+    border-radius: 8px 0 0 8px;
+  }
+  .book-triple-container.is-open .page-middle {
+    display: block;
+  }
+  .book-triple-container.is-open .book-perspective-wrapper {
+    transform: translateX(calc(var(--book-width) * 0.5));
+  }
 
-.progress-text {
-  font-size: 0.85rem;
-  color: var(--color-ink);
-  opacity: 0.6;
-}
+  /* INFO */
+  .book-info-panel {
+    text-align: center;
+    font-family: var(--font-body);
+  }
+  .progress-pill {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    color: var(--color-ink);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+  .click-hint {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    font-style: italic;
+  }
 
-/* Efecto de balanceo suave */
-@keyframes bookIdle {
-  0%, 100% { transform: rotateY(-5deg) rotateX(2deg) translateY(0); }
-  50% { transform: rotateY(5deg) rotateX(-2deg) translateY(-10px); }
-}
-
-/* Fallback */
-.book-placeholder {
-  width: 180px;
-  height: 260px;
-  margin: 0 auto;
-}
-.book-cover-fallback {
-  width: 100%; height: 100%;
-  background: linear-gradient(135deg, var(--color-primary-base), var(--color-secondary-base));
-  border-radius: 4px 8px 8px 4px;
-  position: relative;
-  box-shadow: var(--shadow-elevated);
-}
-.placeholder-text {
-  text-align: center; margin-top: 1rem; font-size: 0.8rem; opacity: 0.6;
-}
+  @media (max-width: 768px) {
+    .book-triple-container {
+      --book-width: 220px;
+      --book-height: 330px;
+    }
+  }
 </style>
 
 <script>
-if (typeof window !== 'undefined') {
-  document.addEventListener('DOMContentLoaded', () => {
-    const bookContainer = document.getElementById('animated-book-container');
-    const frontWing = document.getElementById('book-front-wing');
-    const bookCover = document.getElementById('animated-book-cover') as HTMLImageElement;
-    const progressFill = document.getElementById('cover-progress-fill');
-    const progressText = document.getElementById('cover-progress-text');
-    
-    if (!bookCover || !frontWing) return;
-    
-    const coversData = JSON.parse(bookCover.dataset.covers || '[]');
-    if (coversData.length === 0) return;
-    
-    let currentIdx = 0;
-    const total = coversData.length;
-    const CYCLE_TIME = 8000;
-    
-    function flipAndChange() {
-      // 1. Iniciar giro de página
-      frontWing?.classList.add('turning');
-      
-      // 2. A mitad del giro, cambiar la imagen (cuando no es visible)
-      setTimeout(() => {
-        currentIdx = (currentIdx + 1) % total;
-        const next = coversData[currentIdx];
-        
-        if (bookCover) {
-          bookCover.src = next.url;
-          bookCover.alt = `Portada de ${next.title}`;
+  if (typeof window !== "undefined") {
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.querySelector(".book-triple-container");
+      const pageMiddle = document.getElementById("page-middle");
+      const imgLeft = document.getElementById("img-left") as HTMLImageElement;
+      const imgRight = document.getElementById("img-right") as HTMLImageElement;
+      const imgMidFront = document.getElementById(
+        "img-mid-front",
+      ) as HTMLImageElement;
+      const imgMidBack = document.getElementById(
+        "img-mid-back",
+      ) as HTMLImageElement;
+      const counter = document.getElementById("book-counter");
+
+      const dataEl = document.getElementById("book3d-data");
+      const covers = dataEl ? JSON.parse(dataEl.textContent || "[]") : [];
+      const exterior = "/images/library-cover.svg";
+
+      if (!covers.length) return;
+
+      let currentIndex = -1; // -1 = Cerrado
+      let isForward = true;
+      let isAnimating = false;
+      const FLIP_DURATION = 1200;
+      const CYCLE_DELAY = 8000;
+
+      function flip() {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        // APERTURA INICIAL
+        if (currentIndex === -1) {
+          container?.classList.add("is-open");
+          currentIndex = 0;
+
+          imgMidFront.src = exterior;
+          imgMidBack.src = covers[0].localUrl;
+          imgRight.src = covers[1] ? covers[1].localUrl : exterior;
+
+          setTimeout(() => {
+            if (pageMiddle) pageMiddle.style.transform = "rotateY(-180deg)";
+          }, 50);
+
+          setTimeout(() => {
+            imgLeft.src = exterior;
+            isAnimating = false;
+            updateCounter();
+          }, FLIP_DURATION + 100);
+          return;
         }
 
-        // Actualizar UI
-        if (progressFill) progressFill.style.width = `${((currentIdx + 1) / total) * 100}%`;
-        if (progressText) progressText.textContent = `Libro ${currentIdx + 1} de ${total}`;
-      }, 600); // 600ms es la mitad de la transición de 1.2s
+        // CAMBIO DE DIRECCIÓN
+        if (isForward && currentIndex >= covers.length - 1) isForward = false;
+        if (!isForward && currentIndex <= 0) isForward = true;
 
-      // 3. Cerrar la página tras el cambio
-      setTimeout(() => {
-        frontWing?.classList.remove('turning');
-      }, 1300);
-    }
-    
-    let interval = setInterval(flipAndChange, CYCLE_TIME);
-    
-    // Interactividad manual
-    frontWing.addEventListener('click', () => {
-      clearInterval(interval);
-      flipAndChange();
-      interval = setInterval(flipAndChange, CYCLE_TIME);
-    });
+        if (!pageMiddle) return;
 
-    // Pausar idle en hover (opcional, para mejor visualización manual)
-    bookContainer?.addEventListener('mouseenter', () => {
-      if (bookContainer) bookContainer.style.animationPlayState = 'paused';
-    });
-    bookContainer?.addEventListener('mouseleave', () => {
-      if (bookContainer) bookContainer.style.animationPlayState = 'running';
-    });
+        if (isForward) {
+          currentIndex++;
+          imgMidFront.src = covers[currentIndex - 1].localUrl;
+          imgMidBack.src = covers[currentIndex].localUrl;
+          imgRight.src = covers[currentIndex + 1]
+            ? covers[currentIndex + 1].localUrl
+            : exterior;
 
-    // Inicializar barra
-    if (progressFill) progressFill.style.width = `${((currentIdx + 1) / total) * 100}%`;
-  });
-}
+          pageMiddle.style.transition = "none";
+          pageMiddle.style.transform = "rotateY(0deg)";
+
+          setTimeout(() => {
+            pageMiddle.style.transition = `transform ${FLIP_DURATION}ms cubic-bezier(0.645, 0.045, 0.355, 1)`;
+            pageMiddle.style.transform = "rotateY(-180deg)";
+          }, 50);
+
+          setTimeout(() => {
+            imgLeft.src = covers[currentIndex - 1].localUrl;
+            isAnimating = false;
+            updateCounter();
+          }, FLIP_DURATION + 100);
+        } else {
+          currentIndex--;
+          imgMidBack.src = covers[currentIndex + 1].localUrl;
+          imgMidFront.src = covers[currentIndex].localUrl;
+          imgLeft.src =
+            currentIndex > 0 ? covers[currentIndex - 1].localUrl : exterior;
+
+          pageMiddle.style.transition = "none";
+          pageMiddle.style.transform = "rotateY(-180deg)";
+
+          setTimeout(() => {
+            pageMiddle.style.transition = `transform ${FLIP_DURATION}ms cubic-bezier(0.645, 0.045, 0.355, 1)`;
+            pageMiddle.style.transform = "rotateY(0deg)";
+          }, 50);
+
+          setTimeout(() => {
+            imgRight.src = covers[currentIndex + 1].localUrl;
+            isAnimating = false;
+            updateCounter();
+          }, FLIP_DURATION + 100);
+        }
+      }
+
+      function updateCounter() {
+        if (counter) {
+          if (currentIndex === -1) counter.textContent = "Biblioteca";
+          else
+            counter.textContent = `Libro ${currentIndex + 1} de ${covers.length} ${!isForward ? "⇜" : "⇝"}`;
+        }
+      }
+
+      let autoTimer = setInterval(flip, CYCLE_DELAY);
+
+      container?.addEventListener("click", (e) => {
+        // Evitar que el click se propague si es solo decorativo
+        clearInterval(autoTimer);
+        flip();
+        autoTimer = setInterval(flip, CYCLE_DELAY);
+      });
+
+      updateCounter();
+    });
+  }
 </script>
+
+<script
+  id="book3d-data"
+  type="application/json"
+  set:html={JSON.stringify(covers)}
+/>

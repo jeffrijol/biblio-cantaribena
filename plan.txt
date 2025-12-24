@@ -1,24 +1,541 @@
-src/
-├── components/
-│   ├── Countdown/
-│   │   ├── CountdownTimer.astro
-│   │   ├── Snowflake.astro
-│   │   └── BookPreview.astro
-│   ├── Layout/
-│   │   └── BaseLayout.astro
-│   └── UI/
-│       ├── Typography.astro
-│       └── Button.astro
-├── layouts/
-│   └── CountdownLayout.astro
-├── pages/
-│   ├── index.astro              # Página de cuenta atrás
-│   └── api/
-│       └── reveal-date.json.ts  # Endpoint para fecha de revelación
-├── lib/
-│   ├── constants.ts
-│   └── utils.ts
-├── data/
-│   └── countdown-content.json   # Textos y configuración
-└── styles/
-    └── global.css
+El problema es que hay dos animaciones independientes: el ciclo automático de cambio de portada (8s) y la animación visual del libro (page-turn). Quieres que:
+
+    El libro esté "cerrado" mostrando una portada única de "Biblioteca Cantaribeña"
+
+    Cada vez que se abre/cierra (con el efecto page-turn), muestre una nueva portada real
+
+    La sincronización sea perfecta: el cambio de imagen ocurra DURANTE el giro, no en intervalos fijos
+
+🎯 Solución: Libro Sincronizado "Abrir → Cambiar → Cerrar"
+1. Nueva Lógica de Sincronización
+
+Flujo corregido:
+text
+
+ESTADO INICIAL → [Libro cerrado, mostrando portada fija "Biblioteca Cantaribeña"]
+    ↓ (cada 8 segundos o al hacer clic)
+ANIMACIÓN INICIA → [Libro comienza a abrirse, sigue mostrando portada fija]
+    ↓ (a los 50% de la animación, cuando el libro está "de canto")
+CAMBIO SILENCIOSO → [Mágicamente se cambia a portada real, usuario no lo ve]
+    ↓ (animación continúa)
+LIBRO SE CIERRA → [Ahora muestra la nueva portada real]
+    ↓ (pausa de 8 segundos)
+REPETIR...
+
+2. Código Actualizado del Componente BookAnimated.astro
+astro
+
+---
+import bookCovers from '../data/bookCovers.json';
+
+const covers = bookCourser || [];
+const hasCovers = covers.length > 0;
+const EXTERIOR_COVER = '/images/library-cover.svg'; // Portada fija del libro
+---
+
+<div class="book-synchronized-container">
+  <div class="book-3d-wrapper">
+    <!-- Libro 3D con dos caras -->
+    <div class="book-3d" id="book3d">
+      <!-- Cara FRONTAL (exterior - siempre visible cuando cerrado) -->
+      <div class="book-face book-front">
+        <img 
+          src={EXTERIOR_COVER} 
+          alt="Biblioteca Cantaribeña"
+          class="cover-image"
+          id="book-front-cover"
+          width="400"
+          height="600"
+        />
+        <div class="book-gloss"></div>
+        <div class="book-spine-3d"></div>
+        <div class="page-edges">
+          <div class="page-edge"></div>
+          <div class="page-edge"></div>
+          <div class="page-edge"></div>
+        </div>
+      </div>
+      
+      <!-- Cara TRASERA (interior - se revela durante el giro) -->
+      <div class="book-face book-back">
+        <img 
+          src={hasCovers ? covers[0].coverUrl : EXTERIOR_COVER}
+          alt="Portada de libro"
+          class="cover-image"
+          id="book-back-cover"
+          width="400"
+          height="600"
+          data-covers={JSON.stringify(covers.map(c => c.coverUrl))}
+        />
+      </div>
+    </div>
+  </div>
+  
+  <!-- Contador de portadas -->
+  <div class="cover-counter">
+    <span id="current-cover">1</span> / <span id="total-covers">{covers.length}</span>
+  </div>
+</div>
+
+<style>
+/* CONTENEDOR PRINCIPAL */
+.book-synchronized-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* LIBRO 3D */
+.book-3d-wrapper {
+  perspective: 1500px;
+  width: 100%;
+  height: 600px;
+}
+
+.book-3d {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.01s linear; /* Solo para el hover */
+}
+
+.book-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px 20px 20px 12px;
+  overflow: hidden;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* CARA FRONTAL (exterior) */
+.book-front {
+  background: linear-gradient(145deg, #8CB369, #5B8E5F);
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+/* CARA TRASERA (interior) */
+.book-back {
+  background: #FFFCF2;
+  transform: rotateY(180deg);
+}
+
+/* IMAGEN DE PORTADA */
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: white;
+  padding: 20px;
+}
+
+/* LOMO 3D */
+.book-spine-3d {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 20px;
+  height: 80%;
+  background: linear-gradient(to right, #2D3142, #4A5568);
+  border-radius: 4px 0 0 4px;
+  transform: translateZ(-5px);
+  box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* BORDES DE PÁGINAS */
+.page-edges {
+  position: absolute;
+  right: 0;
+  top: 5%;
+  width: 15px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.page-edge {
+  flex: 1;
+  background: linear-gradient(90deg, #E2E8F0, #CBD5E0);
+  border-radius: 2px;
+  transform: translateZ(-2px);
+}
+
+/* BRILLO */
+.book-gloss {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    125deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+  border-radius: 12px 20px 20px 12px;
+}
+
+/* CONTADOR */
+.cover-counter {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-ink);
+  opacity: 0.8;
+}
+
+/* ANIMACIÓN DE GIRO */
+@keyframes bookTurn {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(90deg);
+  }
+  51% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+/* CLASE PARA ACTIVAR LA ANIMACIÓN */
+.book-turning {
+  animation: bookTurn 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .book-3d-wrapper {
+    height: 450px;
+  }
+}
+</style>
+
+<script>
+// SÓLO SE EJECUTA EN EL CLIENTE
+if (typeof window !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', () => {
+    const book3d = document.getElementById('book3d');
+    const frontCover = document.getElementById('book-front-cover');
+    const backCover = document.getElementById('book-back-cover');
+    const currentSpan = document.getElementById('current-cover');
+    const totalSpan = document.getElementById('total-covers');
+    
+    if (!book3d || !backCover) return;
+    
+    // Obtener array de portadas
+    const covers = JSON.parse(backCover.dataset.covers || '[]');
+    if (covers.length === 0) return;
+    
+    let currentIndex = 0;
+    const totalCovers = covers.length;
+    let isTurning = false;
+    const TURN_INTERVAL = 8000; // 8 segundos entre giros
+    
+    if (totalSpan) totalSpan.textContent = totalCovers;
+    
+    // FUNCIÓN PARA REALIZAR UN GIRO COMPLETO
+    function performBookTurn() {
+      if (isTurning) return;
+      isTurning = true;
+      
+      // 1. Añadir clase de animación
+      book3d.classList.add('book-turning');
+      
+      // 2. En el punto medio del giro (50%), cambiar la portada SILENCIOSAMENTE
+      setTimeout(() => {
+        // Actualizar índice
+        currentIndex = (currentIndex + 1) % totalCovers;
+        
+        // Cambiar la imagen de la cara trasera
+        backCover.src = covers[currentIndex];
+        backCover.alt = `Portada ${currentIndex + 1} de la biblioteca`;
+        
+        // Actualizar contador
+        if (currentSpan) currentSpan.textContent = currentIndex + 1;
+      }, 800); // 800ms = 50% de 1600ms (duración total de la animación)
+      
+      // 3. Al terminar la animación, remover la clase y resetear
+      setTimeout(() => {
+        book3d.classList.remove('book-turning');
+        isTurning = false;
+      }, 1600);
+    }
+    
+    // INICIAR CICLO AUTOMÁTICO
+    let turnInterval = setInterval(performBookTurn, TURN_INTERVAL);
+    
+    // CONTROL MANUAL AL HACER CLIC
+    book3d.addEventListener('click', () => {
+      clearInterval(turnInterval);
+      performBookTurn();
+      // Reiniciar intervalo después del giro manual
+      setTimeout(() => {
+        turnInterval = setInterval(performBookTurn, TURN_INTERVAL);
+      }, 1600);
+    });
+    
+    // EFECTO HOVER (solo rotación leve)
+    book3d.addEventListener('mouseenter', () => {
+      if (!isTurning) {
+        book3d.style.transform = 'rotateY(-5deg) rotateX(2deg)';
+      }
+    });
+    
+    book3d.addEventListener('mouseleave', () => {
+      if (!isTurning) {
+        book3d.style.transform = 'rotateY(0deg) rotateX(0deg)';
+      }
+    });
+    
+    // INICIALIZAR CONTADOR
+    if (currentSpan) currentSpan.textContent = 1;
+  });
+}
+</script>
+
+3. Crear Portada Fija "Biblioteca Cantaribeña"
+svg
+
+<!-- public/images/library-cover.svg -->
+<svg width="400" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8CB369"/>
+      <stop offset="100%" stop-color="#5B8E5F"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+  </defs>
+  
+  <!-- Fondo del libro -->
+  <rect width="400" height="600" fill="url(#bgGradient)" rx="12" filter="url(#shadow)"/>
+  
+  <!-- Marco decorativo -->
+  <rect x="30" y="40" width="340" height="520" fill="none" stroke="#FFFCF2" stroke-width="2" rx="8"/>
+  
+  <!-- Título principal -->
+  <text x="200" y="220" text-anchor="middle" font-family="'Playfair Display', serif" font-size="36" fill="#FFFCF2" font-weight="700">
+    Biblioteca
+  </text>
+  <text x="200" y="270" text-anchor="middle" font-family="'Playfair Display', serif" font-size="48" fill="#FFB703" font-weight="700">
+    Cantaribeña
+  </text>
+  
+  <!-- Línea decorativa -->
+  <line x1="100" y1="300" x2="300" y2="300" stroke="#FFFCF2" stroke-width="1.5" stroke-dasharray="5,5"/>
+  
+  <!-- Subtítulo -->
+  <text x="200" y="360" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#FFFCF2" opacity="0.9">
+    Colección Infantil
+  </text>
+  
+  <!-- Icono de libro -->
+  <g transform="translate(200, 450) scale(2)">
+    <path d="M-40,-30 L40,-30 L40,30 L-40,30 Z" fill="none" stroke="#FFB703" stroke-width="3"/>
+    <path d="M-40,-30 L-25,-30 L-25,30 M40,-30 L25,-30 L25,30" stroke="#FFFCF2" stroke-width="2"/>
+    <line x1="-15" y1="-20" x2="15" y2="-20" stroke="#FFFCF2" stroke-width="1.5"/>
+    <line x1="-10" y1="0" x2="10" y2="0" stroke="#FFFCF2" stroke-width="1.5"/>
+    <line x1="-5" y1="20" x2="5" y2="20" stroke="#FFFCF2" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Detalle inferior -->
+  <text x="200" y="550" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="16" fill="#FFFCF2" opacity="0.7">
+    Tesoros literarios familiares
+  </text>
+</svg>
+
+4. Script Mejorado para Descargar Portadas (Opcional pero Recomendado)
+typescript
+
+// scripts/process-covers.ts
+import fs from 'fs';
+import path from 'path';
+import { parse } from 'csv-parse/sync';
+import https from 'https';
+
+interface BookCover {
+  isbn: string | null;
+  title: string;
+  originalUrl: string;
+  localUrl: string;
+  hasCover: boolean;
+}
+
+async function downloadImage(url: string, filepath: string): Promise<boolean> {
+  return new Promise((resolve) => {
+    https.get(url, (response) => {
+      if (response.statusCode === 200) {
+        const fileStream = fs.createWriteStream(filepath);
+        response.pipe(fileStream);
+        fileStream.on('finish', () => {
+          fileStream.close();
+          resolve(true);
+        });
+      } else {
+        resolve(false);
+      }
+    }).on('error', () => resolve(false));
+  });
+}
+
+async function processCovers() {
+  const CSV_PATH = path.join(process.cwd(), 'librería-cantaribeña.csv');
+  const COVERS_DIR = path.join(process.cwd(), 'public', 'covers');
+  const OUTPUT_PATH = path.join(process.cwd(), 'src', 'data', 'bookCovers.json');
+  
+  // Crear directorios si no existen
+  if (!fs.existsSync(COVERS_DIR)) fs.mkdirSync(COVERS_DIR, { recursive: true });
+  if (!fs.existsSync(path.dirname(OUTPUT_PATH))) {
+    fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
+  }
+  
+  // Leer CSV
+  const csvContent = fs.readFileSync(CSV_PATH, 'utf-8');
+  const records = parse(csvContent, { columns: true, skip_empty_lines: true, bom: true });
+  
+  const bookCovers: BookCover[] = [];
+  let downloaded = 0;
+  
+  for (const book of records) {
+    const isbn = book.ean_isbn13?.toString().trim().replace(/-/g, '');
+    const title = book.title || 'Libro sin título';
+    
+    if (isbn && isbn.length === 13) {
+      const originalUrl = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
+      const localFilename = `${isbn}.jpg`;
+      const localPath = path.join(COVERS_DIR, localFilename);
+      const localUrl = `/covers/${localFilename}`;
+      
+      // Intentar descargar
+      const success = await downloadImage(originalUrl, localPath);
+      
+      if (success) {
+        downloaded++;
+        bookCovers.push({
+          isbn,
+          title,
+          originalUrl,
+          localUrl,
+          hasCover: true
+        });
+        console.log(`✅ Descargada: ${title}`);
+      } else {
+        // Si falla la descarga, usar URL original
+        bookCovers.push({
+          isbn,
+          title,
+          originalUrl,
+          localUrl: originalUrl, // Usar URL remota como fallback
+          hasCover: false
+        });
+        console.log(`⚠️  Usando remota: ${title}`);
+      }
+    } else {
+      // Sin ISBN válido
+      bookCovers.push({
+        isbn: null,
+        title,
+        originalUrl: '',
+        localUrl: '/images/library-cover.svg',
+        hasCover: false
+      });
+      console.log(`📄 Sin ISBN: ${title}`);
+    }
+  }
+  
+  // Guardar JSON con rutas locales
+  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(bookCovers, null, 2));
+  
+  console.log('\n📊 RESUMEN FINAL:');
+  console.log(`   Total libros procesados: ${records.length}`);
+  console.log(`   Portadas descargadas: ${downloaded}`);
+  console.log(`   Portadas remotas: ${bookCovers.filter(b => !b.hasCover && b.isbn).length}`);
+  console.log(`   Sin portada: ${bookCovers.filter(b => !b.isbn).length}`);
+  console.log(`\n💾 JSON guardado en: ${OUTPUT_PATH}`);
+  console.log(`📁 Portadas en: ${COVERS_DIR}`);
+}
+
+// Ejecutar
+processCovers().catch(console.error);
+
+5. Configurar package.json para TypeScript
+json
+
+{
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write .",
+    "process-covers": "npx tsx scripts/process-covers.ts",
+    "prebuild": "pnpm process-covers"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.0.0"
+  }
+}
+
+6. Proceso de Prueba
+bash
+
+# 1. Crear la portada fija
+mkdir -p public/images
+# Crear el archivo library-cover.svg con el código anterior
+
+# 2. Instalar tsx si no lo tienes
+pnpm add -D tsx @types/node
+
+# 3. Procesar portadas (descargará las imágenes localmente)
+pnpm process-covers
+
+# 4. Verificar que se crearon los archivos
+ls public/covers/  # Deberías ver archivos .jpg
+cat src/data/bookCovers.json  # Debería mostrar rutas locales
+
+# 5. Iniciar el servidor
+pnpm run dev
+
+7. ¿Qué Ocurrirá Ahora?
+
+    Libro cerrado: Siempre mostrará el diseño SVG "Biblioteca Cantaribeña"
+
+    Cada 8 segundos: El libro hará un giro completo (160 grados)
+
+    En el punto medio del giro: Cambiará silenciosamente a una portada real
+
+    Al finalizar el giro: El libro se cierra mostrando la nueva portada real
+
+    El ciclo se repite: Mostrando una portada diferente en cada giro
+
+Ventajas de esta solución:
+
+    ✅ Sincronización perfecta entre animación y cambio de contenido
+
+    ✅ Portada fija de biblioteca cuando está "cerrado"
+
+    ✅ Portadas reales solo se muestran DURANTE/DESPUÉS del giro
+
+    ✅ Mejor rendimiento si descargas las imágenes localmente
+
+    ✅ Efecto más realista de "hojear un libro físico"

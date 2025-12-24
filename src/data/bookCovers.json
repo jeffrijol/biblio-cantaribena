@@ -2,78 +2,78 @@
   {
     "isbn": "9788417617141",
     "title": "Duelo al sol",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417617141-L.jpg",
-    "hasCover": true,
-    "fallbackTitle": "Duelo al sol"
+    "originalUrl": "https://covers.openlibrary.org/b/isbn/9788417617141-L.jpg",
+    "localUrl": "/covers/9788417617141.jpg",
+    "hasCover": true
   },
   {
     "isbn": "9788410025868",
     "title": "La calavera",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788410025868-L.jpg",
-    "hasCover": true,
-    "fallbackTitle": "La calavera"
+    "originalUrl": "https://covers.openlibrary.org/b/isbn/9788410025868-L.jpg",
+    "localUrl": "/covers/9788410025868.jpg",
+    "hasCover": true
   },
   {
     "isbn": "9788492608287",
     "title": "Diógenes (Spanish Edition)",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788492608287-L.jpg",
-    "hasCover": true,
-    "fallbackTitle": "Diógenes (Spanish Edition)"
+    "originalUrl": "https://covers.openlibrary.org/b/isbn/9788492608287-L.jpg",
+    "localUrl": "/covers/9788492608287.jpg",
+    "hasCover": true
   },
   {
     "isbn": "9788484705611",
     "title": "Buenas noches, luna",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484705611-L.jpg",
-    "hasCover": true,
-    "fallbackTitle": "Buenas noches, luna"
+    "originalUrl": "https://covers.openlibrary.org/b/isbn/9788484705611-L.jpg",
+    "localUrl": "/images/library-cover.svg",
+    "hasCover": false
   },
   {
     "isbn": "9788494417245",
     "title": "Que Sonaran Las Camas? (Spanish Edition)",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494417245-L.jpg",
-    "hasCover": true,
-    "fallbackTitle": "Que Sonaran Las Camas? (Spanis"
+    "originalUrl": "https://covers.openlibrary.org/b/isbn/9788494417245-L.jpg",
+    "localUrl": "/images/library-cover.svg",
+    "hasCover": false
   },
   {
     "isbn": "9788491221258",
     "title": "Cuentos en verso para ninos perversos",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788491221258-L.jpg",
-    "hasCover": true,
-    "fallbackTitle": "Cuentos en verso para ninos pe"
+    "originalUrl": "https://covers.openlibrary.org/b/isbn/9788491221258-L.jpg",
+    "localUrl": "/covers/9788491221258.jpg",
+    "hasCover": true
   },
   {
     "isbn": "9788420464466",
     "title": "Konrad",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788420464466-L.jpg",
-    "hasCover": true,
-    "fallbackTitle": "Konrad"
+    "originalUrl": "https://covers.openlibrary.org/b/isbn/9788420464466-L.jpg",
+    "localUrl": "/covers/9788420464466.jpg",
+    "hasCover": true
   },
   {
     "isbn": "9788412669039",
     "title": "Las manos de mi padre",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788412669039-L.jpg",
-    "hasCover": true,
-    "fallbackTitle": "Las manos de mi padre"
+    "originalUrl": "https://covers.openlibrary.org/b/isbn/9788412669039-L.jpg",
+    "localUrl": "/covers/9788412669039.jpg",
+    "hasCover": true
   },
   {
     "isbn": "9788415208693",
     "title": "Oso que no estaba, El",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788415208693-L.jpg",
-    "hasCover": true,
-    "fallbackTitle": "Oso que no estaba, El"
+    "originalUrl": "https://covers.openlibrary.org/b/isbn/9788415208693-L.jpg",
+    "localUrl": "/covers/9788415208693.jpg",
+    "hasCover": true
   },
   {
     "isbn": "9789977671093",
     "title": "Chinto pinto (Spanish Edition)",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9789977671093-L.jpg",
-    "hasCover": true,
-    "fallbackTitle": "Chinto pinto (Spanish Edition)"
+    "originalUrl": "https://covers.openlibrary.org/b/isbn/9789977671093-L.jpg",
+    "localUrl": "/images/library-cover.svg",
+    "hasCover": false
   },
   {
     "isbn": "9788419475992",
     "title": "Mi mundo perdido",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788419475992-L.jpg",
-    "hasCover": true,
-    "fallbackTitle": "Mi mundo perdido"
+    "originalUrl": "https://covers.openlibrary.org/b/isbn/9788419475992-L.jpg",
+    "localUrl": "/covers/9788419475992.jpg",
+    "hasCover": true
   }
 ]

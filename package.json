@@ -12,14 +12,16 @@
     "prebuild": "pnpm process-covers"
   },
   "dependencies": {
+    "@lucide/astro": "latest",
     "astro": "^5.16.6",
-    "csv-parse": "^5.2.0",
-    "@lucide/astro": "latest"
+    "csv-parse": "^5.2.0"
   },
   "devDependencies": {
     "@astrojs/check": "latest",
+    "@types/node": "^25.0.3",
     "prettier": "latest",
     "prettier-plugin-astro": "latest",
+    "tsx": "^4.21.0",
     "typescript": "latest"
   }
 }
