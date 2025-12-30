@@ -157,7 +157,7 @@ async function processLibraryData(): Promise<void> {
 
         const personalNotes = record.notes || '';
         const isTraveler = /comprado|viaje|costa rica|maliaño/i.test(personalNotes);
-        const isArtBook = personalTags.some(tag => tag.includes('ilustración'));
+        const isArtBook = personalTags.some((tag: string) => tag.includes('ilustración'));
         const isRecent = new Date(record.added) > new Date('2024-01-01');
         const isFavorite = rating !== null && rating >= 4.5;
 

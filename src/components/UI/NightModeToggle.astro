@@ -24,54 +24,53 @@
 
 <script>
     // Script para manejar el modo noche/día
+    function initTheme() {
+        const toggleButton = document.getElementById("night-mode-toggle");
+        const htmlElement = document.documentElement;
+
+        // Recuperar tema
+        const savedTheme = localStorage.getItem("theme");
+        const systemPrefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+        ).matches;
+
+        // Determinar tema actual
+        const theme = savedTheme || (systemPrefersDark ? "dark" : "light");
+
+        // Aplicar tema
+        htmlElement.setAttribute("data-theme", theme);
+
+        // Actualizar UI del toggle si es necesario (opcional)
+
+        if (toggleButton) {
+            // Eliminar listeners antiguos para evitar duplicados si se usa View Transitions
+            const newButton = toggleButton.cloneNode(true);
+            toggleButton.parentNode?.replaceChild(newButton, toggleButton);
+
+            newButton.addEventListener("click", () => {
+                const currentTheme = htmlElement.getAttribute("data-theme");
+                const newTheme = currentTheme === "light" ? "dark" : "light";
+
+                htmlElement.setAttribute("data-theme", newTheme);
+                localStorage.setItem("theme", newTheme);
+
+                // Evento para otros componentes
+                window.dispatchEvent(
+                    new CustomEvent("themechange", {
+                        detail: { theme: newTheme },
+                    }),
+                );
+            });
+        }
+    }
+
+    // Ejecutar al inicio
     if (typeof window !== "undefined") {
-        document.addEventListener("DOMContentLoaded", () => {
-            const toggleButton = document.getElementById("night-mode-toggle");
-            const htmlElement = document.documentElement;
+        initTheme();
 
-            // Verificar preferencia guardada o del sistema
-            const savedTheme = localStorage.getItem("theme");
-            const systemPrefersDark = window.matchMedia(
-                "(prefers-color-scheme: dark)",
-            ).matches;
-
-            // Aplicar tema inicial
-            if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
-                htmlElement.setAttribute("data-theme", "dark");
-            } else {
-                htmlElement.setAttribute("data-theme", "light");
-            }
-
-            // Manejar clic en el toggle
-            if (toggleButton) {
-                toggleButton.addEventListener("click", () => {
-                    const currentTheme = htmlElement.getAttribute("data-theme");
-                    const newTheme =
-                        currentTheme === "light" ? "dark" : "light";
-
-                    // Cambiar tema
-                    htmlElement.setAttribute("data-theme", newTheme);
-                    localStorage.setItem("theme", newTheme);
-
-                    // Disparar evento personalizado para que otros componentes reaccionen
-                    window.dispatchEvent(
-                        new CustomEvent("themechange", {
-                            detail: { theme: newTheme },
-                        }),
-                    );
-                });
-            }
-
-            // Escuchar cambios en las preferencias del sistema
-            window
-                .matchMedia("(prefers-color-scheme: dark)")
-                .addEventListener("change", (e) => {
-                    if (!localStorage.getItem("theme")) {
-                        const newTheme = e.matches ? "dark" : "light";
-                        htmlElement.setAttribute("data-theme", newTheme);
-                    }
-                });
-        });
+        // Soporte para Astro View Transitions
+        document.addEventListener("astro:after-swap", initTheme);
+        document.addEventListener("astro:page-load", initTheme);
     }
 </script>
 

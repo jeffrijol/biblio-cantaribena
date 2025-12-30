@@ -12,6 +12,8 @@
     "allowJs": true,
     "checkJs": true,
     "jsx": "preserve",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "types": [
       "astro/client"
     ]

@@ -1,7 +1,13 @@
 ---
 import libraryData from "../../data/processed/library.json";
 
-const { frequentAuthors } = libraryData;
+interface Author {
+  name: string;
+  count: number;
+  books: string[];
+}
+
+const { frequentAuthors = [] } = libraryData as { frequentAuthors: Author[] };
 ---
 
 <section class="frequent-authors" id="autores-frecuentes">

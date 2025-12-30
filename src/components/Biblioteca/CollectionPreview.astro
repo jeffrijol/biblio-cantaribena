@@ -112,11 +112,11 @@ const previewBooks = books.slice(0, 8);
             });
         });
 
-        function renderBooks(books) {
+        function renderBooks(books: any[]) {
             if (!grid) return;
             grid.innerHTML = books
                 .map(
-                    (book) => `
+                    (book: any) => `
         <a href="/biblioteca/libro/${book.slug}" class="book-card-mini fade-in">
           <div class="card-cover">
             ${

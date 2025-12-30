@@ -1,16 +1,20 @@
 ---
-import BibliotecaLayout from "../../layouts/BibliotecaLayout.astro";
-import libraryData from "../../data/processed/library.json";
+import BibliotecaLayout from "../../../layouts/BibliotecaLayout.astro";
+import libraryData from "../../../data/processed/library.json";
 
 export async function getStaticPaths() {
     const { books } = libraryData;
-    return books.map((book) => ({
+    return (books as any[]).map((book: any) => ({
         params: { slug: book.slug },
         props: { book },
     }));
 }
 
 const { book } = Astro.props;
+
+if (!book) {
+    return Astro.redirect("/404");
+}
 ---
 
 <BibliotecaLayout title={book.title}>
@@ -106,7 +110,7 @@ const { book } = Astro.props;
 
                 <div class="tags-section">
                     {
-                        book.personalTags.map((tag) => (
+                        book.personalTags.map((tag: string) => (
                             <a
                                 href={`/biblioteca/catalogo?search=${tag}`}
                                 class="tag"

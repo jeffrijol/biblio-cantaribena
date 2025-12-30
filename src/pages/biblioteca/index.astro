@@ -10,39 +10,147 @@ import RandomBookPicker from "../../components/Biblioteca/RandomBookPicker.astro
 ---
 
 <BibliotecaLayout title="Inicio">
-    <BibliotecaLayout title="Inicio">
-        <HeroSection>
-            <!-- Aquí podemos poner el BookAnimated o cualquier otra decoración -->
-            <div class="book-placeholder">📚</div>
-        </HeroSection>
+    <div class="library-grid">
+        <!-- 1. Header/Hero (span 5 cols) -->
+        <div class="grid-item hero-area">
+            <HeroSection>
+                <div class="book-placeholder">📚</div>
+            </HeroSection>
+        </div>
 
-        <PichuCorner />
+        <!-- 2. Pichu Corner (col-start-2 span-2, row-start-2 span-2) -->
+        <div class="grid-item pichu-area">
+            <PichuCorner />
+        </div>
 
-        <CollectionPreview />
+        <!-- 3. Collection Preview (col-start-4 span-2, row-start-2 span-2) -->
+        <div class="grid-item collection-area">
+            <CollectionPreview />
+        </div>
 
-        <FrequentAuthors />
+        <!-- 4. Random Picker (col-start-2 span-4, row-start-5) -->
+        <div class="grid-item picker-area">
+            <RandomBookPicker />
+        </div>
 
-        <AgeRecommendations />
+        <!-- 5. Frequent Authors (col-start-2 span-2, row-start-4) -->
+        <div class="grid-item authors-area">
+            <FrequentAuthors />
+        </div>
 
-        <RandomBookPicker />
-    </BibliotecaLayout>
+        <!-- 6. Age Recommendations (col-start-4 span-2, row-start-4) -->
+        <div class="grid-item age-area">
+            <AgeRecommendations />
+        </div>
 
-    <style>
-        .book-placeholder {
-            font-size: 10rem;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-    </style>
+        <!-- 7. Extra decoration/sidebar (row-start-2 span-4 col-start-1) - Optional filler -->
+        <div class="grid-item decoration-area">
+            <div class="vertical-text">BIBLIOTECA</div>
+        </div>
+    </div>
 </BibliotecaLayout>
+
+<style>
+    .library-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        /* rows auto to adapt to content */
+        grid-auto-rows: min-content;
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    .grid-item {
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    /* 1. Header: col-span-5 */
+    .hero-area {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    /* 2. Pichu: col-start-2 span-2 row-start-2 span-2 */
+    .pichu-area {
+        grid-column: 2 / span 2;
+        grid-row: 2 / span 2;
+    }
+
+    /* 3. Collection: col-start-4 span-2 row-start-2 span-2 */
+    .collection-area {
+        grid-column: 4 / span 2;
+        grid-row: 2 / span 2;
+    }
+
+    /* 4. Picker: col-start-2 span-4 row-start-5 */
+    .picker-area {
+        grid-column: 2 / span 4;
+        grid-row: 5;
+    }
+
+    /* 5. Authors: col-start-2 span-2 row-start-4 */
+    .authors-area {
+        grid-column: 2 / span 2;
+        grid-row: 4;
+    }
+
+    /* 6. Age: col-start-4 span-2 row-start-4 */
+    .age-area {
+        grid-column: 4 / span 2;
+        grid-row: 4;
+    }
+
+    /* 7. Decoration: col-start-1 row-start-2 span-4 */
+    .decoration-area {
+        grid-column: 1;
+        grid-row: 2 / span 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(var(--primary-rgb), 0.05);
+        border-radius: 50px;
+    }
+
+    .vertical-text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        font-family: var(--font-heading);
+        font-size: 3rem;
+        color: var(--primary-color);
+        opacity: 0.3;
+        letter-spacing: 0.5rem;
+    }
+
+    .book-placeholder {
+        font-size: 10rem;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    /* Responsive fallback */
+    @media (max-width: 1024px) {
+        .library-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .decoration-area {
+            display: none;
+        }
+    }
+</style>
