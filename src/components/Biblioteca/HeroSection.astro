@@ -1,0 +1,112 @@
+---
+
+---
+
+<!-- src/components/Biblioteca/HeroSection.astro -->
+<section class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">Biblioteca Cantaribeña</h1>
+        <p class="hero-subtitle">
+            Donde cada libro es un miembro de la familia
+        </p>
+        <div class="hero-actions">
+            <a href="#catalogo" class="btn btn-primary">Explorar Colección</a>
+            <a href="#rincon-pichu" class="btn btn-secondary"
+                >El Rincón de Pichu</a
+            >
+        </div>
+    </div>
+    <div class="hero-decoration">
+        <!-- Aquí vendrá la animación del libro más adelante -->
+        <slot />
+    </div>
+</section>
+
+<style>
+    .hero-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4rem 2rem;
+        min-height: 80vh;
+        background: radial-gradient(
+            circle at top right,
+            rgba(142, 202, 230, 0.1),
+            transparent 60%
+        );
+    }
+
+    .hero-content {
+        flex: 1;
+        max-width: 600px;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        line-height: 1.1;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+        color: var(--text-color);
+        opacity: 0.8;
+        margin-bottom: 2rem;
+        font-family: var(--font-decorative);
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-primary {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        border: 2px solid var(--secondary-color);
+        color: var(--secondary-color);
+    }
+
+    .hero-decoration {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        .hero-section {
+            flex-direction: column-reverse;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .hero-actions {
+            justify-content: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+        }
+    }
+</style>

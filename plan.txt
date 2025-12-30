@@ -1,541 +1,1106 @@
-El problema es que hay dos animaciones independientes: el ciclo automático de cambio de portada (8s) y la animación visual del libro (page-turn). Quieres que:
+Diseño Propuesto: "La Biblioteca como Hogar de Historias"
 
-    El libro esté "cerrado" mostrando una portada única de "Biblioteca Cantaribeña"
+Concepto Central: Un viaje literario a través de diferentes "habitaciones" o "rincones" de la biblioteca, donde cada sección tiene su propia atmósfera y propósito.
 
-    Cada vez que se abre/cierra (con el efecto page-turn), muestre una nueva portada real
+Implementación Completa: Biblioteca Modular con Astro
+📁 Estructura de Proyecto Actualizada
 
-    La sincronización sea perfecta: el cambio de imagen ocurra DURANTE el giro, no en intervalos fijos
+src/
+├── components/
+│   ├── Biblioteca/
+│   │   ├── HeroSection.astro          # Sección principal con estadísticas
+│   │   ├── PichuCorner.astro          # Rincón editable vía JSON
+│   │   ├── AgeRecommendations.astro   # Árbol de recomendaciones por edad
+│   │   ├── CollectionPreview.astro     # Vista previa colección con filtros poéticos
+│   │   ├── FrequentAuthors.astro      # Autores frecuentes
+│   │   ├── RandomBookPicker.astro     # ¿Qué leer hoy? (ruleta/aleatorio)
+│   │   └── NightModeToggle.astro      # Toggle modo noche
+│   └── Layout/
+│       └── BibliotecaLayout.astro      # Layout específico para biblioteca
+├── data/
+│   ├── processed/
+│   │   ├── library.json              # Datos principales procesados
+│   │   ├── pichu-corner.json         # ⭐ EDITABLE: Libro destacado y anécdota
+│   │   └── recommendations.json      # Recomendaciones estructuradas
+│   └── constants/
+│       └── themes.json               # Configuración de temas claro/oscuro
+└── pages/
+    ├── biblioteca/
+    │   ├── index.astro               # Página principal con secciones
+    │   ├── catalogo/
+    │   │   └── index.astro           # Catálogo completo tradicional
+    │   └── libro/
+    │       └── [slug].astro          # Página detalle individual
+    └── redirigir.astro               # Lógica de redirección automática
 
-🎯 Solución: Libro Sincronizado "Abrir → Cambiar → Cerrar"
-1. Nueva Lógica de Sincronización
+Archivo de Temas (Modo Claro/Oscuro)
 
-Flujo corregido:
-text
+// src/data/constants/themes.json
+{
+  "light": {
+    "primary": "#8CB369",
+    "secondary": "#8ECAE6",
+    "accent": "#FFB703",
+    "background": "#FFFCF2",
+    "surface": "#FFFFFF",
+    "text": "#2D3142",
+    "textSecondary": "#4A5568",
+    "border": "#E2E8F0",
+    "shadow": "0 4px 20px rgba(0, 0, 0, 0.08)"
+  },
+  "dark": {
+    "primary": "#8CB369",
+    "secondary": "#219EBC",
+    "accent": "#FFB703",
+    "background": "#1A202C",
+    "surface": "#2D3748",
+    "text": "#E2E8F0",
+    "textSecondary": #CBD5E0",
+    "border": "#4A5568",
+    "shadow": "0 4px 20px rgba(0, 0, 0, 0.3)"
+  }
+}
 
-ESTADO INICIAL → [Libro cerrado, mostrando portada fija "Biblioteca Cantaribeña"]
-    ↓ (cada 8 segundos o al hacer clic)
-ANIMACIÓN INICIA → [Libro comienza a abrirse, sigue mostrando portada fija]
-    ↓ (a los 50% de la animación, cuando el libro está "de canto")
-CAMBIO SILENCIOSO → [Mágicamente se cambia a portada real, usuario no lo ve]
-    ↓ (animación continúa)
-LIBRO SE CIERRA → [Ahora muestra la nueva portada real]
-    ↓ (pausa de 8 segundos)
-REPETIR...
 
-2. Código Actualizado del Componente BookAnimated.astro
-astro
+______
+
+Componente PichuCorner (Editable via JSON)
 
 ---
-import bookCovers from '../data/bookCovers.json';
+// src/components/Biblioteca/PichuCorner.astro
+import pichuCornerData from '../../data/processed/pichu-corner.json';
+import libraryData from '../../data/processed/library.json';
 
-const covers = bookCourser || [];
-const hasCovers = covers.length > 0;
-const EXTERIOR_COVER = '/images/library-cover.svg'; // Portada fija del libro
+const { books } = libraryData;
+const { featuredBookId, anecdote, lastUpdated } = pichuCornerData;
+
+const featuredBook = books.find(b => b.id === featuredBookId) || books[0];
 ---
 
-<div class="book-synchronized-container">
-  <div class="book-3d-wrapper">
-    <!-- Libro 3D con dos caras -->
-    <div class="book-3d" id="book3d">
-      <!-- Cara FRONTAL (exterior - siempre visible cuando cerrado) -->
-      <div class="book-face book-front">
-        <img 
-          src={EXTERIOR_COVER} 
-          alt="Biblioteca Cantaribeña"
-          class="cover-image"
-          id="book-front-cover"
-          width="400"
-          height="600"
-        />
-        <div class="book-gloss"></div>
-        <div class="book-spine-3d"></div>
-        <div class="page-edges">
-          <div class="page-edge"></div>
-          <div class="page-edge"></div>
-          <div class="page-edge"></div>
+<section class="pichu-corner" id="rincon-pichu">
+  <div class="corner-header">
+    <h2 class="title">
+      <span class="icon">📚</span>
+      El Rincón de Pichu
+    </h2>
+    <p class="subtitle">Un espacio especial con historias familiares</p>
+  </div>
+
+  <div class="corner-content">
+    <!-- Libro destacado -->
+    <div class="featured-book">
+      <div class="book-cover">
+        {featuredBook.coverUrl ? (
+          <img 
+            src={featuredBook.coverUrl} 
+            alt={featuredBook.title}
+            loading="lazy"
+            width="300"
+            height="450"
+            class="cover-image"
+          />
+        ) : (
+          <div class="cover-placeholder">
+            <span>{featuredBook.title}</span>
+          </div>
+        )}
+        <div class="book-decoration">
+          <div class="bookmark"></div>
+          <div class="reading-light"></div>
         </div>
       </div>
-      
-      <!-- Cara TRASERA (interior - se revela durante el giro) -->
-      <div class="book-face book-back">
-        <img 
-          src={hasCovers ? covers[0].coverUrl : EXTERIOR_COVER}
-          alt="Portada de libro"
-          class="cover-image"
-          id="book-back-cover"
-          width="400"
-          height="600"
-          data-covers={JSON.stringify(covers.map(c => c.coverUrl))}
-        />
+
+      <div class="book-details">
+        <h3 class="book-title">{featuredBook.title}</h3>
+        <p class="book-author">{featuredBook.authors.join(', ')}</p>
+        
+        {featuredBook.rating && (
+          <div class="rating">
+            {'★'.repeat(Math.round(featuredBook.rating))}
+            {'☆'.repeat(5 - Math.round(featuredBook.rating))}
+            <span>({featuredBook.rating})</span>
+          </div>
+        )}
+
+        <div class="tags">
+          {featuredBook.personalTags.slice(0, 3).map(tag => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Anécdota familiar -->
+    <div class="anecdote-container">
+      <div class="anecdote-header">
+        <span class="anecdote-icon">💭</span>
+        <h4>Por qué este libro es especial</h4>
+      </div>
+      <div class="anecdote-content">
+        <p>{anecdote}</p>
+        <div class="anecdote-meta">
+          <small>Actualizado: {lastUpdated}</small>
+          <a 
+            href="/biblioteca/libro/${featuredBook.slug}" 
+            class="see-more"
+          >
+            Ver ficha completa →
+          </a>
+        </div>
       </div>
     </div>
   </div>
-  
-  <!-- Contador de portadas -->
-  <div class="cover-counter">
-    <span id="current-cover">1</span> / <span id="total-covers">{covers.length}</span>
+
+  <!-- Nota para editar -->
+  <div class="edit-notice">
+    <p>
+      <small>
+        ✏️ Para cambiar el libro destacado o la anécdota, edita el archivo 
+        <code>src/data/processed/pichu-corner.json</code>
+      </small>
+    </p>
   </div>
-</div>
+</section>
 
 <style>
-/* CONTENEDOR PRINCIPAL */
-.book-synchronized-container {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* LIBRO 3D */
-.book-3d-wrapper {
-  perspective: 1500px;
-  width: 100%;
-  height: 600px;
-}
-
-.book-3d {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.01s linear; /* Solo para el hover */
-}
-
-.book-face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 12px 20px 20px 12px;
-  overflow: hidden;
-  box-shadow: 
-    0 15px 35px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-/* CARA FRONTAL (exterior) */
-.book-front {
-  background: linear-gradient(145deg, #8CB369, #5B8E5F);
-  transform: rotateY(0deg);
-  z-index: 2;
-}
-
-/* CARA TRASERA (interior) */
-.book-back {
-  background: #FFFCF2;
-  transform: rotateY(180deg);
-}
-
-/* IMAGEN DE PORTADA */
-.cover-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  background: white;
-  padding: 20px;
-}
-
-/* LOMO 3D */
-.book-spine-3d {
-  position: absolute;
-  left: 0;
-  top: 10%;
-  width: 20px;
-  height: 80%;
-  background: linear-gradient(to right, #2D3142, #4A5568);
-  border-radius: 4px 0 0 4px;
-  transform: translateZ(-5px);
-  box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.5);
-}
-
-/* BORDES DE PÁGINAS */
-.page-edges {
-  position: absolute;
-  right: 0;
-  top: 5%;
-  width: 15px;
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.page-edge {
-  flex: 1;
-  background: linear-gradient(90deg, #E2E8F0, #CBD5E0);
-  border-radius: 2px;
-  transform: translateZ(-2px);
-}
-
-/* BRILLO */
-.book-gloss {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    125deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.15) 50%,
-    transparent 70%
+.pichu-corner {
+  background: linear-gradient(135deg, 
+    rgba(140, 179, 105, 0.05) 0%,
+    rgba(142, 202, 230, 0.05) 100%
   );
-  pointer-events: none;
-  border-radius: 12px 20px 20px 12px;
+  border-radius: 24px;
+  padding: 3rem;
+  margin: 4rem auto;
+  max-width: 1200px;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
 }
 
-/* CONTADOR */
-.cover-counter {
-  position: absolute;
-  bottom: -30px;
-  left: 0;
-  width: 100%;
+.corner-header {
   text-align: center;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--color-ink);
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.title .icon {
+  margin-right: 0.5rem;
+}
+
+.subtitle {
+  font-family: var(--font-decorative);
+  font-size: 1.2rem;
   opacity: 0.8;
 }
 
-/* ANIMACIÓN DE GIRO */
-@keyframes bookTurn {
-  0% {
-    transform: rotateY(0deg);
-  }
-  50% {
-    transform: rotateY(90deg);
-  }
-  51% {
-    transform: rotateY(90deg);
-  }
-  100% {
-    transform: rotateY(0deg);
-  }
+.corner-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
 }
 
-/* CLASE PARA ACTIVAR LA ANIMACIÓN */
-.book-turning {
-  animation: bookTurn 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.featured-book {
+  position: relative;
 }
 
-/* RESPONSIVE */
+.book-cover {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.cover-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cover-image:hover {
+  transform: scale(1.03) rotateY(5deg);
+}
+
+.cover-placeholder {
+  width: 100%;
+  padding-top: 150%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.book-decoration {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 2;
+}
+
+.bookmark {
+  width: 30px;
+  height: 100px;
+  background: linear-gradient(135deg, #FFB703, #FB8500);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+}
+
+.reading-light {
+  position: absolute;
+  top: 10px;
+  right: 35px;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.book-details {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.book-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.book-author {
+  font-style: italic;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.rating {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.rating span {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-left: 0.5rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(var(--primary-rgb), 0.1);
+  border: 1px solid rgba(var(--primary-rgb), 0.3);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--primary-color);
+}
+
+.anecdote-container {
+  background: var(--surface-color);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.anecdote-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.anecdote-icon {
+  font-size: 2rem;
+}
+
+.anecdote-header h4 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.anecdote-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-decorative);
+}
+
+.anecdote-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.anecdote-meta small {
+  opacity: 0.6;
+}
+
+.see-more {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.see-more:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.edit-notice {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(var(--primary-rgb), 0.05);
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.edit-notice code {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
 @media (max-width: 768px) {
-  .book-3d-wrapper {
-    height: 450px;
+  .pichu-corner {
+    padding: 2rem;
+    margin: 2rem 1rem;
+  }
+  
+  .corner-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .book-cover {
+    max-width: 250px;
+  }
+  
+  .title {
+    font-size: 2rem;
   }
 }
 </style>
 
+
+______
+
+
+Componente AgeRecommendations (Árbol de Edades)
+
+---
+// src/components/Biblioteca/AgeRecommendations.astro
+import libraryData from '../../data/processed/library.json';
+
+const { ageGroups, books } = libraryData;
+
+// Función para encontrar libro por título aproximado
+const findBookByTitle = (title: string) => {
+  return books.find(book => 
+    book.title.toLowerCase().includes(title.toLowerCase()) ||
+    title.toLowerCase().includes(book.title.toLowerCase())
+  );
+};
+---
+
+<section class="age-recommendations" id="recomendaciones-edad">
+  <div class="section-header">
+    <h2 class="title">
+      <span class="icon">🌳</span>
+      Árbol de Recomendaciones
+    </h2>
+    <p class="subtitle">Libros para cada etapa del crecimiento</p>
+  </div>
+
+  <div class="age-tree">
+    <!-- Tronco del árbol (línea central) -->
+    <div class="tree-trunk"></div>
+    
+    {ageGroups.map((group, index) => {
+      const isEven = index % 2 === 0;
+      const booksInCollection = group.booksInCollection.filter(b => b.inCollection);
+      const booksToDiscover = group.booksInCollection.filter(b => !b.inCollection);
+      
+      return (
+        <div class={`age-branch ${isEven ? 'left' : 'right'} branch-${index}`}>
+          <!-- Rama del árbol -->
+          <div class="branch-line"></div>
+          
+          <!-- Nodo de edad -->
+          <div class="age-node">
+            <span class="age-label">{group.age}</span>
+          </div>
+          
+          <!-- Contenedor de libros -->
+          <div class="books-container">
+            <!-- Libros en la colección -->
+            {booksInCollection.length > 0 && (
+              <div class="books-section our-books">
+                <h4 class="section-title">
+                  <span class="icon">✅</span>
+                  En nuestro estante
+                </h4>
+                <ul class="books-list">
+                  {booksInCollection.slice(0, 3).map(book => {
+                    const bookData = findBookByTitle(book.title);
+                    return (
+                      <li class="book-item">
+                        {bookData ? (
+                          <a 
+                            href={`/biblioteca/libro/${bookData.slug}`}
+                            class="book-link"
+                            title={book.title}
+                          >
+                            {book.title}
+                          </a>
+                        ) : (
+                          <span class="book-title">{book.title}</span>
+                        )}
+                      </li>
+                    );
+                  })}
+                  {booksInCollection.length > 3 && (
+                    <li class="more-books">
+                      +{booksInCollection.length - 3} más
+                    </li>
+                  )}
+                </ul>
+              </div>
+            )}
+            
+            <!-- Libros por descubrir -->
+            {booksToDiscover.length > 0 && (
+              <div class="books-section to-discover">
+                <h4 class="section-title">
+                  <span class="icon">🔍</span>
+                  Por descubrir
+                </h4>
+                <ul class="books-list">
+                  {booksToDiscover.slice(0, 3).map(book => (
+                    <li class="book-item" title={book.title}>
+                      {book.title}
+                    </li>
+                  ))}
+                  {booksToDiscover.length > 3 && (
+                    <li class="more-books">
+                      +{booksToDiscover.length - 3} más
+                    </li>
+                  )}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <!-- Leyenda -->
+  <div class="legend">
+    <div class="legend-item">
+      <span class="legend-icon">✅</span>
+      <span>Ya en la biblioteca</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-icon">🔍</span>
+      <span>Por descubrir</span>
+    </div>
+  </div>
+</section>
+
+<style>
+.age-recommendations {
+  max-width: 1400px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.title .icon {
+  margin-right: 0.5rem;
+}
+
+.subtitle {
+  font-family: var(--font-decorative);
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* Árbol principal */
+.age-tree {
+  position: relative;
+  min-height: 800px;
+}
+
+.tree-trunk {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  transform: translateX(-50%);
+  border-radius: 4px;
+  z-index: 1;
+}
+
+/* Ramas */
+.age-branch {
+  position: absolute;
+  width: 45%;
+  z-index: 2;
+}
+
+.age-branch.left {
+  left: 0;
+  padding-right: 5%;
+}
+
+.age-branch.right {
+  right: 0;
+  padding-left: 5%;
+  text-align: right;
+}
+
+/* Posicionamiento vertical de las ramas */
+.branch-0 { top: 5%; }
+.branch-1 { top: 25%; }
+.branch-2 { top: 45%; }
+.branch-3 { top: 65%; }
+.branch-4 { top: 85%; }
+
+.branch-line {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  opacity: 0.5;
+}
+
+.age-branch.left .branch-line {
+  right: 0;
+}
+
+.age-branch.right .branch-line {
+  left: 0;
+}
+
+/* Nodo de edad */
+.age-node {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+  background: var(--surface-color);
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  z-index: 3;
+}
+
+.age-branch.left .age-node {
+  right: -40px;
+}
+
+.age-branch.right .age-node {
+  left: -40px;
+}
+
+.age-label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Contenedor de libros */
+.books-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(100% - 100px);
+  background: var(--surface-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.age-branch.left .books-container {
+  left: 0;
+}
+
+.age-branch.right .books-container {
+  right: 0;
+  text-align: right;
+}
+
+.books-section {
+  margin-bottom: 1.5rem;
+}
+
+.books-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.age-branch.right .section-title {
+  justify-content: flex-end;
+}
+
+.books-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.book-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+.book-item:last-child {
+  border-bottom: none;
+}
+
+.book-link {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.book-link:hover {
+  color: var(--primary-color);
+}
+
+.book-title {
+  opacity: 0.8;
+}
+
+.more-books {
+  opacity: 0.6;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Leyenda */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 4rem;
+  padding: 1.5rem;
+  background: var(--surface-color);
+  border-radius: 12px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: var(--shadow);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.legend-icon {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1024px) {
+  .age-tree {
+    min-height: 1200px;
+  }
+  
+  .branch-0 { top: 3%; }
+  .branch-1 { top: 20%; }
+  .branch-2 { top: 37%; }
+  .branch-3 { top: 54%; }
+  .branch-4 { top: 71%; }
+}
+
+@media (max-width: 768px) {
+  .age-recommendations {
+    padding: 0 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .age-tree {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .tree-trunk,
+  .branch-line {
+    display: none;
+  }
+  
+  .age-branch {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    text-align: center !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+  }
+  
+  .age-node {
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    margin: 0 auto 1.5rem;
+  }
+  
+  .books-container {
+    position: relative;
+    width: 100%;
+    transform: none;
+    top: auto;
+    left: auto;
+    right: auto;
+  }
+  
+  .legend {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+</style>
+
+
+__________
+
+Componente NightModeToggle
+
+---
+// src/components/UI/NightModeToggle.astro
+---
+
+<div class="night-mode-toggle">
+  <button 
+    id="night-mode-toggle" 
+    class="toggle-button"
+    aria-label="Cambiar modo noche/día"
+    title="Cambiar tema"
+  >
+    <span class="toggle-track">
+      <span class="toggle-thumb">
+        <span class="sun-icon">☀️</span>
+        <span class="moon-icon">🌙</span>
+      </span>
+    </span>
+    <span class="toggle-label">
+      <span class="label-day">Día</span>
+      <span class="label-night">Noche</span>
+    </span>
+  </button>
+</div>
+
 <script>
-// SÓLO SE EJECUTA EN EL CLIENTE
+// Script para manejar el modo noche/día
 if (typeof window !== 'undefined') {
   document.addEventListener('DOMContentLoaded', () => {
-    const book3d = document.getElementById('book3d');
-    const frontCover = document.getElementById('book-front-cover');
-    const backCover = document.getElementById('book-back-cover');
-    const currentSpan = document.getElementById('current-cover');
-    const totalSpan = document.getElementById('total-covers');
+    const toggleButton = document.getElementById('night-mode-toggle');
+    const htmlElement = document.documentElement;
     
-    if (!book3d || !backCover) return;
+    // Verificar preferencia guardada o del sistema
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    // Obtener array de portadas
-    const covers = JSON.parse(backCover.dataset.covers || '[]');
-    if (covers.length === 0) return;
-    
-    let currentIndex = 0;
-    const totalCovers = covers.length;
-    let isTurning = false;
-    const TURN_INTERVAL = 8000; // 8 segundos entre giros
-    
-    if (totalSpan) totalSpan.textContent = totalCovers;
-    
-    // FUNCIÓN PARA REALIZAR UN GIRO COMPLETO
-    function performBookTurn() {
-      if (isTurning) return;
-      isTurning = true;
-      
-      // 1. Añadir clase de animación
-      book3d.classList.add('book-turning');
-      
-      // 2. En el punto medio del giro (50%), cambiar la portada SILENCIOSAMENTE
-      setTimeout(() => {
-        // Actualizar índice
-        currentIndex = (currentIndex + 1) % totalCovers;
-        
-        // Cambiar la imagen de la cara trasera
-        backCover.src = covers[currentIndex];
-        backCover.alt = `Portada ${currentIndex + 1} de la biblioteca`;
-        
-        // Actualizar contador
-        if (currentSpan) currentSpan.textContent = currentIndex + 1;
-      }, 800); // 800ms = 50% de 1600ms (duración total de la animación)
-      
-      // 3. Al terminar la animación, remover la clase y resetear
-      setTimeout(() => {
-        book3d.classList.remove('book-turning');
-        isTurning = false;
-      }, 1600);
+    // Aplicar tema inicial
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+      htmlElement.setAttribute('data-theme', 'dark');
+    } else {
+      htmlElement.setAttribute('data-theme', 'light');
     }
     
-    // INICIAR CICLO AUTOMÁTICO
-    let turnInterval = setInterval(performBookTurn, TURN_INTERVAL);
+    // Manejar clic en el toggle
+    if (toggleButton) {
+      toggleButton.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        // Cambiar tema
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        // Disparar evento personalizado para que otros componentes reaccionen
+        window.dispatchEvent(new CustomEvent('themechange', { 
+          detail: { theme: newTheme } 
+        }));
+      });
+    }
     
-    // CONTROL MANUAL AL HACER CLIC
-    book3d.addEventListener('click', () => {
-      clearInterval(turnInterval);
-      performBookTurn();
-      // Reiniciar intervalo después del giro manual
-      setTimeout(() => {
-        turnInterval = setInterval(performBookTurn, TURN_INTERVAL);
-      }, 1600);
-    });
-    
-    // EFECTO HOVER (solo rotación leve)
-    book3d.addEventListener('mouseenter', () => {
-      if (!isTurning) {
-        book3d.style.transform = 'rotateY(-5deg) rotateX(2deg)';
+    // Escuchar cambios en las preferencias del sistema
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        const newTheme = e.matches ? 'dark' : 'light';
+        htmlElement.setAttribute('data-theme', newTheme);
       }
     });
-    
-    book3d.addEventListener('mouseleave', () => {
-      if (!isTurning) {
-        book3d.style.transform = 'rotateY(0deg) rotateX(0deg)';
-      }
-    });
-    
-    // INICIALIZAR CONTADOR
-    if (currentSpan) currentSpan.textContent = 1;
   });
 }
 </script>
 
-3. Crear Portada Fija "Biblioteca Cantaribeña"
-svg
-
-<!-- public/images/library-cover.svg -->
-<svg width="400" height="600" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8CB369"/>
-      <stop offset="100%" stop-color="#5B8E5F"/>
-    </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,0.3)"/>
-    </filter>
-  </defs>
-  
-  <!-- Fondo del libro -->
-  <rect width="400" height="600" fill="url(#bgGradient)" rx="12" filter="url(#shadow)"/>
-  
-  <!-- Marco decorativo -->
-  <rect x="30" y="40" width="340" height="520" fill="none" stroke="#FFFCF2" stroke-width="2" rx="8"/>
-  
-  <!-- Título principal -->
-  <text x="200" y="220" text-anchor="middle" font-family="'Playfair Display', serif" font-size="36" fill="#FFFCF2" font-weight="700">
-    Biblioteca
-  </text>
-  <text x="200" y="270" text-anchor="middle" font-family="'Playfair Display', serif" font-size="48" fill="#FFB703" font-weight="700">
-    Cantaribeña
-  </text>
-  
-  <!-- Línea decorativa -->
-  <line x1="100" y1="300" x2="300" y2="300" stroke="#FFFCF2" stroke-width="1.5" stroke-dasharray="5,5"/>
-  
-  <!-- Subtítulo -->
-  <text x="200" y="360" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#FFFCF2" opacity="0.9">
-    Colección Infantil
-  </text>
-  
-  <!-- Icono de libro -->
-  <g transform="translate(200, 450) scale(2)">
-    <path d="M-40,-30 L40,-30 L40,30 L-40,30 Z" fill="none" stroke="#FFB703" stroke-width="3"/>
-    <path d="M-40,-30 L-25,-30 L-25,30 M40,-30 L25,-30 L25,30" stroke="#FFFCF2" stroke-width="2"/>
-    <line x1="-15" y1="-20" x2="15" y2="-20" stroke="#FFFCF2" stroke-width="1.5"/>
-    <line x1="-10" y1="0" x2="10" y2="0" stroke="#FFFCF2" stroke-width="1.5"/>
-    <line x1="-5" y1="20" x2="5" y2="20" stroke="#FFFCF2" stroke-width="1.5"/>
-  </g>
-  
-  <!-- Detalle inferior -->
-  <text x="200" y="550" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="16" fill="#FFFCF2" opacity="0.7">
-    Tesoros literarios familiares
-  </text>
-</svg>
-
-4. Script Mejorado para Descargar Portadas (Opcional pero Recomendado)
-typescript
-
-// scripts/process-covers.ts
-import fs from 'fs';
-import path from 'path';
-import { parse } from 'csv-parse/sync';
-import https from 'https';
-
-interface BookCover {
-  isbn: string | null;
-  title: string;
-  originalUrl: string;
-  localUrl: string;
-  hasCover: boolean;
+<style>
+.night-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
 }
 
-async function downloadImage(url: string, filepath: string): Promise<boolean> {
-  return new Promise((resolve) => {
-    https.get(url, (response) => {
-      if (response.statusCode === 200) {
-        const fileStream = fs.createWriteStream(filepath);
-        response.pipe(fileStream);
-        fileStream.on('finish', () => {
-          fileStream.close();
-          resolve(true);
-        });
-      } else {
-        resolve(false);
-      }
-    }).on('error', () => resolve(false));
-  });
+.toggle-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
 }
 
-async function processCovers() {
-  const CSV_PATH = path.join(process.cwd(), 'librería-cantaribeña.csv');
-  const COVERS_DIR = path.join(process.cwd(), 'public', 'covers');
-  const OUTPUT_PATH = path.join(process.cwd(), 'src', 'data', 'bookCovers.json');
-  
-  // Crear directorios si no existen
-  if (!fs.existsSync(COVERS_DIR)) fs.mkdirSync(COVERS_DIR, { recursive: true });
-  if (!fs.existsSync(path.dirname(OUTPUT_PATH))) {
-    fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
-  }
-  
-  // Leer CSV
-  const csvContent = fs.readFileSync(CSV_PATH, 'utf-8');
-  const records = parse(csvContent, { columns: true, skip_empty_lines: true, bom: true });
-  
-  const bookCovers: BookCover[] = [];
-  let downloaded = 0;
-  
-  for (const book of records) {
-    const isbn = book.ean_isbn13?.toString().trim().replace(/-/g, '');
-    const title = book.title || 'Libro sin título';
-    
-    if (isbn && isbn.length === 13) {
-      const originalUrl = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
-      const localFilename = `${isbn}.jpg`;
-      const localPath = path.join(COVERS_DIR, localFilename);
-      const localUrl = `/covers/${localFilename}`;
-      
-      // Intentar descargar
-      const success = await downloadImage(originalUrl, localPath);
-      
-      if (success) {
-        downloaded++;
-        bookCovers.push({
-          isbn,
-          title,
-          originalUrl,
-          localUrl,
-          hasCover: true
-        });
-        console.log(`✅ Descargada: ${title}`);
-      } else {
-        // Si falla la descarga, usar URL original
-        bookCovers.push({
-          isbn,
-          title,
-          originalUrl,
-          localUrl: originalUrl, // Usar URL remota como fallback
-          hasCover: false
-        });
-        console.log(`⚠️  Usando remota: ${title}`);
-      }
-    } else {
-      // Sin ISBN válido
-      bookCovers.push({
-        isbn: null,
-        title,
-        originalUrl: '',
-        localUrl: '/images/library-cover.svg',
-        hasCover: false
-      });
-      console.log(`📄 Sin ISBN: ${title}`);
-    }
-  }
-  
-  // Guardar JSON con rutas locales
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(bookCovers, null, 2));
-  
-  console.log('\n📊 RESUMEN FINAL:');
-  console.log(`   Total libros procesados: ${records.length}`);
-  console.log(`   Portadas descargadas: ${downloaded}`);
-  console.log(`   Portadas remotas: ${bookCovers.filter(b => !b.hasCover && b.isbn).length}`);
-  console.log(`   Sin portada: ${bookCovers.filter(b => !b.isbn).length}`);
-  console.log(`\n💾 JSON guardado en: ${OUTPUT_PATH}`);
-  console.log(`📁 Portadas en: ${COVERS_DIR}`);
+.toggle-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-// Ejecutar
-processCovers().catch(console.error);
-
-5. Configurar package.json para TypeScript
-json
-
-{
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "format": "prettier --write .",
-    "process-covers": "npx tsx scripts/process-covers.ts",
-    "prebuild": "pnpm process-covers"
-  },
-  "devDependencies": {
-    "@types/node": "^20.0.0",
-    "tsx": "^4.7.0",
-    "typescript": "^5.0.0"
-  }
+.toggle-track {
+  position: relative;
+  width: 50px;
+  height: 24px;
+  background: linear-gradient(90deg, #8ECAE6, #8CB369);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-6. Proceso de Prueba
-bash
+.toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
-# 1. Crear la portada fija
-mkdir -p public/images
-# Crear el archivo library-cover.svg con el código anterior
+[data-theme="dark"] .toggle-thumb {
+  transform: translateX(26px);
+}
 
-# 2. Instalar tsx si no lo tienes
-pnpm add -D tsx @types/node
+.sun-icon, .moon-icon {
+  font-size: 12px;
+  position: absolute;
+  transition: opacity 0.3s ease;
+}
 
-# 3. Procesar portadas (descargará las imágenes localmente)
-pnpm process-covers
+.sun-icon {
+  opacity: 1;
+}
 
-# 4. Verificar que se crearon los archivos
-ls public/covers/  # Deberías ver archivos .jpg
-cat src/data/bookCovers.json  # Debería mostrar rutas locales
+.moon-icon {
+  opacity: 0;
+}
 
-# 5. Iniciar el servidor
+[data-theme="dark"] .sun-icon {
+  opacity: 0;
+}
+
+[data-theme="dark"] .moon-icon {
+  opacity: 1;
+}
+
+.toggle-label {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.label-day, .label-night {
+  transition: opacity 0.3s ease;
+}
+
+.label-day {
+  opacity: 1;
+}
+
+.label-night {
+  opacity: 0.5;
+}
+
+[data-theme="dark"] .label-day {
+  opacity: 0.5;
+}
+
+[data-theme="dark"] .label-night {
+  opacity: 1;
+}
+
+/* Variables CSS para temas */
+:root {
+  --primary-color: #8CB369;
+  --secondary-color: #8ECAE6;
+  --accent-color: #FFB703;
+  --background-color: #FFFCF2;
+  --surface-color: #FFFFFF;
+  --text-color: #2D3142;
+  --border-color: #E2E8F0;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+  --primary-color: #8CB369;
+  --secondary-color: #219EBC;
+  --accent-color: #FFB703;
+  --background-color: #1A202C;
+  --surface-color: #2D3748;
+  --text-color: #E2E8F0;
+  --border-color: #4A5568;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Aplicar a toda la página */
+html {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+</style>
+
+_____________
+
+
+Comandos para Ejecutar
+# 1. Instalar dependencias
+pnpm install
+
+# 2. Procesar los datos (ejecuta automáticamente antes del build)
+pnpm process-data
+
+# 3. Iniciar servidor de desarrollo
 pnpm run dev
 
-7. ¿Qué Ocurrirá Ahora?
+# 4. Abrir en navegador
+# http://localhost:4321/biblioteca
 
-    Libro cerrado: Siempre mostrará el diseño SVG "Biblioteca Cantaribeña"
 
-    Cada 8 segundos: El libro hará un giro completo (160 grados)
 
-    En el punto medio del giro: Cambiará silenciosamente a una portada real
+Flujo de Trabajo para el Rincón de Pichu
 
-    Al finalizar el giro: El libro se cierra mostrando la nueva portada real
+Para editar el Rincón de Pichu, solo necesitas modificar el archivo JSON:
 
-    El ciclo se repite: Mostrando una portada diferente en cada giro
+# Editar el archivo
+nano src/data/processed/pichu-corner.json
 
-Ventajas de esta solución:
+# Contenido ejemplo:
+{
+  "featuredBookId": "book-9788417617141",  # ID del libro a destacar
+  "anecdote": "Este libro llegó a nuestras vidas en un día de lluvia...",
+  "lastUpdated": "2025-12-20"
+}
 
-    ✅ Sincronización perfecta entre animación y cambio de contenido
+# Reiniciar el servidor para ver cambios
+pnpm run dev
 
-    ✅ Portada fija de biblioteca cuando está "cerrado"
+Características Implementadas
 
-    ✅ Portadas reales solo se muestran DURANTE/DESPUÉS del giro
+✅ Arquitectura modular - Cada sección es un componente independiente
+✅ Rincón de Pichu editable vía JSON sin tocar código
+✅ Árbol de recomendaciones visual por edades
+✅ Modo noche/día con toggle persistente
+✅ Datos procesados automáticamente desde CSV
+✅ Estilos consistentes con variables CSS
+✅ Totalmente responsive
+✅ Optimizado para Astro (0 JavaScript en cliente innecesario)
 
-    ✅ Mejor rendimiento si descargas las imágenes localmente
+Próximos pasos sugeridos:
 
-    ✅ Efecto más realista de "hojear un libro físico"
+    Implementar CollectionPreview.astro para la vista previa de colección
+
+    Crear RandomBookPicker.astro para "¿Qué leer hoy?"
+
+    Desarrollar la página /biblioteca/catalogo para el catálogo completo

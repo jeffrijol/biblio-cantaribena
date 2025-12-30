@@ -1,0 +1,42 @@
+---
+// src/pages/redirigir.astro
+---
+
+<html lang="es">
+    <head>
+        <meta http-equiv="refresh" content="3;url=/biblioteca" />
+        <title>Redirigiendo...</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                font-family: sans-serif;
+                background: #f0f0f0;
+                color: #333;
+                text-align: center;
+            }
+            .spinner {
+                margin-bottom: 20px;
+                font-size: 3rem;
+                animation: spin 1s infinite linear;
+            }
+            @keyframes spin {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="spinner">📚</div>
+            <h1>¡Bienvenido a casa!</h1>
+            <p>Te estamos llevando a la biblioteca...</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+---
+import BibliotecaLayout from "../../layouts/BibliotecaLayout.astro";
+import HeroSection from "../../components/Biblioteca/HeroSection.astro";
+import PichuCorner from "../../components/Biblioteca/PichuCorner.astro";
+import AgeRecommendations from "../../components/Biblioteca/AgeRecommendations.astro";
+import CollectionPreview from "../../components/Biblioteca/CollectionPreview.astro";
+import FrequentAuthors from "../../components/Biblioteca/FrequentAuthors.astro";
+import RandomBookPicker from "../../components/Biblioteca/RandomBookPicker.astro";
+// Importaremos más componentes conforme los creemos
+---
+
+<BibliotecaLayout title="Inicio">
+    <BibliotecaLayout title="Inicio">
+        <HeroSection>
+            <!-- Aquí podemos poner el BookAnimated o cualquier otra decoración -->
+            <div class="book-placeholder">📚</div>
+        </HeroSection>
+
+        <PichuCorner />
+
+        <CollectionPreview />
+
+        <FrequentAuthors />
+
+        <AgeRecommendations />
+
+        <RandomBookPicker />
+    </BibliotecaLayout>
+
+    <style>
+        .book-placeholder {
+            font-size: 10rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</BibliotecaLayout>

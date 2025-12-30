@@ -1,0 +1,423 @@
+---
+import libraryData from '../../data/processed/library.json';
+
+const { ageGroups, books } = libraryData;
+
+// Función para encontrar libro por título aproximado
+const findBookByTitle = (title: string) => {
+  return books.find(book => 
+    book.title.toLowerCase().includes(title.toLowerCase()) ||
+    title.toLowerCase().includes(book.title.toLowerCase())
+  );
+};
+---
+
+<section class="age-recommendations" id="recomendaciones-edad">
+  <div class="section-header">
+    <h2 class="title">
+      <span class="icon">🌳</span>
+      Árbol de Recomendaciones
+    </h2>
+    <p class="subtitle">Libros para cada etapa del crecimiento</p>
+  </div>
+
+  <div class="age-tree">
+    <!-- Tronco del árbol (línea central) -->
+    <div class="tree-trunk"></div>
+    
+    {ageGroups.map((group, index) => {
+      const isEven = index % 2 === 0;
+      const booksInCollection = group.booksInCollection.filter(b => b.inCollection);
+      const booksToDiscover = group.booksInCollection.filter(b => !b.inCollection);
+      
+      return (
+        <div class={`age-branch ${isEven ? 'left' : 'right'} branch-${index}`}>
+          <!-- Rama del árbol -->
+          <div class="branch-line"></div>
+          
+          <!-- Nodo de edad -->
+          <div class="age-node">
+            <span class="age-label">{group.age}</span>
+          </div>
+          
+          <!-- Contenedor de libros -->
+          <div class="books-container">
+            <!-- Libros en la colección -->
+            {booksInCollection.length > 0 && (
+              <div class="books-section our-books">
+                <h4 class="section-title">
+                  <span class="icon">✅</span>
+                  En nuestro estante
+                </h4>
+                <ul class="books-list">
+                  {booksInCollection.slice(0, 3).map(book => {
+                    const bookData = findBookByTitle(book.title);
+                    return (
+                      <li class="book-item">
+                        {bookData ? (
+                          <a 
+                            href={`/biblioteca/libro/${bookData.slug}`}
+                            class="book-link"
+                            title={book.title}
+                          >
+                            {book.title}
+                          </a>
+                        ) : (
+                          <span class="book-title">{book.title}</span>
+                        )}
+                      </li>
+                    );
+                  })}
+                  {booksInCollection.length > 3 && (
+                    <li class="more-books">
+                      +{booksInCollection.length - 3} más
+                    </li>
+                  )}
+                </ul>
+              </div>
+            )}
+            
+            <!-- Libros por descubrir -->
+            {booksToDiscover.length > 0 && (
+              <div class="books-section to-discover">
+                <h4 class="section-title">
+                  <span class="icon">🔍</span>
+                  Por descubrir
+                </h4>
+                <ul class="books-list">
+                  {booksToDiscover.slice(0, 3).map(book => (
+                    <li class="book-item" title={book.title}>
+                      {book.title}
+                    </li>
+                  ))}
+                  {booksToDiscover.length > 3 && (
+                    <li class="more-books">
+                      +{booksToDiscover.length - 3} más
+                    </li>
+                  )}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <!-- Leyenda -->
+  <div class="legend">
+    <div class="legend-item">
+      <span class="legend-icon">✅</span>
+      <span>Ya en la biblioteca</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-icon">🔍</span>
+      <span>Por descubrir</span>
+    </div>
+  </div>
+</section>
+
+<style>
+.age-recommendations {
+  max-width: 1400px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.title .icon {
+  margin-right: 0.5rem;
+}
+
+.subtitle {
+  font-family: var(--font-decorative);
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* Árbol principal */
+.age-tree {
+  position: relative;
+  min-height: 800px;
+}
+
+.tree-trunk {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  transform: translateX(-50%);
+  border-radius: 4px;
+  z-index: 1;
+}
+
+/* Ramas */
+.age-branch {
+  position: absolute;
+  width: 45%;
+  z-index: 2;
+}
+
+.age-branch.left {
+  left: 0;
+  padding-right: 5%;
+}
+
+.age-branch.right {
+  right: 0;
+  padding-left: 5%;
+  text-align: right;
+}
+
+/* Posicionamiento vertical de las ramas */
+.branch-0 { top: 5%; }
+.branch-1 { top: 25%; }
+.branch-2 { top: 45%; }
+.branch-3 { top: 65%; }
+.branch-4 { top: 85%; }
+
+.branch-line {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  opacity: 0.5;
+}
+
+.age-branch.left .branch-line {
+  right: 0;
+}
+
+.age-branch.right .branch-line {
+  left: 0;
+}
+
+/* Nodo de edad */
+.age-node {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+  background: var(--surface-color);
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  z-index: 3;
+}
+
+.age-branch.left .age-node {
+  right: -40px;
+}
+
+.age-branch.right .age-node {
+  left: -40px;
+}
+
+.age-label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Contenedor de libros */
+.books-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(100% - 100px);
+  background: var(--surface-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.age-branch.left .books-container {
+  left: 0;
+}
+
+.age-branch.right .books-container {
+  right: 0;
+  text-align: right;
+}
+
+.books-section {
+  margin-bottom: 1.5rem;
+}
+
+.books-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.age-branch.right .section-title {
+  justify-content: flex-end;
+}
+
+.books-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.book-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+.book-item:last-child {
+  border-bottom: none;
+}
+
+.book-link {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.book-link:hover {
+  color: var(--primary-color);
+}
+
+.book-title {
+  opacity: 0.8;
+}
+
+.more-books {
+  opacity: 0.6;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Leyenda */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 4rem;
+  padding: 1.5rem;
+  background: var(--surface-color);
+  border-radius: 12px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: var(--shadow);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.legend-icon {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1024px) {
+  .age-tree {
+    min-height: 1200px;
+  }
+  
+  .branch-0 { top: 3%; }
+  .branch-1 { top: 20%; }
+  .branch-2 { top: 37%; }
+  .branch-3 { top: 54%; }
+  .branch-4 { top: 71%; }
+}
+
+@media (max-width: 768px) {
+  .age-recommendations {
+    padding: 0 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .age-tree {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .tree-trunk,
+  .branch-line {
+    display: none;
+  }
+  
+  .age-branch {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    text-align: center !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+  }
+  
+  .age-node {
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    margin: 0 auto 1.5rem;
+  }
+  
+  .books-container {
+    position: relative;
+    width: 100%;
+    transform: none;
+    top: auto;
+    left: auto;
+    right: auto;
+  }
+  
+  .legend {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+</style>

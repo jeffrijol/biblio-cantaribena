@@ -1,0 +1,266 @@
+---
+import libraryData from "../../data/processed/library.json";
+
+// Si no hay datos (ej. primer build), usar array vacío
+const { books = [] } = libraryData || {};
+const hasBooks = books.length > 0;
+---
+
+<section class="random-picker" id="que-leer">
+    <div class="picker-container">
+        <div class="picker-content">
+            <h2 class="title">¿Qué leemos hoy?</h2>
+            <p class="subtitle">
+                Deja que el destino elija tu próxima aventura
+            </p>
+
+            <button id="spin-button" class="spin-button" disabled={!hasBooks}>
+                <span class="icon">🎲</span>
+                <span class="text">Girar la Ruleta</span>
+            </button>
+
+            <div id="result-container" class="result-container hidden">
+                <div class="book-reveal">
+                    <div class="reveal-cover">
+                        <img id="result-img" src="" alt="" />
+                    </div>
+                    <div class="reveal-info">
+                        <h3 id="result-title"></h3>
+                        <p id="result-author"></p>
+                        <a id="result-link" href="#" class="btn-read"
+                            >Ver Libro →</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="picker-decoration">
+            <!-- Elementos decorativos de fondo -->
+            <div class="floating-icon icon-1">❓</div>
+            <div class="floating-icon icon-2">✨</div>
+            <div class="floating-icon icon-3">📚</div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Cliente-side logic
+    import libraryData from "../../data/processed/library.json";
+    const books = libraryData.books || [];
+
+    const spinBtn = document.getElementById("spin-button");
+    const resultContainer = document.getElementById("result-container");
+    const resultImg = document.getElementById("result-img") as HTMLImageElement;
+    const resultTitle = document.getElementById("result-title");
+    const resultAuthor = document.getElementById("result-author");
+    const resultLink = document.getElementById(
+        "result-link",
+    ) as HTMLAnchorElement;
+
+    if (spinBtn && books.length > 0) {
+        spinBtn.addEventListener("click", () => {
+            // 1. Efecto de "girando"
+            spinBtn.classList.add("spinning");
+            spinBtn.setAttribute("disabled", "true");
+            if (resultContainer) resultContainer.classList.add("hidden");
+
+            // 2. Selección aleatoria después de un delay
+            setTimeout(() => {
+                const randomBook =
+                    books[Math.floor(Math.random() * books.length)];
+
+                // 3. Mostrar resultado
+                if (resultImg)
+                    resultImg.src =
+                        randomBook.coverUrl || "/images/default-cover.svg"; // Fallback image needed
+                if (resultTitle) resultTitle.textContent = randomBook.title;
+                if (resultAuthor)
+                    resultAuthor.textContent = randomBook.authors.join(", ");
+                if (resultLink)
+                    resultLink.href = `/biblioteca/libro/${randomBook.slug}`;
+
+                if (resultContainer) {
+                    resultContainer.classList.remove("hidden");
+                    resultContainer.classList.add("fade-in");
+                }
+
+                spinBtn.classList.remove("spinning");
+                spinBtn.removeAttribute("disabled");
+            }, 1500);
+        });
+    }
+</script>
+
+<style>
+    .random-picker {
+        padding: 4rem 2rem;
+        background: linear-gradient(
+            135deg,
+            var(--secondary-color),
+            var(--primary-color)
+        );
+        color: white;
+        margin: 4rem 0;
+        border-radius: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Hacer que ocupe todo el ancho visualmente si está dentro de un contenedor, 
+   o ajustar margen negativo si el layout limita el ancho */
+    @media (min-width: 768px) {
+        .random-picker {
+            border-radius: 24px;
+            margin: 6rem auto;
+            max-width: 1200px;
+        }
+    }
+
+    .picker-container {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+    }
+
+    .title {
+        font-family: var(--font-heading);
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 3rem;
+        font-family: var(--font-decorative);
+    }
+
+    .spin-button {
+        background: white;
+        color: var(--primary-color);
+        border: none;
+        padding: 1rem 3rem;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .spin-button:hover:not(:disabled) {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .spin-button:disabled {
+        opacity: 0.7;
+        cursor: wait;
+    }
+
+    .spin-button.spinning .icon {
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .result-container {
+        margin-top: 3rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        border-radius: 16px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .result-container.hidden {
+        display: none;
+    }
+
+    .book-reveal {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        text-align: left;
+    }
+
+    .reveal-cover {
+        width: 120px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .reveal-info h3 {
+        font-size: 1.5rem;
+        margin: 0 0 0.5rem 0;
+        color: white;
+    }
+
+    .reveal-info p {
+        opacity: 0.9;
+        margin-bottom: 1rem;
+    }
+
+    .btn-read {
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+        transition: border-color 0.3s;
+    }
+
+    .btn-read:hover {
+        border-color: white;
+    }
+
+    /* Decoración */
+    .floating-icon {
+        position: absolute;
+        font-size: 4rem;
+        opacity: 0.1;
+        animation: float 6s ease-in-out infinite;
+        z-index: 1;
+    }
+
+    .icon-1 {
+        top: 10%;
+        left: 10%;
+        animation-delay: 0s;
+    }
+    .icon-2 {
+        bottom: 20%;
+        right: 10%;
+        animation-delay: 2s;
+    }
+    .icon-3 {
+        top: 40%;
+        right: 20%;
+        animation-delay: 4s;
+    }
+
+    @media (max-width: 600px) {
+        .book-reveal {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+</style>

@@ -1,0 +1,111 @@
+---
+import NightModeToggle from "../components/UI/NightModeToggle.astro";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title} | Biblioteca Cantaribeña</title>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="generator" content={Astro.generator} />
+    </head>
+    <body>
+        <NightModeToggle />
+        <main>
+            <slot />
+        </main>
+        <footer>
+            <p>
+                &copy; {new Date().getFullYear()} Biblioteca Cantaribeña. Donde las
+                historias cobran vida.
+            </p>
+        </footer>
+    </body>
+</html>
+
+<style is:global>
+    :root {
+        --primary-color: #8cb369;
+        --secondary-color: #8ecae6;
+        --accent-color: #ffb703;
+        --background-color: #fffcf2;
+        --surface-color: #ffffff;
+        --text-color: #2d3142;
+        --border-color: #e2e8f0;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+        --font-heading: "Playfair Display", serif;
+        --font-body: "Inter", sans-serif;
+        --font-decorative: "Cormorant Garamond", serif;
+    }
+
+    [data-theme="dark"] {
+        --primary-color: #8cb369;
+        --secondary-color: #219ebc;
+        --accent-color: #ffb703;
+        --background-color: #1a202c;
+        --surface-color: #2d3748;
+        --text-color: #e2e8f0;
+        --border-color: #4a5568;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    html {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        font-family: var(--font-body);
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1;
+    }
+
+    footer {
+        text-align: center;
+        padding: 2rem;
+        opacity: 0.7;
+        font-size: 0.9rem;
+        border-top: 1px solid var(--border-color);
+        margin-top: 4rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-heading);
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>

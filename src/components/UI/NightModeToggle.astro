@@ -1,0 +1,183 @@
+---
+
+---
+
+<div class="night-mode-toggle">
+    <button
+        id="night-mode-toggle"
+        class="toggle-button"
+        aria-label="Cambiar modo noche/día"
+        title="Cambiar tema"
+    >
+        <span class="toggle-track">
+            <span class="toggle-thumb">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </span>
+        </span>
+        <span class="toggle-label">
+            <span class="label-day">Día</span>
+            <span class="label-night">Noche</span>
+        </span>
+    </button>
+</div>
+
+<script>
+    // Script para manejar el modo noche/día
+    if (typeof window !== "undefined") {
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggleButton = document.getElementById("night-mode-toggle");
+            const htmlElement = document.documentElement;
+
+            // Verificar preferencia guardada o del sistema
+            const savedTheme = localStorage.getItem("theme");
+            const systemPrefersDark = window.matchMedia(
+                "(prefers-color-scheme: dark)",
+            ).matches;
+
+            // Aplicar tema inicial
+            if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+                htmlElement.setAttribute("data-theme", "dark");
+            } else {
+                htmlElement.setAttribute("data-theme", "light");
+            }
+
+            // Manejar clic en el toggle
+            if (toggleButton) {
+                toggleButton.addEventListener("click", () => {
+                    const currentTheme = htmlElement.getAttribute("data-theme");
+                    const newTheme =
+                        currentTheme === "light" ? "dark" : "light";
+
+                    // Cambiar tema
+                    htmlElement.setAttribute("data-theme", newTheme);
+                    localStorage.setItem("theme", newTheme);
+
+                    // Disparar evento personalizado para que otros componentes reaccionen
+                    window.dispatchEvent(
+                        new CustomEvent("themechange", {
+                            detail: { theme: newTheme },
+                        }),
+                    );
+                });
+            }
+
+            // Escuchar cambios en las preferencias del sistema
+            window
+                .matchMedia("(prefers-color-scheme: dark)")
+                .addEventListener("change", (e) => {
+                    if (!localStorage.getItem("theme")) {
+                        const newTheme = e.matches ? "dark" : "light";
+                        htmlElement.setAttribute("data-theme", newTheme);
+                    }
+                });
+        });
+    }
+</script>
+
+<style>
+    .night-mode-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .toggle-button {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.5rem 1rem;
+        background: var(--surface-color);
+        border: 1px solid var(--border-color);
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow);
+    }
+
+    .toggle-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .toggle-track {
+        position: relative;
+        width: 50px;
+        height: 24px;
+        background: linear-gradient(90deg, #8ecae6, #8cb369);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .toggle-thumb {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 20px;
+        height: 20px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    [data-theme="dark"] .toggle-thumb {
+        transform: translateX(26px);
+    }
+
+    .sun-icon,
+    .moon-icon {
+        font-size: 12px;
+        position: absolute;
+        transition: opacity 0.3s ease;
+    }
+
+    .sun-icon {
+        opacity: 1;
+    }
+
+    .moon-icon {
+        opacity: 0;
+    }
+
+    [data-theme="dark"] .sun-icon {
+        opacity: 0;
+    }
+
+    [data-theme="dark"] .moon-icon {
+        opacity: 1;
+    }
+
+    .toggle-label {
+        display: flex;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text-color);
+    }
+
+    .label-day,
+    .label-night {
+        transition: opacity 0.3s ease;
+    }
+
+    .label-day {
+        opacity: 1;
+    }
+
+    .label-night {
+        opacity: 0.5;
+    }
+
+    [data-theme="dark"] .label-day {
+        opacity: 0.5;
+    }
+
+    [data-theme="dark"] .label-night {
+        opacity: 1;
+    }
+</style>

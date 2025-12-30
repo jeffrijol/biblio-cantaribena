@@ -1,0 +1,590 @@
+{
+  "books": [
+    {
+      "id": "book-9788417617141",
+      "slug": "duelo-al-sol-7141",
+      "title": "Duelo al sol",
+      "authors": [
+        "Manuel Marsol"
+      ],
+      "isbn": "9788417617141",
+      "publisher": "Fulgencio Pimentel S.L.",
+      "publishDate": "2019-03-25",
+      "pageCount": 104,
+      "ageRange": {
+        "min": 3,
+        "max": 8
+      },
+      "personalTags": [
+        "ilustración artística",
+        "poco texto"
+      ],
+      "rating": 4.5,
+      "price": 20,
+      "personalNotes": "Le encanta a la tía Pichu",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": "Le encanta a la tía Pichu"
+      },
+      "addedDate": "2025-12-20",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417617141-M.jpg",
+      "searchKeywords": "duelo al sol manuel marsol ilustración artística poco texto",
+      "isTraveler": false,
+      "isArtBook": true,
+      "isRecent": true,
+      "isFavorite": true
+    },
+    {
+      "id": "book-9788410025868",
+      "slug": "la-calavera-5868",
+      "title": "La calavera",
+      "authors": [
+        "Jon Klassen",
+        "Gemma Rovira"
+      ],
+      "isbn": "9788410025868",
+      "publisher": "Blackie Books",
+      "publishDate": "2024-10-16",
+      "pageCount": 120,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2025-12-20",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788410025868-M.jpg",
+      "searchKeywords": "la calavera jon klassen gemma rovira ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788492608287",
+      "slug": "diogenes-spanish-edition-8287",
+      "title": "Diógenes (Spanish Edition)",
+      "authors": [
+        "Pablo Albo",
+        "Pablo Auladell"
+      ],
+      "isbn": "9788492608287",
+      "publisher": "Kalandraka",
+      "publishDate": "2010-03-25",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [
+        "ilustración artística"
+      ],
+      "rating": null,
+      "price": null,
+      "personalNotes": "Escuchamos a Albo en Maliaño con Sara y Vera en 2024",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": "Escuchamos a Albo en Maliaño con Sara y Vera en 2024"
+      },
+      "addedDate": "2025-12-20",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788492608287-M.jpg",
+      "searchKeywords": "diógenes (spanish edition) pablo albo pablo auladell ilustración artística",
+      "isTraveler": true,
+      "isArtBook": true,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484705611",
+      "slug": "buenas-noches-luna-5611",
+      "title": "Buenas noches, luna",
+      "authors": [],
+      "isbn": "9788484705611",
+      "publisher": "",
+      "publishDate": "",
+      "pageCount": 32,
+      "ageRange": {
+        "min": 0,
+        "max": 3
+      },
+      "personalTags": [
+        "poético"
+      ],
+      "rating": null,
+      "price": null,
+      "personalNotes": "Leido por todos los niños cantaribeños",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": true,
+        "familyNotes": "Leido por todos los niños cantaribeños"
+      },
+      "addedDate": "2025-12-20",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484705611-M.jpg",
+      "searchKeywords": "buenas noches, luna  poético",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494417245",
+      "slug": "que-sonaran-las-camas-spanish-edition-7245",
+      "title": "Que Sonaran Las Camas? (Spanish Edition)",
+      "authors": [
+        "Mar Benegas",
+        "Ester Garcia"
+      ],
+      "isbn": "9788494417245",
+      "publisher": "Libre Albedrio",
+      "publishDate": "2018-04-20",
+      "pageCount": 56,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2025-12-20",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494417245-M.jpg",
+      "searchKeywords": "que sonaran las camas? (spanish edition) mar benegas ester garcia ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788491221258",
+      "slug": "cuentos-en-verso-para-ninos-perversos-1258",
+      "title": "Cuentos en verso para ninos perversos",
+      "authors": [
+        "Roald Dahl"
+      ],
+      "isbn": "9788491221258",
+      "publisher": "Santillana Educación, S.L.",
+      "publishDate": "2016-01-01",
+      "pageCount": 64,
+      "ageRange": {
+        "min": 1,
+        "max": 4
+      },
+      "personalTags": [],
+      "rating": 4,
+      "price": null,
+      "personalNotes": "Las madres cantaribeñas de niñas y de adultas lo disfrutan por igual",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": "Las madres cantaribeñas de niñas y de adultas lo disfrutan por igual"
+      },
+      "addedDate": "2025-12-20",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788491221258-M.jpg",
+      "searchKeywords": "cuentos en verso para ninos perversos roald dahl ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788420464466",
+      "slug": "konrad-4466",
+      "title": "Konrad",
+      "authors": [
+        "Christine Nöstlinger"
+      ],
+      "isbn": "9788420464466",
+      "publisher": "Ediciones Alfaguara",
+      "publishDate": "2005-09-30",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2025-12-20",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788420464466-M.jpg",
+      "searchKeywords": "konrad christine nöstlinger ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788412669039",
+      "slug": "las-manos-de-mi-padre-9039",
+      "title": "Las manos de mi padre",
+      "authors": [
+        "Deok-Kyu Choi",
+        "Minjeong Kang"
+      ],
+      "isbn": "9788412669039",
+      "publisher": "Litera Libros",
+      "publishDate": "2023-11-16",
+      "pageCount": 44,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [
+        "ilustración artística",
+        "ternura"
+      ],
+      "rating": null,
+      "price": null,
+      "personalNotes": "Para matar y resucitar padres cantaribeños",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": "Para matar y resucitar padres cantaribeños"
+      },
+      "addedDate": "2025-12-20",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788412669039-M.jpg",
+      "searchKeywords": "las manos de mi padre deok-kyu choi minjeong kang ilustración artística ternura",
+      "isTraveler": false,
+      "isArtBook": true,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788415208693",
+      "slug": "oso-que-no-estaba-el-8693",
+      "title": "Oso que no estaba, El",
+      "authors": [
+        "OREN LAVIE"
+      ],
+      "isbn": "9788415208693",
+      "publisher": "COLOFON, S.A.",
+      "publishDate": "2013-01-01",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2025-12-20",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788415208693-M.jpg",
+      "searchKeywords": "oso que no estaba, el oren lavie ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9789977671093",
+      "slug": "chinto-pinto-spanish-edition-1093",
+      "title": "Chinto pinto (Spanish Edition)",
+      "authors": [
+        "Joaquín Gutiérrez"
+      ],
+      "isbn": "9789977671093",
+      "publisher": "Editorial Universidad de Costa Rica",
+      "publishDate": "1989-01-01",
+      "pageCount": 76,
+      "ageRange": {
+        "min": 3,
+        "max": 8
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "Comprado en Costa Rica",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": "Comprado en Costa Rica"
+      },
+      "addedDate": "2025-12-20",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9789977671093-M.jpg",
+      "searchKeywords": "chinto pinto (spanish edition) joaquín gutiérrez ",
+      "isTraveler": true,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788419475992",
+      "slug": "mi-mundo-perdido-5992",
+      "title": "Mi mundo perdido",
+      "authors": [
+        "Astrid Lindgren",
+        "Equipo Kókinos"
+      ],
+      "isbn": "9788419475992",
+      "publisher": "Editorial Kókinos",
+      "publishDate": "2025-11-05",
+      "pageCount": 156,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2025-12-20",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788419475992-M.jpg",
+      "searchKeywords": "mi mundo perdido astrid lindgren equipo kókinos ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    }
+  ],
+  "ageGroups": [
+    {
+      "age": "4 años",
+      "booksInCollection": [
+        {
+          "title": "Cualquiera de Anthony Brown: Gorila o El cuento de los cerdos.",
+          "inCollection": false
+        },
+        {
+          "title": "Madre Medusa Kitty Crowther.",
+          "inCollection": false
+        },
+        {
+          "title": "Arnold Lobel: Historia de ratones Sapo y Sepo o Búho en casa.",
+          "inCollection": false
+        },
+        {
+          "title": "Cuatro romances Imapla. Poético.",
+          "inCollection": false
+        },
+        {
+          "title": "¿Mau iz io? Carson Ellis. Naturaleza.",
+          "inCollection": false
+        },
+        {
+          "title": "Ocultos en el bosque Mitsumasa Anno. Naturaleza, ilustraciones preciosas para buscar animales.",
+          "inCollection": false
+        },
+        {
+          "title": "Ur: libro de lluvia. Elena Odriozola. Para jugar en días de lluvia.",
+          "inCollection": false
+        },
+        {
+          "title": "La cena con la reina Rutu Modan. Divertido.",
+          "inCollection": false
+        },
+        {
+          "title": "Si yo fuera mayor Eva Janikovsky. Divertido.",
+          "inCollection": false
+        },
+        {
+          "title": "La casa encantada de Kazuno Kohara.",
+          "inCollection": false
+        },
+        {
+          "title": "Amandina de Sergio Ruzzier.",
+          "inCollection": false
+        },
+        {
+          "title": "¿Yo y mi gato Satoshi Kitamura.",
+          "inCollection": false
+        },
+        {
+          "title": "Yokai Manuel Marsol.",
+          "inCollection": false
+        },
+        {
+          "title": "Frederick Leo Lionni.",
+          "inCollection": false
+        },
+        {
+          "title": "El Bosco. La extraña historia de Hyeronimus. Thé Tjong-Khing. Aventuras.",
+          "inCollection": false
+        },
+        {
+          "title": "Un final inesperado. Jerome Camil. Divertido.",
+          "inCollection": false
+        },
+        {
+          "title": "Zorrito Editorial Pípara. Ilustraciones originales y bonitas.",
+          "inCollection": false
+        },
+        {
+          "title": "En la selva Ed. A buen paso.",
+          "inCollection": false
+        },
+        {
+          "title": "Los carpinchos. Ed Kalandraka.",
+          "inCollection": false
+        },
+        {
+          "title": "Los 3 erizos Javier Saez Castan.",
+          "inCollection": false
+        },
+        {
+          "title": "El moco Ed. Lóguez. Divertido.",
+          "inCollection": false
+        },
+        {
+          "title": "Malacatú Ed. A Buen Paso.",
+          "inCollection": false
+        },
+        {
+          "title": "Harold y el lápiz morado Crockett Johnson. MARAVILLOSO.",
+          "inCollection": false
+        }
+      ]
+    },
+    {
+      "age": "4 años",
+      "booksInCollection": [
+        {
+          "title": "Cualquiera de Anthony Brown: Gorila o El cuento de los cerdos.",
+          "inCollection": false
+        },
+        {
+          "title": "cuentos de mamá osa Kitty Crowther. (Indispensable)",
+          "inCollection": false
+        },
+        {
+          "title": "Arnold Lobel: Historia de ratones Sapo y Sepo o Búho en casa. (De lo mejor que hay en literatura infantil) para leer todas las noches.",
+          "inCollection": false
+        },
+        {
+          "title": "Cuatro romances Imapla. Poético.",
+          "inCollection": false
+        },
+        {
+          "title": "¿Mau iz io? Carson Ellis. Naturaleza.",
+          "inCollection": false
+        },
+        {
+          "title": "Ocultos en el bosque Mitsumasa Anno. Naturaleza, ilustraciones preciosas para buscar animales.",
+          "inCollection": false
+        },
+        {
+          "title": "Ur: libro de lluvia. Elena Odriozola. Para jugar en días de lluvia.",
+          "inCollection": false
+        },
+        {
+          "title": "La cena con la reina Rutu Modan. Divertido.",
+          "inCollection": false
+        },
+        {
+          "title": "Si yo fuera mayor Eva Janikovsky. Divertido.",
+          "inCollection": false
+        },
+        {
+          "title": "La casa encantada de Kazuno Kohara.",
+          "inCollection": false
+        },
+        {
+          "title": "Dos ratones de Sergio Ruzzier.",
+          "inCollection": false
+        },
+        {
+          "title": "¿Yo y mi gato Satoshi Kitamura.",
+          "inCollection": false
+        },
+        {
+          "title": "Yokai Manuel Marsol.",
+          "inCollection": false
+        },
+        {
+          "title": "Frederick Leo Lionni.",
+          "inCollection": false
+        },
+        {
+          "title": "El Bosco. La extraña historia de Hyeronimus. Thé Tjong-Khing. Aventuras.",
+          "inCollection": false
+        },
+        {
+          "title": "Un final inesperado. Jerome Camil. Divertido.",
+          "inCollection": false
+        },
+        {
+          "title": "Zorrito Editorial Pípara. Ilustraciones originales y bonitas. (Este para un poco mayor también vale, o para filosofar)",
+          "inCollection": false
+        },
+        {
+          "title": "En la selva Ed. A buen paso.",
+          "inCollection": false
+        },
+        {
+          "title": "Los carpinchos. Ed Kalandraka.",
+          "inCollection": false
+        },
+        {
+          "title": "Los 3 erizos Javier Saez Castan.",
+          "inCollection": false
+        },
+        {
+          "title": "El moco Ed. Lóguez. Divertido.",
+          "inCollection": false
+        },
+        {
+          "title": "Malacatú Ed. A Buen Paso.",
+          "inCollection": false
+        },
+        {
+          "title": "Harold y el lápiz morado Crockett Johnson. MARAVILLOSO.",
+          "inCollection": false
+        },
+        {
+          "title": "“el jardín del señor ruraru” Hiroshi ito. (Les encanta)",
+          "inCollection": false
+        },
+        {
+          "title": "“Gotitas” shinsuke yositake. O cualquiera de este autor como “piensa” o “ese robot soy yo”",
+          "inCollection": false
+        }
+      ]
+    }
+  ],
+  "frequentAuthors": [],
+  "pichuCorner": {
+    "featuredBookId": "book-9788417617141",
+    "anecdote": "Este libro tiene una historia especial en nuestra familia...",
+    "lastUpdated": "2025-12-30"
+  },
+  "stats": {
+    "totalBooks": 11,
+    "totalAuthors": 15,
+    "booksWithNotes": 6,
+    "averageRating": 4.25,
+    "booksByCountry": {
+      "España": 0,
+      "Costa Rica": 1,
+      "Internacional": 11
+    }
+  }
+}
