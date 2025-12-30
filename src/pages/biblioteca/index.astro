@@ -1,51 +1,74 @@
 ---
 import BibliotecaLayout from "../../layouts/BibliotecaLayout.astro";
-import HeroSection from "../../components/Biblioteca/HeroSection.astro";
 import PichuCorner from "../../components/Biblioteca/PichuCorner.astro";
 import AgeRecommendations from "../../components/Biblioteca/AgeRecommendations.astro";
 import CollectionPreview from "../../components/Biblioteca/CollectionPreview.astro";
 import FrequentAuthors from "../../components/Biblioteca/FrequentAuthors.astro";
 import RandomBookPicker from "../../components/Biblioteca/RandomBookPicker.astro";
-// Importaremos más componentes conforme los creemos
 ---
 
 <BibliotecaLayout title="Inicio">
     <div class="library-grid">
-        <!-- 1. Header/Hero (span 5 cols) -->
-        <div class="grid-item hero-area">
-            <HeroSection>
-                <div class="book-placeholder">📚</div>
-            </HeroSection>
+        <!-- 0. Decoration/Sidebar (spans all rows) -->
+        <div class="grid-item decoration-area">
+            <div class="vertical-text">BIBLIOTECA CANTARIBEÑA</div>
         </div>
 
-        <!-- 2. Pichu Corner (col-start-2 span-2, row-start-2 span-2) -->
-        <div class="grid-item pichu-area">
-            <PichuCorner />
-        </div>
-
-        <!-- 3. Collection Preview (col-start-4 span-2, row-start-2 span-2) -->
+        <!-- 1. Collection Preview: Explora Nuestros Tesoros (Row 1) -->
         <div class="grid-item collection-area">
             <CollectionPreview />
         </div>
 
-        <!-- 4. Random Picker (col-start-2 span-4, row-start-5) -->
+        <!-- 2. Pichu Corner & Random Picker (Row 2) -->
+        <div class="grid-item pichu-area">
+            <PichuCorner />
+        </div>
         <div class="grid-item picker-area">
             <RandomBookPicker />
         </div>
 
-        <!-- 5. Frequent Authors (col-start-2 span-2, row-start-4) -->
+        <!-- 3. Age Recommendations & Frequent Authors (Row 3) -->
+        <div class="grid-item age-area">
+            <AgeRecommendations />
+        </div>
         <div class="grid-item authors-area">
             <FrequentAuthors />
         </div>
 
-        <!-- 6. Age Recommendations (col-start-4 span-2, row-start-4) -->
-        <div class="grid-item age-area">
-            <AgeRecommendations />
-        </div>
-
-        <!-- 7. Extra decoration/sidebar (row-start-2 span-4 col-start-1) - Optional filler -->
-        <div class="grid-item decoration-area">
-            <div class="vertical-text">BIBLIOTECA</div>
+        <!-- 4. Legend Section (Row 4) -->
+        <div class="grid-item legend-area">
+            <div class="library-legend">
+                <h3>📖 Símbolos de nuestra colección</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="icon">🌍</span>
+                        <span
+                            ><strong>Libros Viajeros:</strong> Traídos de nuestros
+                            viajes o sobre otras tierras.</span
+                        >
+                    </div>
+                    <div class="legend-item">
+                        <span class="icon">🎨</span>
+                        <span
+                            ><strong>Arte e Ilustración:</strong> Selección especial
+                            por su valor visual.</span
+                        >
+                    </div>
+                    <div class="legend-item">
+                        <span class="icon">❤️</span>
+                        <span
+                            ><strong>Favoritos:</strong> Joyas que leemos una y otra
+                            vez.</span
+                        >
+                    </div>
+                    <div class="legend-item">
+                        <span class="icon">✨</span>
+                        <span
+                            ><strong>Novedades:</strong> Recién llegados a la estantería.</span
+                        >
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </BibliotecaLayout>
@@ -54,7 +77,6 @@ import RandomBookPicker from "../../components/Biblioteca/RandomBookPicker.astro
     .library-grid {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        /* rows auto to adapt to content */
         grid-auto-rows: min-content;
         gap: 2rem;
         padding: 2rem;
@@ -67,78 +89,90 @@ import RandomBookPicker from "../../components/Biblioteca/RandomBookPicker.astro
         overflow: hidden;
     }
 
-    /* 1. Header: col-span-5 */
-    .hero-area {
-        grid-column: 1 / -1;
-        grid-row: 1;
-    }
-
-    /* 2. Pichu: col-start-2 span-2 row-start-2 span-2 */
-    .pichu-area {
-        grid-column: 2 / span 2;
-        grid-row: 2 / span 2;
-    }
-
-    /* 3. Collection: col-start-4 span-2 row-start-2 span-2 */
-    .collection-area {
-        grid-column: 4 / span 2;
-        grid-row: 2 / span 2;
-    }
-
-    /* 4. Picker: col-start-2 span-4 row-start-5 */
-    .picker-area {
-        grid-column: 2 / span 4;
-        grid-row: 5;
-    }
-
-    /* 5. Authors: col-start-2 span-2 row-start-4 */
-    .authors-area {
-        grid-column: 2 / span 2;
-        grid-row: 4;
-    }
-
-    /* 6. Age: col-start-4 span-2 row-start-4 */
-    .age-area {
-        grid-column: 4 / span 2;
-        grid-row: 4;
-    }
-
-    /* 7. Decoration: col-start-1 row-start-2 span-4 */
+    /* 0. Decoration: col-start-1 spans all rows */
     .decoration-area {
         grid-column: 1;
-        grid-row: 2 / span 4;
+        grid-row: 1 / span 4;
         display: flex;
         align-items: center;
         justify-content: center;
         background: rgba(var(--primary-rgb), 0.05);
         border-radius: 50px;
+        margin-right: 1rem;
+    }
+
+    /* Row 1: Collection (standalone) */
+    .collection-area {
+        grid-column: 2 / span 4;
+        grid-row: 1;
+    }
+
+    /* Row 2: Pichu & Random Picker */
+    .pichu-area {
+        grid-column: 2 / span 2;
+        grid-row: 2;
+    }
+
+    .picker-area {
+        grid-column: 4 / span 2;
+        grid-row: 2;
+    }
+
+    /* Row 3: Recommendations & Authors */
+    .age-area {
+        grid-column: 2 / span 2;
+        grid-row: 3;
+    }
+
+    .authors-area {
+        grid-column: 4 / span 2;
+        grid-row: 3;
+    }
+
+    /* Row 4: Legend Section */
+    .legend-area {
+        grid-column: 2 / span 4;
+        grid-row: 4;
+        background: var(--surface-color);
+        border: 1px solid var(--border-color);
+        padding: 2rem;
+        border-radius: 16px;
+    }
+
+    .library-legend h3 {
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        color: var(--primary-color);
+        font-family: var(--font-heading);
+    }
+
+    .legend-items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .legend-item .icon {
+        font-size: 1.5rem;
+        flex-shrink: 0;
     }
 
     .vertical-text {
         writing-mode: vertical-rl;
         text-orientation: mixed;
         font-family: var(--font-heading);
-        font-size: 3rem;
+        font-size: 2.2rem;
         color: var(--primary-color);
         opacity: 0.3;
         letter-spacing: 0.5rem;
-    }
-
-    .book-placeholder {
-        font-size: 10rem;
-        animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-        0% {
-            transform: translateY(0px);
-        }
-        50% {
-            transform: translateY(-20px);
-        }
-        100% {
-            transform: translateY(0px);
-        }
+        text-align: center;
     }
 
     /* Responsive fallback */
