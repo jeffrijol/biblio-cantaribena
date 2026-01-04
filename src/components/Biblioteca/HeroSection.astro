@@ -18,7 +18,7 @@ const previewBooks = books.slice(0, 8);
 
 <section class="collection-preview" id="catalogo-preview">
     <div class="section-header">
-        <h2 class="title">Explora Nuestros Tesoros</h2>
+        <h2 class="title">La biblioteca cantaribeña</h2>
 
         <div class="filters-scroll">
             <div class="filters-container">
@@ -88,7 +88,7 @@ const previewBooks = books.slice(0, 8);
 
                 // Filtrar
                 const filterType = btn.getAttribute("data-filter");
-                let filteredBooks = [];
+                let filteredBooks: any[] = [];
 
                 switch (filterType) {
                     case "traveler":

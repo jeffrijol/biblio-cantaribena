@@ -9,14 +9,14 @@ import RandomBookPicker from "../../components/Biblioteca/RandomBookPicker.astro
 
 <BibliotecaLayout title="Inicio">
     <div class="library-grid">
-        <!-- 0. Decoration/Sidebar (spans all rows) -->
-        <div class="grid-item decoration-area">
-            <div class="vertical-text">BIBLIOTECA CANTARIBEÑA</div>
-        </div>
-
-        <!-- 1. Collection Preview: Explora Nuestros Tesoros (Row 1) -->
+        <!-- 1. Collection Preview: Explora Nuestros Tesoros (Contenido principal, ancho completo Fila 1) -->
         <div class="grid-item collection-area">
             <CollectionPreview />
+        </div>
+
+        <!-- 0. Decoration/Sidebar (empieza en la Fila 2) -->
+        <div class="grid-item decoration-area">
+            <div class="vertical-text">BIBLIOTECA CANTARIBEÑA</div>
         </div>
 
         <!-- 2. Pichu Corner & Random Picker (Row 2) -->
@@ -27,15 +27,7 @@ import RandomBookPicker from "../../components/Biblioteca/RandomBookPicker.astro
             <RandomBookPicker />
         </div>
 
-        <!-- 3. Age Recommendations & Frequent Authors (Row 3) -->
-        <div class="grid-item age-area">
-            <AgeRecommendations />
-        </div>
-        <div class="grid-item authors-area">
-            <FrequentAuthors />
-        </div>
-
-        <!-- 4. Legend Section (Row 4) -->
+        <!-- 3. Legend Section & Frequent Authors (Row 3) -->
         <div class="grid-item legend-area">
             <div class="library-legend">
                 <h3>📖 Símbolos de nuestra colección</h3>
@@ -70,6 +62,14 @@ import RandomBookPicker from "../../components/Biblioteca/RandomBookPicker.astro
                 </div>
             </div>
         </div>
+        <div class="grid-item authors-area">
+            <FrequentAuthors />
+        </div>
+
+        <!-- 4. Age Recommendations (Row 4) -->
+        <div class="grid-item age-area">
+            <AgeRecommendations />
+        </div>
     </div>
 </BibliotecaLayout>
 
@@ -89,22 +89,22 @@ import RandomBookPicker from "../../components/Biblioteca/RandomBookPicker.astro
         overflow: hidden;
     }
 
-    /* 0. Decoration: col-start-1 spans all rows */
+    /* Row 1: Collection (Full Width) */
+    .collection-area {
+        grid-column: 1 / span 5;
+        grid-row: 1;
+    }
+
+    /* 0. Decoration: empieza en Fila 2 hasta el final */
     .decoration-area {
         grid-column: 1;
-        grid-row: 1 / span 4;
+        grid-row: 2 / span 3;
         display: flex;
         align-items: center;
         justify-content: center;
         background: rgba(var(--primary-rgb), 0.05);
         border-radius: 50px;
         margin-right: 1rem;
-    }
-
-    /* Row 1: Collection (standalone) */
-    .collection-area {
-        grid-column: 2 / span 4;
-        grid-row: 1;
     }
 
     /* Row 2: Pichu & Random Picker */
@@ -118,10 +118,14 @@ import RandomBookPicker from "../../components/Biblioteca/RandomBookPicker.astro
         grid-row: 2;
     }
 
-    /* Row 3: Recommendations & Authors */
-    .age-area {
+    /* Row 3: Legend & Authors */
+    .legend-area {
         grid-column: 2 / span 2;
         grid-row: 3;
+        background: var(--surface-color);
+        border: 1px solid var(--border-color);
+        padding: 2rem;
+        border-radius: 16px;
     }
 
     .authors-area {
@@ -129,14 +133,10 @@ import RandomBookPicker from "../../components/Biblioteca/RandomBookPicker.astro
         grid-row: 3;
     }
 
-    /* Row 4: Legend Section */
-    .legend-area {
+    /* Row 4: Age Recommendations */
+    .age-area {
         grid-column: 2 / span 4;
         grid-row: 4;
-        background: var(--surface-color);
-        border: 1px solid var(--border-color);
-        padding: 2rem;
-        border-radius: 16px;
     }
 
     .library-legend h3 {
@@ -148,19 +148,19 @@ import RandomBookPicker from "../../components/Biblioteca/RandomBookPicker.astro
 
     .legend-items {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: 1fr; /* Stacked for better fit in smaller column */
+        gap: 1.2rem;
     }
 
     .legend-item {
         display: flex;
         align-items: flex-start;
-        gap: 1rem;
-        font-size: 0.95rem;
+        gap: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .legend-item .icon {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         flex-shrink: 0;
     }
 
@@ -168,7 +168,7 @@ import RandomBookPicker from "../../components/Biblioteca/RandomBookPicker.astro
         writing-mode: vertical-rl;
         text-orientation: mixed;
         font-family: var(--font-heading);
-        font-size: 2.2rem;
+        font-size: 2rem;
         color: var(--primary-color);
         opacity: 0.3;
         letter-spacing: 0.5rem;
