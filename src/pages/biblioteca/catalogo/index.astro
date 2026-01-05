@@ -51,7 +51,11 @@ const { books } = libraryData;
                                         src={book.coverUrl}
                                         alt={book.title}
                                         loading="lazy"
+                                        class="catalog-img"
                                     />
+                                    <div class="placeholder" style="display: none;">
+                                        {book.title[0]}
+                                    </div>
                                 ) : (
                                     <div class="placeholder">
                                         {book.title[0]}
@@ -157,6 +161,25 @@ const { books } = libraryData;
             document.body.removeChild(link);
         });
     }
+    // Image placeholder logic
+    const catalogImages = document.querySelectorAll('.catalog-img');
+    catalogImages.forEach(img => {
+        const image = img as HTMLImageElement;
+        const handleImageError = () => {
+            image.style.display = 'none';
+            const nextEl = image.nextElementSibling as HTMLElement;
+            if (nextEl) nextEl.style.display = 'flex';
+        };
+
+        if (image.complete) {
+            if (image.naturalWidth <= 1) handleImageError();
+        } else {
+            image.onload = () => {
+                if (image.naturalWidth <= 1) handleImageError();
+            };
+            image.onerror = handleImageError;
+        }
+    });
 </script>
 
 <style>
