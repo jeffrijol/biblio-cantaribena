@@ -104,7 +104,34 @@ const allCovers = [
   const EXTERIOR_COVER = "/images/library-cover.svg";
 
   // Sequence order: LibraryCover (index 0) ... Books ... -> Loop
-  const sequence = [EXTERIOR_COVER, ...coversData.map((c: any) => c.localUrl)];
+  let validSequence = [EXTERIOR_COVER];
+  const validBooks: any[] = [];
+
+  // Helper to pre-verify images
+  async function verifyCovers() {
+    const promises = coversData.map((book: any) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => {
+          if (img.naturalWidth > 1 && book.localUrl !== EXTERIOR_COVER) {
+            resolve(book);
+          } else {
+            resolve(null);
+          }
+        };
+        img.onerror = () => resolve(null);
+        img.src = book.localUrl;
+      });
+    });
+
+    const results = await Promise.all(promises);
+    results.forEach((res: any) => {
+      if (res && !validBooks.find((b: any) => b.localUrl === res.localUrl)) {
+        validBooks.push(res);
+        validSequence.push(res.localUrl);
+      }
+    });
+  }
 
   let currentIndex = 0;
   const imgCurrent = document.getElementById("img-current") as HTMLImageElement;
@@ -113,8 +140,8 @@ const allCovers = [
 
   // Durations
   const LIBRARY_DURATION = 10000;
-  const BOOK_DURATION = 4000; // 4 seconds for books to be readable
-  const ANIMATION_DURATION = 1500; // Match CSS transition
+  const BOOK_DURATION = 4000;
+  const ANIMATION_DURATION = 1500;
 
   function updateLabel(index: number) {
     if (!label) return;
@@ -122,35 +149,34 @@ const allCovers = [
       label.textContent = "Biblioteca";
     } else {
       const bookIndex = index - 1;
-      if (bookIndex >= 0 && bookIndex < coversData.length) {
-        label.textContent = `Libro ${bookIndex + 1}`;
+      if (bookIndex >= 0 && bookIndex < validBooks.length) {
+        label.textContent = `Libro ${bookIndex + 1} de ${validBooks.length}`;
       }
     }
   }
 
   function step() {
-    if (!imgCurrent || !imgNext) return;
+    if (!imgCurrent || !imgNext || validSequence.length <= 1) return;
 
     // 1. Calculate next index
-    const nextIndex = (currentIndex + 1) % sequence.length;
+    const nextIndex = (currentIndex + 1) % validSequence.length;
 
     // 2. Animate 'current' element lifting up
     imgCurrent.classList.add("lifting");
 
     // 3. After animation finishes
     setTimeout(() => {
-      // Swap logic
       if (!imgCurrent || !imgNext) return;
 
-      imgCurrent.src = sequence[nextIndex];
+      imgCurrent.src = validSequence[nextIndex];
       imgCurrent.classList.remove("lifting");
 
       currentIndex = nextIndex;
       updateLabel(currentIndex);
 
       // Now prepare the underlying 'next' for the NEXT step
-      const subsequentIndex = (nextIndex + 1) % sequence.length;
-      imgNext.src = sequence[subsequentIndex];
+      const subsequentIndex = (nextIndex + 1) % validSequence.length;
+      imgNext.src = validSequence[subsequentIndex];
 
       // Schedule next step
       const delay = currentIndex === 0 ? LIBRARY_DURATION : BOOK_DURATION;
@@ -158,10 +184,15 @@ const allCovers = [
     }, ANIMATION_DURATION);
   }
 
-  // Initial Start
-  if (imgCurrent && imgNext && sequence.length > 1) {
-    setTimeout(step, LIBRARY_DURATION);
-  }
+  // Initial Start after verification
+  verifyCovers().then(() => {
+    if (imgCurrent && imgNext && validSequence.length > 1) {
+      // Sync initial 'next' if we have books
+      imgNext.src = validSequence[1];
+      updateLabel(0); // Ensure initial label is correct
+      setTimeout(step, LIBRARY_DURATION);
+    }
+  });
 </script>
 
 <script

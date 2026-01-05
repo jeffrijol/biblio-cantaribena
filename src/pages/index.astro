@@ -19,6 +19,14 @@ const snowflakes = Array.from({ length: 50 }, (_, i) => ({
 
 const timeLeft = getTimeUntilReveal();
 const currentHint = getHintForDay(timeLeft.days);
+
+import bookCovers from "../data/bookCovers.json";
+// Filter valid covers
+const validCovers = bookCovers
+	.filter((b) => b.hasCover && b.localUrl !== "/images/library-cover.svg")
+	.sort(() => Math.random() - 0.5); // Randomize for variety
+
+const previewBooks = validCovers.slice(0, 4);
 ---
 
 <CountdownLayout
@@ -84,7 +92,6 @@ const currentHint = getHintForDay(timeLeft.days);
 
 			<div class="column book-column">
 				<BookAnimated />
-				<p class="column-caption">Acá faltan libros!</p>
 			</div>
 
 			<!-- Columna 2: Texto de Astrid Lindgren -->
@@ -140,10 +147,15 @@ const currentHint = getHintForDay(timeLeft.days);
 						{content.countdownConfig.hintText}
 					</Typography>
 					<div class="hints-preview">
-						<BookPreview pixelLevel={8} />
-						<BookPreview pixelLevel={6} />
-						<BookPreview pixelLevel={4} />
-						<BookPreview pixelLevel={2} />
+						{
+							previewBooks.map((book, index) => (
+								<BookPreview
+									pixelLevel={8 - index * 2}
+									title={book.title}
+									coverUrl={book.localUrl}
+								/>
+							))
+						}
 					</div>
 					<div
 						id="live-hint"

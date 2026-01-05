@@ -6,7 +6,7 @@ interface Props {
     coverUrl?: string;
 }
 
-const { pixelLevel = 4, title = "Libro secreto" } = Astro.props;
+const { pixelLevel = 4, title = "Libro secreto", coverUrl } = Astro.props;
 
 // En una implementación real, aquí usarías la coverUrl
 // Por ahora usamos un placeholder con efecto de pixelación
@@ -15,25 +15,33 @@ const pixelSize = pixelLevel;
 
 <div class="book-preview" data-pixel-level={pixelLevel}>
     <div class="book-cover-preview">
-        <div
-            class="pixelated-cover"
-            style={`--pixel-size: ${pixelSize}px;`}
-            title={title}
-        >
-            <div class="pixel-grid">
-                {
-                    Array.from({ length: 64 }).map((_) => (
-                        <div
-                            class="pixel"
-                            style={`
-              background-color: hsl(${Math.random() * 360}, 70%, 70%);
-              opacity: ${0.3 + Math.random() * 0.7};
-            `}
-                        />
-                    ))
-                }
-            </div>
-        </div>
+        {
+            coverUrl ? (
+                <div
+                    class="real-cover-pixelated"
+                    style={`background-image: url(${coverUrl}); filter: blur(${pixelLevel}px) contrast(1.2);`}
+                    title={title}
+                />
+            ) : (
+                <div
+                    class="pixelated-cover"
+                    style={`--pixel-size: ${pixelSize}px;`}
+                    title={title}
+                >
+                    <div class="pixel-grid">
+                        {Array.from({ length: 64 }).map((_) => (
+                            <div
+                                class="pixel"
+                                style={`
+                  background-color: hsl(${Math.random() * 360}, 70%, 70%);
+                  opacity: ${0.3 + Math.random() * 0.7};
+                `}
+                            />
+                        ))}
+                    </div>
+                </div>
+            )
+        }
     </div>
     <div class="book-info-preview">
         <div class="pixel-level-indicator">
@@ -52,6 +60,17 @@ const pixelSize = pixelLevel;
 </div>
 
 <style>
+    .real-cover-pixelated {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transition: filter 0.5s ease;
+    }
+
+    .book-preview:hover .real-cover-pixelated {
+        filter: blur(calc(var(--pixel-size, 0) / 2)) contrast(1.1);
+    }
     .book-preview {
         display: flex;
         flex-direction: column;
