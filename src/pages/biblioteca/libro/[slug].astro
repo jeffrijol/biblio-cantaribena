@@ -15,9 +15,38 @@ const { book } = Astro.props;
 if (!book) {
     return Astro.redirect("/404");
 }
+
+const seoDescription = `Libro: ${book.title} por ${book.authors.join(", ")}. Publicado por ${book.publisher || "Editorial conocida"}. Descubre más en nuestra biblioteca.`;
+
+// JSON-LD for Book Schema
+const schemData = {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    name: book.title,
+    author: book.authors.map((name: string) => ({
+        "@type": "Person",
+        name: name,
+    })),
+    publisher: {
+        "@type": "Organization",
+        name: book.publisher || "Biblioteca Cantaribeña",
+    },
+    isbn: book.isbn,
+    description: book.personalNotes || seoDescription,
+    image: book.coverUrl
+        ? new URL(book.coverUrl, Astro.url.origin).toString()
+        : undefined,
+};
 ---
 
-<BibliotecaLayout title={book.title}>
+<BibliotecaLayout
+    title={book.title}
+    description={seoDescription}
+    image={book.coverUrl}
+    type="book"
+>
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemData)} />
     <div class="book-detail-page">
         <div class="breadcrumb">
             <a href="/biblioteca">Inicio</a> / <a href="/biblioteca/catalogo"
@@ -128,12 +157,136 @@ if (!book) {
                         </div>
                     )
                 }
+                <div class="divider"></div>
+
+                <div class="book-actions">
+                    <h3>📢 Compartir esta joya</h3>
+                    <div class="share-buttons">
+                        <button
+                            class="share-btn whatsapp"
+                            id="share-whatsapp"
+                            aria-label="Compartir en WhatsApp"
+                        >
+                            <span class="icon">💬</span> WhatsApp
+                        </button>
+                        <button
+                            class="share-btn twitter"
+                            id="share-twitter"
+                            aria-label="Compartir en X"
+                        >
+                            <span class="icon">🐦</span> X
+                        </button>
+                        <button
+                            class="share-btn copy"
+                            id="share-copy"
+                            aria-label="Copiar enlace"
+                        >
+                            <span class="icon">🔗</span>
+                            <span id="copy-text">Copiar Link</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </BibliotecaLayout>
 
+<script>
+    const title = document.title;
+    const url = window.location.href;
+
+    document.getElementById("share-whatsapp")?.addEventListener("click", () => {
+        window.open(
+            `https://api.whatsapp.com/send?text=${encodeURIComponent(title + " " + url)}`,
+            "_blank",
+        );
+    });
+
+    document.getElementById("share-twitter")?.addEventListener("click", () => {
+        window.open(
+            `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
+            "_blank",
+        );
+    });
+
+    document
+        .getElementById("share-copy")
+        ?.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(url);
+                const textEl = document.getElementById("copy-text");
+                if (textEl) {
+                    textEl.textContent = "¡Copiado!";
+                    setTimeout(
+                        () => (textEl.textContent = "Copiar Link"),
+                        2000,
+                    );
+                }
+            } catch (err) {
+                console.error("Error al copiar:", err);
+            }
+        });
+</script>
+
 <style>
+    .book-actions {
+        margin-top: 2rem;
+    }
+
+    .book-actions h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        opacity: 0.9;
+    }
+
+    .share-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .share-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.2rem;
+        border-radius: 50px;
+        border: 1px solid var(--border-color);
+        background: var(--surface-color);
+        color: var(--text-color);
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+
+    .share-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+        border-color: var(--primary-color);
+    }
+
+    .share-btn .icon {
+        font-size: 1.1rem;
+    }
+
+    .share-btn.whatsapp:hover {
+        background: #25d366;
+        color: white;
+        border-color: #25d366;
+    }
+
+    .share-btn.twitter:hover {
+        background: #000;
+        color: white;
+        border-color: #000;
+    }
+
+    .share-btn.copy:hover {
+        background: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+    }
     .book-detail-page {
         max-width: 1000px;
         margin: 0 auto;

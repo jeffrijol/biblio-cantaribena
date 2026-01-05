@@ -38,12 +38,19 @@ const previewBooks = books.slice(0, 12);
     </div>
 
     <div class="books-grid-container">
-        <div class="books-grid" id="books-grid">
+        <div
+            class="books-grid"
+            id="books-grid"
+            role="region"
+            aria-label="Carrusel de libros"
+        >
             {
                 previewBooks.map((book) => (
                     <a
                         href={`/biblioteca/libro/${book.slug}`}
                         class="book-card-mini"
+                        data-astro-prefetch
+                        aria-label={`Ver detalles de ${book.title}`}
                     >
                         <div class="card-cover">
                             {book.coverUrl ? (
@@ -121,10 +128,16 @@ const previewBooks = books.slice(0, 12);
 
         function renderBooks(books: any[]) {
             if (!grid) return;
-            grid.innerHTML = books
+
+            // Si hay pocos libros, no clonamos para evitar glitches.
+            // Si hay suficientes, clonamos para el efecto de scroll "continuo"
+            const booksToRender =
+                books.length > 5 ? [...books, ...books.slice(0, 5)] : books;
+
+            grid.innerHTML = booksToRender
                 .map(
                     (book: any) => `
-        <a href="/biblioteca/libro/${book.slug}" class="book-card-mini fade-in">
+        <a href="/biblioteca/libro/${book.slug}" class="book-card-mini fade-in" data-astro-prefetch aria-label="Ver detalles de ${book.title}">
           <div class="card-cover">
             ${
                 book.coverUrl
@@ -141,6 +154,18 @@ const previewBooks = books.slice(0, 12);
                 )
                 .join("");
         }
+
+        // Infinite loop detection (simplified)
+        grid?.addEventListener("scroll", () => {
+            if (!grid) return;
+            const scrollPos = grid.scrollLeft;
+            const maxScroll = grid.scrollWidth - grid.clientWidth;
+
+            if (scrollPos >= maxScroll - 5) {
+                // Si llegamos al final de los clones, volvemos al inicio suavemente (?)
+                // O dejamos que el usuario lo vea como una lista larga.
+            }
+        });
     });
 </script>
 

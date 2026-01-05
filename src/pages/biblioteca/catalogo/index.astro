@@ -13,12 +13,23 @@ const { books } = libraryData;
         </header>
 
         <div class="controls">
-            <input
-                type="text"
-                id="search-input"
-                placeholder="Buscar por título, autor o etiqueta..."
-                class="search-bar"
-            />
+            <div class="search-wrapper">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Buscar por título, autor o etiqueta..."
+                    class="search-bar"
+                    aria-label="Buscar libros"
+                />
+                <button
+                    id="export-btn"
+                    class="btn-util"
+                    title="Exportar a CSV"
+                    aria-label="Exportar colección a CSV"
+                >
+                    <span class="icon">📥</span> Exportar
+                </button>
+            </div>
         </div>
 
         <div class="catalog-grid" id="catalog-grid">
@@ -31,6 +42,8 @@ const { books } = libraryData;
                         <a
                             href={`/biblioteca/libro/${book.slug}`}
                             class="card-link"
+                            data-astro-prefetch
+                            aria-label={`Ver detalles de ${book.title}`}
                         >
                             <div class="card-cover">
                                 {book.coverUrl ? (
@@ -71,10 +84,15 @@ const { books } = libraryData;
 </BibliotecaLayout>
 
 <script>
+    import libraryData from "../../../data/processed/library.json";
+    const { books } = libraryData;
+
     const searchInput = document.getElementById("search-input");
+    const exportBtn = document.getElementById("export-btn");
     const bookCards = document.querySelectorAll(".book-card");
     const noResults = document.getElementById("no-results");
 
+    // Search logic
     if (searchInput) {
         searchInput.addEventListener("input", (e) => {
             const term = (e.target as HTMLInputElement).value.toLowerCase();
@@ -97,6 +115,46 @@ const { books } = libraryData;
                     noResults.classList.add("hidden");
                 }
             }
+        });
+    }
+
+    // Export logic
+    if (exportBtn) {
+        exportBtn.addEventListener("click", () => {
+            const headers = [
+                "Título",
+                "Autores",
+                "Editorial",
+                "ISBN",
+                "Estado de Lectura",
+            ];
+            const csvContent = [
+                headers.join(","),
+                ...books.map((b) =>
+                    [
+                        `"${b.title}"`,
+                        `"${b.authors.join(", ")}"`,
+                        `"${b.publisher || ""}"`,
+                        `"${b.isbn || ""}"`,
+                        b.readStatus.isRead ? "Leído" : "No leído",
+                    ].join(","),
+                ),
+            ].join("\n");
+
+            const blob = new Blob([csvContent], {
+                type: "text/csv;charset=utf-8;",
+            });
+            const link = document.createElement("a");
+            const url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute(
+                "download",
+                `biblioteca_cantaribena_${new Date().toISOString().split("T")[0]}.csv`,
+            );
+            link.style.visibility = "hidden";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         });
     }
 </script>
@@ -129,12 +187,18 @@ const { books } = libraryData;
     }
 
     .controls {
-        max-width: 600px;
+        max-width: 800px;
         margin: 0 auto 3rem;
     }
 
+    .search-wrapper {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
     .search-bar {
-        width: 100%;
+        flex-grow: 1;
         padding: 1rem 1.5rem;
         font-size: 1.1rem;
         border: 2px solid var(--border-color);
@@ -142,6 +206,26 @@ const { books } = libraryData;
         background: var(--surface-color);
         color: var(--text-color);
         transition: all 0.3s;
+    }
+
+    .btn-util {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--surface-color);
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        padding: 0.8rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        white-space: nowrap;
+    }
+
+    .btn-util:hover {
+        background: var(--primary-color);
+        color: white;
     }
 
     .search-bar:focus {

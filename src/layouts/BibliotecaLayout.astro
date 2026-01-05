@@ -4,9 +4,22 @@ import NightSky from "../components/UI/NightSky.astro";
 
 interface Props {
     title: string;
+    description?: string;
+    image?: string;
+    type?: string;
 }
 
-const { title } = Astro.props;
+const {
+    title,
+    description = "Descubre nuestra colección curada de libros en la Biblioteca Cantaribeña.",
+    image = "/images/og-library.jpg",
+    type = "website",
+} = Astro.props;
+
+const canonicalURL = new URL(
+    Astro.url.pathname,
+    Astro.site || "http://localhost:4321",
+);
 ---
 
 <!doctype html>
@@ -15,6 +28,26 @@ const { title } = Astro.props;
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title} | Biblioteca Cantaribeña</title>
+
+        <!-- SEO Meta Tags -->
+        <meta name="title" content={`${title} | Biblioteca Cantaribeña`} />
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonicalURL} />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content={type} />
+        <meta property="og:url" content={Astro.url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={new URL(image, Astro.url)} />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={Astro.url} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,6 +57,7 @@ const { title } = Astro.props;
         />
         <meta name="generator" content={Astro.generator} />
         <script is:inline>
+            // Theme initialization
             const theme = localStorage.getItem("theme");
             if (
                 theme === "dark" ||
@@ -34,20 +68,73 @@ const { title } = Astro.props;
             } else {
                 document.documentElement.setAttribute("data-theme", "light");
             }
+
+            // Reading mode initialization
+            const readingMode = localStorage.getItem("reading-mode");
+            if (readingMode === "enabled") {
+                document.documentElement.setAttribute(
+                    "data-reading",
+                    "enabled",
+                );
+            }
         </script>
     </head>
-    <body>
+    <body class="bg-transition">
         <NightSky />
-        <NightModeToggle />
+        <header class="layout-header">
+            <nav class="nav-actions">
+                <button
+                    id="reading-mode-toggle"
+                    class="util-btn"
+                    title="Modo Lectura"
+                    aria-label="Alternar modo lectura"
+                >
+                    <span class="icon">📖</span>
+                </button>
+                <NightModeToggle />
+            </nav>
+        </header>
+
         <main>
             <slot />
         </main>
+
         <footer>
-            <p>
-                &copy; {new Date().getFullYear()} Nuestra Biblioteca. Donde las historias
-                cobran vida.
-            </p>
+            <div class="footer-content">
+                <p>
+                    &copy; {new Date().getFullYear()} Nuestra Biblioteca. Donde las
+                    historias cobran vida.
+                </p>
+                <div class="footer-links">
+                    <a href="/biblioteca">Inicio</a>
+                    <a href="/biblioteca/catalogo">Catálogo</a>
+                </div>
+            </div>
         </footer>
+
+        <script>
+            const toggle = document.getElementById("reading-mode-toggle");
+            if (toggle) {
+                toggle.addEventListener("click", () => {
+                    const isEnabled =
+                        document.documentElement.getAttribute(
+                            "data-reading",
+                        ) === "enabled";
+                    if (isEnabled) {
+                        document.documentElement.removeAttribute(
+                            "data-reading",
+                        );
+                        localStorage.setItem("reading-mode", "disabled");
+                    } else {
+                        document.documentElement.setAttribute(
+                            "data-reading",
+                            "enabled",
+                        );
+                        localStorage.setItem("reading-mode", "enabled");
+                    }
+                });
+            }
+        </script>
     </body>
 </html>
 
@@ -65,6 +152,15 @@ const { title } = Astro.props;
         --font-heading: "Playfair Display", serif;
         --font-body: "Inter", sans-serif;
         --font-decorative: "Cormorant Garamond", serif;
+
+        --text-base-size: 16px;
+        --line-height-base: 1.6;
+    }
+
+    /* Reading Mode Variables */
+    [data-reading="enabled"] {
+        --text-base-size: 20px;
+        --line-height-base: 1.8;
     }
 
     [data-theme="dark"] {
@@ -82,9 +178,11 @@ const { title } = Astro.props;
         background-color: var(--background-color);
         color: var(--text-color);
         font-family: var(--font-body);
+        font-size: var(--text-base-size);
         transition:
             background-color 0.3s ease,
-            color 0.3s ease;
+            color 0.3s ease,
+            font-size 0.3s ease;
         scroll-behavior: smooth;
     }
 
@@ -94,6 +192,42 @@ const { title } = Astro.props;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        line-height: var(--line-height-base);
+    }
+
+    .layout-header {
+        position: fixed;
+        top: 1rem;
+        right: 1.5rem;
+        z-index: 1000;
+    }
+
+    .nav-actions {
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+        background: var(--surface-color);
+        padding: 0.5rem;
+        border-radius: 50px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+    }
+
+    .util-btn {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 1.25rem;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background 0.3s;
+    }
+
+    .util-btn:hover {
+        background: rgba(0, 0, 0, 0.05);
     }
 
     main {
@@ -102,11 +236,34 @@ const { title } = Astro.props;
 
     footer {
         text-align: center;
-        padding: 2rem;
-        opacity: 0.7;
-        font-size: 0.9rem;
+        padding: 4rem 2rem;
         border-top: 1px solid var(--border-color);
         margin-top: 4rem;
+        background: var(--surface-color);
+    }
+
+    .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1.5rem;
+    }
+
+    .footer-links a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 500;
+        opacity: 0.7;
+    }
+
+    .footer-links a:hover {
+        opacity: 1;
+        color: var(--primary-color);
     }
 
     h1,
@@ -116,10 +273,17 @@ const { title } = Astro.props;
     h5,
     h6 {
         font-family: var(--font-heading);
+        line-height: 1.2;
     }
 
     img {
         max-width: 100%;
         height: auto;
+    }
+
+    .bg-transition {
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
     }
 </style>
