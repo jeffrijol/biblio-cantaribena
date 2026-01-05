@@ -1,0 +1,39 @@
+---
+// src/components/UI/NightSky.astro
+import Star from "./Star.astro";
+
+const starCount = 100;
+const stars = Array.from({ length: starCount });
+---
+
+<div class="night-sky-container">
+    <div class="stars-layer">
+        {stars.map(() => <Star />)}
+    </div>
+</div>
+
+<style>
+    .night-sky-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+
+    /* Solo mostrar cuando el tema es dark */
+    :global([data-theme="dark"]) .night-sky-container {
+        opacity: 1;
+    }
+
+    .stars-layer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+</style>

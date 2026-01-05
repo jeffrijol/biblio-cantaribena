@@ -1,0 +1,60 @@
+---
+// src/components/UI/Star.astro
+interface Props {
+    size?: number;
+    duration?: number;
+    delay?: number;
+    top?: number;
+    left?: number;
+}
+
+const {
+    size = Math.random() * 2 + 1,
+    duration = Math.random() * 3 + 2,
+    delay = Math.random() * 5,
+    top = Math.random() * 100,
+    left = Math.random() * 100,
+} = Astro.props;
+
+const animationDuration = `${duration}s`;
+const animationDelay = `${delay}s`;
+---
+
+<div
+    class="star"
+    style={`
+    width: ${size}px;
+    height: ${size}px;
+    top: ${top}%;
+    left: ${left}%;
+    animation-duration: ${animationDuration};
+    animation-delay: ${animationDelay};
+  `}
+>
+</div>
+
+<style>
+    .star {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        pointer-events: none;
+        box-shadow: 0 0 4px white;
+        opacity: 0;
+        animation: twinkle infinite ease-in-out;
+        z-index: 0;
+    }
+
+    @keyframes twinkle {
+        0%,
+        100% {
+            opacity: 0.1;
+            transform: scale(0.8);
+        }
+        50% {
+            opacity: 0.8;
+            transform: scale(1.2);
+            box-shadow: 0 0 8px white;
+        }
+    }
+</style>
