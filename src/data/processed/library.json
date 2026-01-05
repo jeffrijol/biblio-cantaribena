@@ -198,7 +198,7 @@
       "isTraveler": false,
       "isArtBook": false,
       "isRecent": true,
-      "isFavorite": false
+      "isFavorite": true
     },
     {
       "id": "book-9788420464466",
@@ -364,6 +364,3577 @@
       "isArtBook": false,
       "isRecent": true,
       "isFavorite": false
+    },
+    {
+      "id": "book-9788417742720",
+      "slug": "mio-mi-querido-mio-2720",
+      "title": "Mío, mi querido Mío",
+      "authors": [
+        "Astrid Lindgren",
+        "Luz Marina Baltasar Navas",
+        "Equipo Kókinos"
+      ],
+      "isbn": "9788417742720",
+      "publisher": "Editorial Kókinos",
+      "publishDate": "2022-03-16",
+      "pageCount": 168,
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "personalTags": [
+        "ilustración artística"
+      ],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-04",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417742720-M.jpg",
+      "searchKeywords": "mío, mi querido mío astrid lindgren luz marina baltasar navas equipo kókinos ilustración artística",
+      "isTraveler": false,
+      "isArtBook": true,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494650673",
+      "slug": "el-jardin-malefico-0673",
+      "title": "El jardín maléfico",
+      "authors": [
+        "Edward Gorey"
+      ],
+      "isbn": "9788494650673",
+      "publisher": "Libros del Zorro Rojo",
+      "publishDate": "2017-03-29",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494650673-M.jpg",
+      "searchKeywords": "el jardín maléfico edward gorey ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788425233173",
+      "slug": "como-son-los-animales-y-como-dibujarlos-3173",
+      "title": "Cómo Son Los Animales y Cómo Dibujarlos",
+      "authors": [
+        "Ai Akikusa"
+      ],
+      "isbn": "9788425233173",
+      "publisher": "Gustavo Gili Editorial S.A.",
+      "publishDate": "2021-01-01",
+      "pageCount": 128,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788425233173-M.jpg",
+      "searchKeywords": "cómo son los animales y cómo dibujarlos ai akikusa ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9780060295554",
+      "slug": "sick-of-each-other-5554",
+      "title": "Sick of Each Other",
+      "authors": [
+        "William Steig"
+      ],
+      "isbn": "9780060295554",
+      "publisher": "Joanna Cotler",
+      "publishDate": "2000-12-31",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9780060295554-M.jpg",
+      "searchKeywords": "sick of each other william steig ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788426144959",
+      "slug": "el-lobo-el-pato-y-el-raton-4959",
+      "title": "El lobo, el pato y el ratón",
+      "authors": [
+        "Mac Barnett",
+        "Jon Klassen",
+        "Susana Tornero Brugués"
+      ],
+      "isbn": "9788426144959",
+      "publisher": "Editorial Juventud, S.A.",
+      "publishDate": "2018-10-01",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788426144959-M.jpg",
+      "searchKeywords": "el lobo, el pato y el ratón mac barnett jon klassen susana tornero brugués ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788417617486",
+      "slug": "melancolia-7486",
+      "title": "Melancolía",
+      "authors": [
+        "Simon Hanselmann",
+        "Alberto García Marcos",
+        "César Sánchez Rodríguez",
+        "Joana Carro Pérez"
+      ],
+      "isbn": "9788417617486",
+      "publisher": "Fulgencio Pimentel S.L.",
+      "publishDate": "2020-07-06",
+      "pageCount": 160,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417617486-M.jpg",
+      "searchKeywords": "melancolía simon hanselmann alberto garcía marcos césar sánchez rodríguez joana carro pérez ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9789802573844",
+      "slug": "conejo-y-conejo-3844",
+      "title": "Conejo y Conejo",
+      "authors": [
+        "Isabella Saturno"
+      ],
+      "isbn": "9789802573844",
+      "publisher": "Ekare, Ediciones",
+      "publishDate": "2018-02-01",
+      "pageCount": 32,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9789802573844-M.jpg",
+      "searchKeywords": "conejo y conejo isabella saturno ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788473294041",
+      "slug": "trombolina-y-mucholio-las-mascaras-4041",
+      "title": "Trombolina y Mucholío: Las máscaras",
+      "authors": [
+        "Claude Ponti",
+        "Robert Juan-Cantavella"
+      ],
+      "isbn": "9788473294041",
+      "publisher": "CLUB EDITOR 1959, S.L.",
+      "publishDate": "2023-06-14",
+      "pageCount": 24,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788473294041-M.jpg",
+      "searchKeywords": "trombolina y mucholío: las máscaras claude ponti robert juan-cantavella ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788417673178",
+      "slug": "un-poco-perdido-3178",
+      "title": "Un Poco Perdido",
+      "authors": [
+        "Chris Haughton (Illustrator)"
+      ],
+      "isbn": "9788417673178",
+      "publisher": "NubeOcho Ediciones",
+      "publishDate": "2019-11-26",
+      "pageCount": 40,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417673178-M.jpg",
+      "searchKeywords": "un poco perdido chris haughton (illustrator) ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788413431680",
+      "slug": "asi-o-asi-1680",
+      "title": "¿Así o así?",
+      "authors": [
+        "María Pascual de la Torre"
+      ],
+      "isbn": "9788413431680",
+      "publisher": "Kalandraka",
+      "publishDate": "2022-11-16",
+      "pageCount": 24,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788413431680-M.jpg",
+      "searchKeywords": "¿así o así? maría pascual de la torre ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484642961",
+      "slug": "por-el-camino-spanish-edition-2961",
+      "title": "Por el camino (Spanish Edition)",
+      "authors": [
+        "Mariana Ruiz Johnson",
+        "Kalandraka"
+      ],
+      "isbn": "9788484642961",
+      "publisher": "Lectorum Pubns (Juv)",
+      "publishDate": "2017-06-01",
+      "pageCount": 26,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484642961-M.jpg",
+      "searchKeywords": "por el camino (spanish edition) mariana ruiz johnson kalandraka ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484706564",
+      "slug": "tranquilo-como-camilo-6564",
+      "title": "TRANQUILO COMO CAMILO",
+      "authors": [
+        "DELPHINE ANDRIAMIRADO",
+        "NATACHA &amp; RENON"
+      ],
+      "isbn": "9788484706564",
+      "publisher": "Editorial Corimbo S.L.",
+      "publishDate": "2023-04-01",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484706564-M.jpg",
+      "searchKeywords": "tranquilo como camilo delphine andriamirado natacha &amp; renon ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788448854522",
+      "slug": "el-topo-que-queria-saber-quien-se-habia-hecho-aquello-en-su-cabeza-libro-de-carton-4522",
+      "title": "El topo que quería saber quién se había hecho aquello en su cabeza (libro de cartón)",
+      "authors": [
+        "Werner Holzwarth",
+        "Miguel Azaola Rodríguez-Espina"
+      ],
+      "isbn": "9788448854522",
+      "publisher": "BEASCOA",
+      "publishDate": "2020-02-06",
+      "pageCount": 22,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788448854522-M.jpg",
+      "searchKeywords": "el topo que quería saber quién se había hecho aquello en su cabeza (libro de cartón) werner holzwarth miguel azaola rodríguez-espina ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788493375973",
+      "slug": "luna-moon-de-la-cuna-a-la-luna-spanish-edition-5973",
+      "title": "Luna / Moon (De La Cuna a La Luna) (Spanish Edition)",
+      "authors": [
+        "Antonio Rubio"
+      ],
+      "isbn": "9788493375973",
+      "publisher": "Kalandraka Editora Sl",
+      "publishDate": "2005-07-30",
+      "pageCount": 16,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788493375973-M.jpg",
+      "searchKeywords": "luna / moon (de la cuna a la luna) (spanish edition) antonio rubio ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788412340020",
+      "slug": "en-el-cielo-0020",
+      "title": "En el cielo",
+      "authors": [
+        "Giovanna Zoboli",
+        "Phipil Giordano"
+      ],
+      "isbn": "9788412340020",
+      "publisher": "Libros del Zorro Rojo",
+      "publishDate": "2021-09-15",
+      "pageCount": 24,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788412340020-M.jpg",
+      "searchKeywords": "en el cielo giovanna zoboli phipil giordano ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788417123765",
+      "slug": "shhh-tenemos-un-plan-libro-de-carton-3765",
+      "title": "¡Shhh! Tenemos un plan (Libro de cartón)",
+      "authors": [
+        "Chris Haughton"
+      ],
+      "isbn": "9788417123765",
+      "publisher": "NubeOcho",
+      "publishDate": "2020-09-07",
+      "pageCount": 42,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417123765-M.jpg",
+      "searchKeywords": "¡shhh! tenemos un plan (libro de cartón) chris haughton ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484643142",
+      "slug": "rufus-el-murcielago-que-adoraba-los-colores-3142",
+      "title": "Rufus el Murcielago Que Adoraba Los Colores",
+      "authors": [
+        "Tomi Ungerer"
+      ],
+      "isbn": "9788484643142",
+      "publisher": "Kalandraka Ediciones Andalucía, S.L.",
+      "publishDate": "2017-11-15",
+      "pageCount": 32,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484643142-M.jpg",
+      "searchKeywords": "rufus el murcielago que adoraba los colores tomi ungerer ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494208126",
+      "slug": "zorro-8126",
+      "title": "Zorro",
+      "authors": [
+        "Margaret Wild"
+      ],
+      "isbn": "9788494208126",
+      "publisher": "Ekaré",
+      "publishDate": "2014-09-01",
+      "pageCount": 40,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494208126-M.jpg",
+      "searchKeywords": "zorro margaret wild ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788417555566",
+      "slug": "va-la-vaca-5566",
+      "title": "Va la vaca",
+      "authors": [
+        "Pablo Pérez Anton",
+        "Simone Rea"
+      ],
+      "isbn": "9788417555566",
+      "publisher": "A buen paso editorial S.L.",
+      "publishDate": "2021-09-13",
+      "pageCount": 60,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417555566-M.jpg",
+      "searchKeywords": "va la vaca pablo pérez anton simone rea ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484644712",
+      "slug": "juego-de-letras-acartonados-spanish-edition-4712",
+      "title": "Juego de letras (Acartonados) (Spanish Edition)",
+      "authors": [
+        "Antonio Rubio Herrero",
+        "Óscar Villán Seoane"
+      ],
+      "isbn": "9788484644712",
+      "publisher": "",
+      "publishDate": "",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484644712-M.jpg",
+      "searchKeywords": "juego de letras (acartonados) (spanish edition) antonio rubio herrero óscar villán seoane ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788491016410",
+      "slug": "cosas-que-parecen-cosas-6410",
+      "title": "Cosas Que Parecen Cosas",
+      "authors": [
+        "Mar Benegas"
+      ],
+      "isbn": "9788491016410",
+      "publisher": "Combel Ediciones Editorial Esin, S.A.",
+      "publishDate": "2022-05-01",
+      "pageCount": 18,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788491016410-M.jpg",
+      "searchKeywords": "cosas que parecen cosas mar benegas ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788412368512",
+      "slug": "miffy-va-al-museo-8512",
+      "title": "Miffy va al museo",
+      "authors": [
+        "Dick Bruna"
+      ],
+      "isbn": "9788412368512",
+      "publisher": "COCO BOOKS, S.L.",
+      "publishDate": "2021-09-15",
+      "pageCount": 28,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788412368512-M.jpg",
+      "searchKeywords": "miffy va al museo dick bruna ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788469866467",
+      "slug": "oso-y-raton-6467",
+      "title": "Oso y Ratón",
+      "authors": [
+        "Mar Benegas",
+        "Cinta Villalobos"
+      ],
+      "isbn": "9788469866467",
+      "publisher": "ANAYA INFANTIL Y JUVENIL",
+      "publishDate": "2020-06-11",
+      "pageCount": 32,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788469866467-M.jpg",
+      "searchKeywords": "oso y ratón mar benegas cinta villalobos ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788492608096",
+      "slug": "que-bonito-es-panama-8096",
+      "title": "¡Qué bonito es Panamá!",
+      "authors": [
+        "Janosch",
+        "Eva Almazán"
+      ],
+      "isbn": "9788492608096",
+      "publisher": "Kalandraka",
+      "publishDate": "2010-09-01",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788492608096-M.jpg",
+      "searchKeywords": "¡qué bonito es panamá! janosch eva almazán ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788417308254",
+      "slug": "la-asombrosa-y-verdadera-historia-de-un-raton-llamado-perez-8254",
+      "title": "La asombrosa y verdadera historia de un ratón llamado Pérez",
+      "authors": [
+        "Ana Cristina Herreros",
+        "Violeta Lópiz"
+      ],
+      "isbn": "9788417308254",
+      "publisher": "Siruela",
+      "publishDate": "2023-02-22",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417308254-M.jpg",
+      "searchKeywords": "la asombrosa y verdadera historia de un ratón llamado pérez ana cristina herreros violeta lópiz ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484645658",
+      "slug": "el-pequeno-conejo-blanco-5658",
+      "title": "El Pequeno Conejo Blanco",
+      "authors": [
+        "Xosé Ballesteros"
+      ],
+      "isbn": "9788484645658",
+      "publisher": "Kalandraka Editora, S.L.",
+      "publishDate": "2006-10-01",
+      "pageCount": 24,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484645658-M.jpg",
+      "searchKeywords": "el pequeno conejo blanco xosé ballesteros ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494503894",
+      "slug": "dos-ratones-3894",
+      "title": "Dos Ratones",
+      "authors": [
+        "Sergio Ruzzier"
+      ],
+      "isbn": "9788494503894",
+      "publisher": "A Buen Paso S.C.P.",
+      "publishDate": "2017-07-30",
+      "pageCount": 32,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494503894-M.jpg",
+      "searchKeywords": "dos ratones sergio ruzzier ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788478887200",
+      "slug": "el-principito-7200",
+      "title": "El Principito",
+      "authors": [
+        "Antoine de Saint-Exupéry"
+      ],
+      "isbn": "9788478887200",
+      "publisher": "Salamandra Infantil y Juvenil",
+      "publishDate": "2001-09-01",
+      "pageCount": 96,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788478887200-M.jpg",
+      "searchKeywords": "el principito antoine de saint-exupéry ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494924279",
+      "slug": "yimulimuli-y-el-dragon-y-otros-cuentos-maravillosos-de-senegal-4279",
+      "title": "Yimulimuli y el dragón: y otros cuentos maravillosos de Senegal",
+      "authors": [
+        "Ana Cristina Herreros Ferreira",
+        "Daniel Tornero Rojo"
+      ],
+      "isbn": "9788494924279",
+      "publisher": "Libros de las Malas Compañías",
+      "publishDate": "2020-10-12",
+      "pageCount": 80,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494924279-M.jpg",
+      "searchKeywords": "yimulimuli y el dragón: y otros cuentos maravillosos de senegal ana cristina herreros ferreira daniel tornero rojo ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9780590411967",
+      "slug": "is-this-you-1967",
+      "title": "Is This You?",
+      "authors": [
+        "Ruth Krauss",
+        "Crockett Johnson"
+      ],
+      "isbn": "9780590411967",
+      "publisher": "Scholastic Trade",
+      "publishDate": "1988-01-01",
+      "pageCount": 32,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9780590411967-M.jpg",
+      "searchKeywords": "is this you? ruth krauss crockett johnson ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494601309",
+      "slug": "a-juego-lento-taller-de-poesia-1309",
+      "title": "A juego lento: Taller de poesía",
+      "authors": [
+        "Mar Benegas Ortiz",
+        "Carlos Rubio Canet"
+      ],
+      "isbn": "9788494601309",
+      "publisher": "Litera Libros",
+      "publishDate": "2016-09-16",
+      "pageCount": 96,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494601309-M.jpg",
+      "searchKeywords": "a juego lento: taller de poesía mar benegas ortiz carlos rubio canet ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788416427420",
+      "slug": "gotitas-7420",
+      "title": "Gotitas",
+      "authors": [
+        "Shinsuke Yoshitake",
+        "Mònica Somalo"
+      ],
+      "isbn": "9788416427420",
+      "publisher": "Pastel de Luna",
+      "publishDate": "2021-03-17",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788416427420-M.jpg",
+      "searchKeywords": "gotitas shinsuke yoshitake mònica somalo ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484642985",
+      "slug": "lluvia-de-cocodrilos-2985",
+      "title": "Lluvia de Cocodrilos",
+      "authors": [
+        "Maurice Sendak (Illustrator)"
+      ],
+      "isbn": "9788484642985",
+      "publisher": "Kalandraka Ediciones Andalucía, S.L.",
+      "publishDate": "2018-05-15",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484642985-M.jpg",
+      "searchKeywords": "lluvia de cocodrilos maurice sendak (illustrator) ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484643326",
+      "slug": "miguel-pierre-spanish-edition-3326",
+      "title": "Miguel / Pierre (Spanish Edition)",
+      "authors": [
+        "Maurice Sendak"
+      ],
+      "isbn": "9788484643326",
+      "publisher": "Kalandraka Editora Sl",
+      "publishDate": "2018-06-18",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484643326-M.jpg",
+      "searchKeywords": "miguel / pierre (spanish edition) maurice sendak ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9786071612182",
+      "slug": "leche-del-sueyntildeo-niyntildeos-especiales-de-a-la-orilla-del-viento-spanish-edition-2182",
+      "title": "Leche del sue&ntilde;o (ni&ntilde;os) (Especiales de a la Orilla del Viento) (Spanish Edition)",
+      "authors": [
+        "Leonora Carrington"
+      ],
+      "isbn": "9786071612182",
+      "publisher": "Fondo de Cultura Económica",
+      "publishDate": "2013-04-30",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9786071612182-M.jpg",
+      "searchKeywords": "leche del sue&ntilde;o (ni&ntilde;os) (especiales de a la orilla del viento) (spanish edition) leonora carrington ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9789681686208",
+      "slug": "kassunguila-especiales-de-a-la-orilla-del-viento-spanish-edition-6208",
+      "title": "Kassunguilà (Especiales de a la Orilla del Viento) (Spanish Edition)",
+      "authors": [
+        "Zepeda Monique"
+      ],
+      "isbn": "9789681686208",
+      "publisher": "Fondo de Cultura Económica",
+      "publishDate": "2008-12-31",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9789681686208-M.jpg",
+      "searchKeywords": "kassunguilà (especiales de a la orilla del viento) (spanish edition) zepeda monique ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788415250043",
+      "slug": "el-pez-rojo-the-little-red-fish-spanish-edition-0043",
+      "title": "El pez rojo / The Little Red Fish (Spanish Edition)",
+      "authors": [
+        "Taeun Yoo",
+        "Carlos Heras"
+      ],
+      "isbn": "9788415250043",
+      "publisher": "Faktoria K De Libros",
+      "publishDate": "2011-03-28",
+      "pageCount": 36,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788415250043-M.jpg",
+      "searchKeywords": "el pez rojo / the little red fish (spanish edition) taeun yoo carlos heras ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788496388932",
+      "slug": "el-cerdito-8932",
+      "title": "El cerdito",
+      "authors": [
+        "Arnold Lobel",
+        "Xosé Manuel González Barreiro"
+      ],
+      "isbn": "9788496388932",
+      "publisher": "Kalandraka",
+      "publishDate": "2009-08-13",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788496388932-M.jpg",
+      "searchKeywords": "el cerdito arnold lobel xosé manuel gonzález barreiro ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484645795",
+      "slug": "historias-de-ratones-mouse-tales-libros-para-sonar-books-to-dream-spanish-edition-5795",
+      "title": "Historias de ratones / Mouse Tales (Libros Para Sonar / Books to Dream) (Spanish Edition)",
+      "authors": [
+        "Arnold Lobel"
+      ],
+      "isbn": "9788484645795",
+      "publisher": "Kalandraka Editora Sl",
+      "publishDate": "2011-04-30",
+      "pageCount": 61,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484645795-M.jpg",
+      "searchKeywords": "historias de ratones / mouse tales (libros para sonar / books to dream) (spanish edition) arnold lobel ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494669996",
+      "slug": "buho-en-casa-9996",
+      "title": "Búho en Casa",
+      "authors": [
+        "Arnold Lobel"
+      ],
+      "isbn": "9788494669996",
+      "publisher": "Ekare, Ediciones",
+      "publishDate": "2017-10-01",
+      "pageCount": 64,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494669996-M.jpg",
+      "searchKeywords": "búho en casa arnold lobel ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788493803636",
+      "slug": "historias-de-conejo-y-elefante-3636",
+      "title": "Historias de Conejo y Elefante",
+      "authors": [
+        "Gustavo Roldán",
+        "Gustavo Roldán",
+        "Gustavo Roldan"
+      ],
+      "isbn": "9788493803636",
+      "publisher": "A Buen Paso S.C.P.",
+      "publishDate": "2015-03-15",
+      "pageCount": 80,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788493803636-M.jpg",
+      "searchKeywords": "historias de conejo y elefante gustavo roldán gustavo roldán gustavo roldan ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494029271",
+      "slug": "44-poemas-para-leer-con-ninos-9271",
+      "title": "44 poemas para leer con niños",
+      "authors": [
+        "Mar Benegas Ortiz"
+      ],
+      "isbn": "9788494029271",
+      "publisher": "Litera Libros",
+      "publishDate": "2013-01-01",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494029271-M.jpg",
+      "searchKeywords": "44 poemas para leer con niños mar benegas ortiz ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788417742362",
+      "slug": "pippi-la-nina-mas-fuerte-del-mundo-2362",
+      "title": "Pippi la niña más fuerte del mundo",
+      "authors": [
+        "Astrid Lindgren",
+        "Ulla Ulla Ljungström",
+        "Ingrid Vang Nyman",
+        "Ulla Ljungström",
+        "Esther Rubio Muñoz"
+      ],
+      "isbn": "9788417742362",
+      "publisher": "Editorial Kókinos",
+      "publishDate": "2021-05-12",
+      "pageCount": 32,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417742362-M.jpg",
+      "searchKeywords": "pippi la niña más fuerte del mundo astrid lindgren ulla ulla ljungström ingrid vang nyman ulla ljungström esther rubio muñoz ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788417555702",
+      "slug": "un-buen-dia-5702",
+      "title": "Un buen día",
+      "authors": [
+        "Angelina Delgado Librero",
+        "Aurora Delgado García",
+        "Daniela Martagón Calderón"
+      ],
+      "isbn": "9788417555702",
+      "publisher": "A buen paso editorial S.L.",
+      "publishDate": "2022-03-21",
+      "pageCount": 40,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417555702-M.jpg",
+      "searchKeywords": "un buen día angelina delgado librero aurora delgado garcía daniela martagón calderón ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788412756500",
+      "slug": "el-hombre-cebu-y-la-hermana-pequena-y-otros-cuentos-de-las-ninas-de-madagascar-6500",
+      "title": "El hombre cebú y la hermana pequeña: y otros cuentos de las niñas de Madagascar",
+      "authors": [
+        "Ana Cristina Herreros",
+        "Daniel Tornero"
+      ],
+      "isbn": "9788412756500",
+      "publisher": "Libros de las Malas Compañías",
+      "publishDate": "2023-11-20",
+      "pageCount": 96,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788412756500-M.jpg",
+      "searchKeywords": "el hombre cebú y la hermana pequeña: y otros cuentos de las niñas de madagascar ana cristina herreros daniel tornero ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788430578030",
+      "slug": "acertijos-chistes-y-canciones-8030",
+      "title": "Acertijos, Chistes y Canciones",
+      "authors": [
+        "Gloria Fuertes",
+        "Margarita Menéndez (Illustrator",
+        "Translator)"
+      ],
+      "isbn": "9788430578030",
+      "publisher": "Susaeta Ediciones, S.A.",
+      "publishDate": "2003-01-01",
+      "pageCount": 121,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788430578030-M.jpg",
+      "searchKeywords": "acertijos, chistes y canciones gloria fuertes margarita menéndez (illustrator translator) ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788430579877",
+      "slug": "cuentos-de-humor-9877",
+      "title": "Cuentos de Humor",
+      "authors": [
+        "Gloria Fuertes"
+      ],
+      "isbn": "9788430579877",
+      "publisher": "Susaeta Ediciones, S.A.",
+      "publishDate": "2003-01-01",
+      "pageCount": 128,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788430579877-M.jpg",
+      "searchKeywords": "cuentos de humor gloria fuertes ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494885914",
+      "slug": "madlenka-spanish-edition-5914",
+      "title": "Madlenka (Spanish Edition)",
+      "authors": [
+        "Peter Sís"
+      ],
+      "isbn": "9788494885914",
+      "publisher": "Lectorum Pubns (Juv)",
+      "publishDate": "2018-12-10",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494885914-M.jpg",
+      "searchKeywords": "madlenka (spanish edition) peter sís ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9789681636517",
+      "slug": "el-libro-de-los-cerdos-6517",
+      "title": "El Libro de los Cerdos",
+      "authors": [
+        "Anthony Browne"
+      ],
+      "isbn": "9789681636517",
+      "publisher": "Fondo de Cultura Economica USA",
+      "publishDate": "1995-12-01",
+      "pageCount": 32,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9789681636517-M.jpg",
+      "searchKeywords": "el libro de los cerdos anthony browne ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9789681636500",
+      "slug": "gorila-6500",
+      "title": "Gorila",
+      "authors": [
+        "Anthony Browne"
+      ],
+      "isbn": "9789681636500",
+      "publisher": "Fondo de Cultura Económica",
+      "publishDate": "2010-11-10",
+      "pageCount": 32,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9789681636500-M.jpg",
+      "searchKeywords": "gorila anthony browne ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494887444",
+      "slug": "la-excursion-del-senor-gumpy-7444",
+      "title": "La excursión del señor Gumpy",
+      "authors": [
+        "John Burningham",
+        "Ellen Duthie"
+      ],
+      "isbn": "9788494887444",
+      "publisher": "Galimatazo",
+      "publishDate": "2021-05-19",
+      "pageCount": 40,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494887444-M.jpg",
+      "searchKeywords": "la excursión del señor gumpy john burningham ellen duthie ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788418690204",
+      "slug": "erase-una-forma-0204",
+      "title": "Érase una forma",
+      "authors": [
+        "Cruschiform",
+        "Gazhole",
+        "Luisa Lucuix",
+        "Piu Martínez"
+      ],
+      "isbn": "9788418690204",
+      "publisher": "Editorial Barrett",
+      "publishDate": "2022-11-16",
+      "pageCount": 64,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788418690204-M.jpg",
+      "searchKeywords": "érase una forma cruschiform gazhole luisa lucuix piu martínez ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788496509566",
+      "slug": "pajaros-los-9566",
+      "title": "Pájaros, Los",
+      "authors": [
+        "Germano Zullo"
+      ],
+      "isbn": "9788496509566",
+      "publisher": "Libros del Zorro Rojo",
+      "publishDate": "2012-03-15",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788496509566-M.jpg",
+      "searchKeywords": "pájaros, los germano zullo ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484643494",
+      "slug": "la-huerta-de-simon-3494",
+      "title": "La Huerta de Simón",
+      "authors": [
+        "Rocío Alejandro"
+      ],
+      "isbn": "9788484643494",
+      "publisher": "Kalandraka Ediciones Andalucía, S.L.",
+      "publishDate": "2018-05-15",
+      "pageCount": 36,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484643494-M.jpg",
+      "searchKeywords": "la huerta de simón rocío alejandro ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788416427482",
+      "slug": "los-animales-no-deberian-vestirse-7482",
+      "title": "Los animales no deberían vestirse",
+      "authors": [
+        "Judi Barrett",
+        "Ron Barret"
+      ],
+      "isbn": "9788416427482",
+      "publisher": "Pastel de Luna",
+      "publishDate": "2022-03-02",
+      "pageCount": 36,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788416427482-M.jpg",
+      "searchKeywords": "los animales no deberían vestirse judi barrett ron barret ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494154997",
+      "slug": "la-biblioteca-nocturna-spanish-edition-4997",
+      "title": "La biblioteca nocturna (Spanish Edition)",
+      "authors": [
+        "Kazuno  Kohara"
+      ],
+      "isbn": "9788494154997",
+      "publisher": "Obelisco",
+      "publishDate": "2014-12-30",
+      "pageCount": 32,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494154997-M.jpg",
+      "searchKeywords": "la biblioteca nocturna (spanish edition) kazuno  kohara ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788417742423",
+      "slug": "todo-lo-que-brilla-2423",
+      "title": "Todo lo que brilla",
+      "authors": [
+        "Lena Sjöberg",
+        "Amanda Eda Monjonell Mansten",
+        "Dea Marie Mansten"
+      ],
+      "isbn": "9788417742423",
+      "publisher": "Editorial Kókinos",
+      "publishDate": "2022-02-16",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417742423-M.jpg",
+      "searchKeywords": "todo lo que brilla lena sjöberg amanda eda monjonell mansten dea marie mansten ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788416394999",
+      "slug": "estamos-aqui-notas-para-vivir-en-el-planeta-tierra-albumes-spanish-edition-4999",
+      "title": "Estamos aquí: Notas para vivir en el planeta Tierra (Álbumes) (Spanish Edition)",
+      "authors": [
+        "Oliver Jeffers",
+        "Anna Llisterri"
+      ],
+      "isbn": "9788416394999",
+      "publisher": "Andana Editorial",
+      "publishDate": "2018-09-12",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788416394999-M.jpg",
+      "searchKeywords": "estamos aquí: notas para vivir en el planeta tierra (álbumes) (spanish edition) oliver jeffers anna llisterri ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788493684310",
+      "slug": "wangari-y-los-arboles-de-la-paz-una-historia-verdadera-spanish-edition-4310",
+      "title": "Wangari y Los Arboles de La Paz (Una Historia Verdadera) (Spanish Edition)",
+      "authors": [
+        "Jeanette Winter"
+      ],
+      "isbn": "9788493684310",
+      "publisher": "Ekare",
+      "publishDate": "2009-08-01",
+      "pageCount": 32,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788493684310-M.jpg",
+      "searchKeywords": "wangari y los arboles de la paz (una historia verdadera) (spanish edition) jeanette winter ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788417552237",
+      "slug": "silvestre-y-la-piedra-magica-2237",
+      "title": "Silvestre y la piedra mágica",
+      "authors": [],
+      "isbn": "9788417552237",
+      "publisher": "",
+      "publishDate": "",
+      "pageCount": 44,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417552237-M.jpg",
+      "searchKeywords": "silvestre y la piedra mágica  ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9780099200413",
+      "slug": "would-you-rather-red-fox-picture-books-0413",
+      "title": "Would You Rather? (Red Fox Picture Books)",
+      "authors": [
+        "John Burningham"
+      ],
+      "isbn": "9780099200413",
+      "publisher": "Red Fox",
+      "publishDate": "1994-11-15",
+      "pageCount": 32,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9780099200413-M.jpg",
+      "searchKeywords": "would you rather? (red fox picture books) john burningham ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9786074006100",
+      "slug": "frankenstein-se-llava-el-pastel-spanish-edition-6100",
+      "title": "Frankenstein se llava el pastel (Spanish Edition)",
+      "authors": [
+        "Agapea"
+      ],
+      "isbn": "9786074006100",
+      "publisher": "Alianza",
+      "publishDate": "1900-01-01",
+      "pageCount": 40,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9786074006100-M.jpg",
+      "searchKeywords": "frankenstein se llava el pastel (spanish edition) agapea ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9789802571079",
+      "slug": "vamos-a-cazar-un-osowere-going-on-a-bear-hunt-spanish-edition-1079",
+      "title": "Vamos a Cazar UN Oso/Were Going on a Bear Hunt (Spanish Edition)",
+      "authors": [
+        "Michael Rosen"
+      ],
+      "isbn": "9789802571079",
+      "publisher": "Ediciones Ekare",
+      "publishDate": "",
+      "pageCount": 36,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9789802571079-M.jpg",
+      "searchKeywords": "vamos a cazar un oso/were going on a bear hunt (spanish edition) michael rosen ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788489804937",
+      "slug": "el-moco-rosa-y-manzana-spanish-edition-spanish-hardcover-january-1-2005-4937",
+      "title": "El moco (Rosa y manzana) (Spanish Edition)\n\n\n\n(Spanish) Hardcover – January 1, 2005",
+      "authors": [],
+      "isbn": "9788489804937",
+      "publisher": "",
+      "publishDate": "",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788489804937-M.jpg",
+      "searchKeywords": "el moco (rosa y manzana) (spanish edition)\n\n\n\n(spanish) hardcover – january 1, 2005  ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494154928",
+      "slug": "la-casa-encantada-spanish-edition-4928",
+      "title": "La casa encantada (Spanish Edition)",
+      "authors": [
+        "Kazuno  Kohara"
+      ],
+      "isbn": "9788494154928",
+      "publisher": "Obelisco",
+      "publishDate": "2014-04-30",
+      "pageCount": 32,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494154928-M.jpg",
+      "searchKeywords": "la casa encantada (spanish edition) kazuno  kohara ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788416117789",
+      "slug": "mi-mono-y-yo-spanish-edition-7789",
+      "title": "Mi mono y yo (Spanish Edition)",
+      "authors": [
+        "Emily Gravett"
+      ],
+      "isbn": "9788416117789",
+      "publisher": "Obelisco",
+      "publishDate": "2016-08-31",
+      "pageCount": 32,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788416117789-M.jpg",
+      "searchKeywords": "mi mono y yo (spanish edition) emily gravett ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788426136718",
+      "slug": "cuidado-con-la-rana-spanish-edition-spanish-hardcover-june-30-2011-6718",
+      "title": "Cuidado con la rana (Spanish Edition)\n\n\n\n(Spanish) Hardcover – June 30, 2011",
+      "authors": [],
+      "isbn": "9788426136718",
+      "publisher": "",
+      "publishDate": "",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788426136718-M.jpg",
+      "searchKeywords": "cuidado con la rana (spanish edition)\n\n\n\n(spanish) hardcover – june 30, 2011  ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788426398567",
+      "slug": "alicia-para-los-pequenos-8567",
+      "title": "Alicia para los pequeños",
+      "authors": [],
+      "isbn": "9788426398567",
+      "publisher": "",
+      "publishDate": "",
+      "pageCount": 72,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788426398567-M.jpg",
+      "searchKeywords": "alicia para los pequeños  ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788412060089",
+      "slug": "los-carpinchos-spanish-edition-spanish-hardcover-february-1-2020-0089",
+      "title": "Los carpinchos (Spanish Edition)\n\n\n\n(Spanish) Hardcover – February 1, 2020",
+      "authors": [
+        "Alfredo Soderguit"
+      ],
+      "isbn": "9788412060089",
+      "publisher": "",
+      "publishDate": "2020-01-01",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788412060089-M.jpg",
+      "searchKeywords": "los carpinchos (spanish edition)\n\n\n\n(spanish) hardcover – february 1, 2020 alfredo soderguit ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788493892739",
+      "slug": "yo-quiero-mi-gorro-spanish-edition-2739",
+      "title": "Yo quiero mi gorro (Spanish Edition)",
+      "authors": [
+        "Jon Klassen",
+        "Jesús Ortiz Pérez del Molino"
+      ],
+      "isbn": "9788493892739",
+      "publisher": "Editorial Milrazones",
+      "publishDate": "2012-04-01",
+      "pageCount": 36,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788493892739-M.jpg",
+      "searchKeywords": "yo quiero mi gorro (spanish edition) jon klassen jesús ortiz pérez del molino ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484649205",
+      "slug": "chancho-pancho-9205",
+      "title": "Chancho-Pancho",
+      "authors": [
+        "Maurice Sendak"
+      ],
+      "isbn": "9788484649205",
+      "publisher": "Kalandraka Editora",
+      "publishDate": "2015-06-01",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484649205-M.jpg",
+      "searchKeywords": "chancho-pancho maurice sendak ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494313479",
+      "slug": "si-yo-fuera-mayor-3479",
+      "title": "Si yo fuera mayor...",
+      "authors": [
+        "JANIKOVSZKY EVA"
+      ],
+      "isbn": "9788494313479",
+      "publisher": "COLOFON, S.A.",
+      "publishDate": "2014-01-01",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494313479-M.jpg",
+      "searchKeywords": "si yo fuera mayor... janikovszky eva ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788419475336",
+      "slug": "domingo-5336",
+      "title": "Domingo",
+      "authors": [
+        "Marcelo Tolentino",
+        "Esther Rubio Muñoz"
+      ],
+      "isbn": "9788419475336",
+      "publisher": "Editorial Kókinos",
+      "publishDate": "2023-06-28",
+      "pageCount": 60,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788419475336-M.jpg",
+      "searchKeywords": "domingo marcelo tolentino esther rubio muñoz ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788487680878",
+      "slug": "el-ratoncito-valiente-0878",
+      "title": "El ratoncito Valiente",
+      "authors": [
+        "Michael Catchpool",
+        "Jill Newton"
+      ],
+      "isbn": "9788487680878",
+      "publisher": "Artime Ediciones Infantil",
+      "publishDate": "2006-01-01",
+      "pageCount": 32,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788487680878-M.jpg",
+      "searchKeywords": "el ratoncito valiente michael catchpool jill newton ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484706199",
+      "slug": "el-gran-libro-verde-spanish-edition-6199",
+      "title": "EL GRAN LIBRO VERDE (Spanish Edition)",
+      "authors": [
+        "MAURICE GRAVES",
+        "ROBERT &amp; SENDAK"
+      ],
+      "isbn": "9788484706199",
+      "publisher": "Editorial Corimbo S.L.",
+      "publishDate": "2020-11-11",
+      "pageCount": 64,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484706199-M.jpg",
+      "searchKeywords": "el gran libro verde (spanish edition) maurice graves robert &amp; sendak ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484641971",
+      "slug": "oliver-button-es-una-nena-1971",
+      "title": "Oliver Button Es Una Nena",
+      "authors": [
+        "Tomie dePaola"
+      ],
+      "isbn": "9788484641971",
+      "publisher": "",
+      "publishDate": "2020-02-01",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484641971-M.jpg",
+      "searchKeywords": "oliver button es una nena tomie depaola ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788417742669",
+      "slug": "caramelos-magicos-2669",
+      "title": "Caramelos mágicos",
+      "authors": [
+        "Heena Baek",
+        "Seong Cholim",
+        "Eunhee Kwon"
+      ],
+      "isbn": "9788417742669",
+      "publisher": "Editorial Kókinos",
+      "publishDate": "2021-11-24",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417742669-M.jpg",
+      "searchKeywords": "caramelos mágicos heena baek seong cholim eunhee kwon ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788417617851",
+      "slug": "yo-quiero-un-perro-el-que-sea-me-da-igual-7851",
+      "title": "Yo quiero un perro: ¡¡El que sea, me da igual!!",
+      "authors": [
+        "Kitty Crowther",
+        "Joana Carro Pérez",
+        "César Sánchez Rodríguez"
+      ],
+      "isbn": "9788417617851",
+      "publisher": "Fulgencio Pimentel S.L.",
+      "publishDate": "2021-10-04",
+      "pageCount": 52,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417617851-M.jpg",
+      "searchKeywords": "yo quiero un perro: ¡¡el que sea, me da igual!! kitty crowther joana carro pérez césar sánchez rodríguez ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484704850",
+      "slug": "el-gnomo-que-no-duerme-spanish-edition-4850",
+      "title": "El gnomo que no duerme (Spanish Edition)",
+      "authors": [
+        "Lingdren & Crowther"
+      ],
+      "isbn": "9788484704850",
+      "publisher": "Lectorum Pubns (Juv)",
+      "publishDate": "2014-03-28",
+      "pageCount": 28,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484704850-M.jpg",
+      "searchKeywords": "el gnomo que no duerme (spanish edition) lingdren & crowther ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484648611",
+      "slug": "al-otro-lado-8611",
+      "title": "Al Otro Lado",
+      "authors": [
+        "Maurice Sendak"
+      ],
+      "isbn": "9788484648611",
+      "publisher": "Kalandraka Ediciones Andalucía, S.L.",
+      "publishDate": "2016-03-10",
+      "pageCount": 40,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484648611-M.jpg",
+      "searchKeywords": "al otro lado maurice sendak ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484648581",
+      "slug": "donde-viven-los-monstruos-8581",
+      "title": "DONDE VIVEN LOS MONSTRUOS",
+      "authors": [
+        "Maurice Sendak"
+      ],
+      "isbn": "9788484648581",
+      "publisher": "",
+      "publishDate": "2014-04-01",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484648581-M.jpg",
+      "searchKeywords": "donde viven los monstruos maurice sendak ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788484648512",
+      "slug": "la-cocina-de-noche-8512",
+      "title": "La cocina de noche",
+      "authors": [
+        "Maurice Sendak"
+      ],
+      "isbn": "9788484648512",
+      "publisher": "",
+      "publishDate": "2014-03-01",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788484648512-M.jpg",
+      "searchKeywords": "la cocina de noche maurice sendak ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788411780735",
+      "slug": "pequenoyampgrande-salvador-dali-0735",
+      "title": "Pequeño&amp;Grande Salvador Dalí",
+      "authors": [
+        "María Isabel Sánchez Vegara",
+        "Mariona Tolosa Sisteré"
+      ],
+      "isbn": "9788411780735",
+      "publisher": "Alba Editorial",
+      "publishDate": "2024-05-15",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788411780735-M.jpg",
+      "searchKeywords": "pequeño&amp;grande salvador dalí maría isabel sánchez vegara mariona tolosa sisteré ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788490655603",
+      "slug": "pequeno-yamp-grande-federico-garcia-lorca-spanish-edition-5603",
+      "title": "Pequeño &amp; Grande Federico García Lorca (Spanish Edition)",
+      "authors": [
+        "María Isabel Sánchez Vegara",
+        "Alfonso Casas Moreno"
+      ],
+      "isbn": "9788490655603",
+      "publisher": "Alba Editorial",
+      "publishDate": "2019-04-03",
+      "pageCount": 32,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788490655603-M.jpg",
+      "searchKeywords": "pequeño &amp; grande federico garcía lorca (spanish edition) maría isabel sánchez vegara alfonso casas moreno ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788417555641",
+      "slug": "un-libro-de-la-selva-5641",
+      "title": "Un libro de la selva",
+      "authors": [
+        "Fernando Vázquez Mahía"
+      ],
+      "isbn": "9788417555641",
+      "publisher": "A buen paso editorial S.L.",
+      "publishDate": "2022-03-07",
+      "pageCount": 60,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417555641-M.jpg",
+      "searchKeywords": "un libro de la selva fernando vázquez mahía ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788416427253",
+      "slug": "me-aburro-7253",
+      "title": "Me aburro",
+      "authors": [],
+      "isbn": "9788416427253",
+      "publisher": "",
+      "publishDate": "",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788416427253-M.jpg",
+      "searchKeywords": "me aburro  ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788416427512",
+      "slug": "piensa-7512",
+      "title": "Piensa",
+      "authors": [
+        "Shinsuke Yoshitake",
+        "Natalia Asano Cubi"
+      ],
+      "isbn": "9788416427512",
+      "publisher": "Pastel de Luna",
+      "publishDate": "2022-04-06",
+      "pageCount": 52,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788416427512-M.jpg",
+      "searchKeywords": "piensa shinsuke yoshitake natalia asano cubi ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788412060027",
+      "slug": "madre-medusa-spanish-edition-0027",
+      "title": "Madre Medusa (Spanish Edition)",
+      "authors": [
+        "Kitty Crowther",
+        "María Carolina Concha"
+      ],
+      "isbn": "9788412060027",
+      "publisher": "LECTORUM PUBLICATIONS INC.",
+      "publishDate": "2020-02-01",
+      "pageCount": 44,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788412060027-M.jpg",
+      "searchKeywords": "madre medusa (spanish edition) kitty crowther maría carolina concha ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494498800",
+      "slug": "el-bosco-la-extrana-historia-de-hieronymus-el-gorro-la-mochila-y-la-pelota-spanish-1st-edition-8800",
+      "title": "El Bosco: La extraña historia de Hieronymus, el gorro, la mochila y la pelota\n\n\n\n(Spanish) 1st Edition",
+      "authors": [],
+      "isbn": "9788494498800",
+      "publisher": "",
+      "publishDate": "",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494498800-M.jpg",
+      "searchKeywords": "el bosco: la extraña historia de hieronymus, el gorro, la mochila y la pelota\n\n\n\n(spanish) 1st edition  ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494222870",
+      "slug": "sales-a-jugar-2870",
+      "title": "¿Sales a jugar?",
+      "authors": [
+        "María Pascual"
+      ],
+      "isbn": "9788494222870",
+      "publisher": "Narval",
+      "publishDate": "2015-01-01",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494222870-M.jpg",
+      "searchKeywords": "¿sales a jugar? maría pascual ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788417303822",
+      "slug": "un-final-inesperado-3822",
+      "title": "Un final inesperado",
+      "authors": [
+        "Jérôme Camil",
+        "Jerome Camil"
+      ],
+      "isbn": "9788417303822",
+      "publisher": "Tramuntana Editorial",
+      "publishDate": "2020-09-28",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417303822-M.jpg",
+      "searchKeywords": "un final inesperado jérôme camil jerome camil ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788493486358",
+      "slug": "la-merienda-del-senor-verde-the-snack-of-mrgreen-spanish-edition-6358",
+      "title": "La Merienda del Senor Verde = The Snack of Mr.Green (Spanish Edition)",
+      "authors": [
+        "Javier Saez Castan"
+      ],
+      "isbn": "9788493486358",
+      "publisher": "Ekare",
+      "publishDate": "2007-09-01",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788493486358-M.jpg",
+      "searchKeywords": "la merienda del senor verde = the snack of mr.green (spanish edition) javier saez castan ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9780064434010",
+      "slug": "caps-for-sale-se-venden-gorras-reading-rainbow-book-spanish-edition-4010",
+      "title": "Caps For Sale / Se Venden Gorras (Reading Rainbow Book) (Spanish Edition)",
+      "authors": [
+        "Esphyr Slobodkina"
+      ],
+      "isbn": "9780064434010",
+      "publisher": "Rayo",
+      "publishDate": "2000-10-24",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9780064434010-M.jpg",
+      "searchKeywords": "caps for sale / se venden gorras (reading rainbow book) (spanish edition) esphyr slobodkina ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9789802572557",
+      "slug": "siete-ratones-ciegos-seven-blind-mice-spanish-edition-2557",
+      "title": "Siete ratones ciegos / Seven Blind Mice (Spanish Edition)",
+      "authors": [
+        "Ed Young",
+        "Veronica Uribe"
+      ],
+      "isbn": "9789802572557",
+      "publisher": "Ediciones Ekare",
+      "publishDate": "2001-01-01",
+      "pageCount": 40,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9789802572557-M.jpg",
+      "searchKeywords": "siete ratones ciegos / seven blind mice (spanish edition) ed young veronica uribe ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788416167562",
+      "slug": "la-cena-con-la-reina-7562",
+      "title": "La cena con la reina",
+      "authors": [
+        "Rutu Modan"
+      ],
+      "isbn": "9788416167562",
+      "publisher": "Fulgencio Pimentel S.L.",
+      "publishDate": "2017-01-01",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788416167562-M.jpg",
+      "searchKeywords": "la cena con la reina rutu modan ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788417555146",
+      "slug": "contar-5146",
+      "title": "Contar",
+      "authors": [
+        "Pep Bruno Galán",
+        "Andrea Antinori"
+      ],
+      "isbn": "9788417555146",
+      "publisher": "A buen paso editorial S.L.",
+      "publishDate": "2019-03-25",
+      "pageCount": 48,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417555146-M.jpg",
+      "searchKeywords": "contar pep bruno galán andrea antinori ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9789802573097",
+      "slug": "beso-beso-spanish-edition-3097",
+      "title": "Beso, Beso (Spanish Edition)",
+      "authors": [
+        "Margaret Wild",
+        "Veronica Uribe"
+      ],
+      "isbn": "9789802573097",
+      "publisher": "Ediciones Ekare",
+      "publishDate": "2005-04-30",
+      "pageCount": 24,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9789802573097-M.jpg",
+      "searchKeywords": "beso, beso (spanish edition) margaret wild veronica uribe ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788417028770",
+      "slug": "bicho-pelota-8770",
+      "title": "Bicho Pelota",
+      "authors": [
+        "Olga de Dios"
+      ],
+      "isbn": "9788417028770",
+      "publisher": "APILA Ediciones",
+      "publishDate": "2023-03-01",
+      "pageCount": 36,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788417028770-M.jpg",
+      "searchKeywords": "bicho pelota olga de dios ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788415208884",
+      "slug": "el-mulero-8884",
+      "title": "El mulero",
+      "authors": [
+        "ELLIS CARSON"
+      ],
+      "isbn": "9788415208884",
+      "publisher": "BARBARA FIORE",
+      "publishDate": "2014-01-01",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788415208884-M.jpg",
+      "searchKeywords": "el mulero ellis carson ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788496388550",
+      "slug": "chivos-chivones-8550",
+      "title": "CHIVOS CHIVONES",
+      "authors": [
+        "Federico Fernández (Illustrator)"
+      ],
+      "isbn": "9788496388550",
+      "publisher": "Kalandraka Editora, S.L.",
+      "publishDate": "2006-12-01",
+      "pageCount": 34,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788496388550-M.jpg",
+      "searchKeywords": "chivos chivones federico fernández (illustrator) ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788496388567",
+      "slug": "los-tres-bandidos-8567",
+      "title": "Los Tres Bandidos",
+      "authors": [
+        "Tomi Ungerer"
+      ],
+      "isbn": "9788496388567",
+      "publisher": "Kalandraka Editora, S.L.",
+      "publishDate": "2007-02-01",
+      "pageCount": 40,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788496388567-M.jpg",
+      "searchKeywords": "los tres bandidos tomi ungerer ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9786075570457",
+      "slug": "porque-si-0457",
+      "title": "Porque sí",
+      "authors": [
+        "Mac Barnett",
+        "Isabelle Arsenault (Illustrator)"
+      ],
+      "isbn": "9786075570457",
+      "publisher": "Editorial Oceano de Mexico",
+      "publishDate": "2021-04-01",
+      "pageCount": 40,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9786075570457-M.jpg",
+      "searchKeywords": "porque sí mac barnett isabelle arsenault (illustrator) ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788493598259",
+      "slug": "dientes-8259",
+      "title": "DIENTES",
+      "authors": [],
+      "isbn": "9788493598259",
+      "publisher": "MEDIA VACA (BABEL LIBROS SAS)",
+      "publishDate": "",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788493598259-M.jpg",
+      "searchKeywords": "dientes  ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788493598273",
+      "slug": "ombligo-mapa-cuer-6-mvaca-8273",
+      "title": "OMBLIGO MAPA-CUER 6 M.VACA",
+      "authors": [
+        "Genichiro Yagyu"
+      ],
+      "isbn": "9788493598273",
+      "publisher": "MEDIA VACA",
+      "publishDate": "2008-01-01",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788493598273-M.jpg",
+      "searchKeywords": "ombligo mapa-cuer 6 m.vaca genichiro yagyu ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788493375911",
+      "slug": "frederick-5911",
+      "title": "Frederick",
+      "authors": [
+        "VARIOS AUTORES"
+      ],
+      "isbn": "9788493375911",
+      "publisher": "Tecolote",
+      "publishDate": "2012-01-01",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788493375911-M.jpg",
+      "searchKeywords": "frederick varios autores ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788494744648",
+      "slug": "malacatu-4648",
+      "title": "¡Malacatú!",
+      "authors": [
+        "María Pascual de la Torre"
+      ],
+      "isbn": "9788494744648",
+      "publisher": "A buen paso editorial S.L.",
+      "publishDate": "2018-02-14",
+      "pageCount": 44,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788494744648-M.jpg",
+      "searchKeywords": "¡malacatú! maría pascual de la torre ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788467537949",
+      "slug": "los-mamuts-los-ogros-y-los-extraterrestres-albumes-ilustrados-spanish-edition-7949",
+      "title": "Los mamuts, los ogros y los extraterrestres (Albumes ilustrados) (Spanish Edition)",
+      "authors": [
+        "Alex Cousseau",
+        "Nathalie Choux",
+        "Teresa Tellechea"
+      ],
+      "isbn": "9788467537949",
+      "publisher": "EDICIONES SM",
+      "publishDate": "2009-12-16",
+      "pageCount": 40,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788467537949-M.jpg",
+      "searchKeywords": "los mamuts, los ogros y los extraterrestres (albumes ilustrados) (spanish edition) alex cousseau nathalie choux teresa tellechea ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788418762338",
+      "slug": "hay-un-fantasma-en-esta-casa-2338",
+      "title": "Hay un fantasma en esta casa",
+      "authors": [
+        "Oliver Jeffers",
+        "Antoinio Díaz Pérez"
+      ],
+      "isbn": "9788418762338",
+      "publisher": "Andana Editorial",
+      "publishDate": "2022-08-25",
+      "pageCount": 84,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788418762338-M.jpg",
+      "searchKeywords": "hay un fantasma en esta casa oliver jeffers antoinio díaz pérez ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788416167524",
+      "slug": "yokai-7524",
+      "title": "Yôkai",
+      "authors": [
+        "Carmen Chica",
+        "Manuel Marsol"
+      ],
+      "isbn": "9788416167524",
+      "publisher": "Fulgencio Pimentel S.L.",
+      "publishDate": "2017-10-02",
+      "pageCount": 54,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788416167524-M.jpg",
+      "searchKeywords": "yôkai carmen chica manuel marsol ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
+    },
+    {
+      "id": "book-9788493729578",
+      "slug": "en-el-cine-9578",
+      "title": "EN EL CINE",
+      "authors": [
+        "KITTY CROWTHER"
+      ],
+      "isbn": "9788493729578",
+      "publisher": "LOS CUATRO AZULES",
+      "publishDate": "1900-01-01",
+      "pageCount": null,
+      "ageRange": {
+        "min": null,
+        "max": null
+      },
+      "personalTags": [],
+      "rating": null,
+      "price": null,
+      "personalNotes": "",
+      "readStatus": {
+        "isRead": true,
+        "readByAll": false,
+        "familyNotes": ""
+      },
+      "addedDate": "2026-01-05",
+      "coverUrl": "https://covers.openlibrary.org/b/isbn/9788493729578-M.jpg",
+      "searchKeywords": "en el cine kitty crowther ",
+      "isTraveler": false,
+      "isArtBook": false,
+      "isRecent": true,
+      "isFavorite": false
     }
   ],
   "ageGroups": [
@@ -372,7 +3943,8 @@
       "booksInCollection": [
         {
           "title": "Cualquiera de Anthony Brown: Gorila o El cuento de los cerdos.",
-          "inCollection": false
+          "inCollection": true,
+          "slug": "gorila-6500"
         },
         {
           "title": "Madre Medusa Kitty Crowther.",
@@ -380,7 +3952,8 @@
         },
         {
           "title": "Arnold Lobel: Historia de ratones Sapo y Sepo o Búho en casa.",
-          "inCollection": false
+          "inCollection": true,
+          "slug": "buho-en-casa-9996"
         },
         {
           "title": "Cuatro romances Imapla. Poético.",
@@ -400,7 +3973,8 @@
         },
         {
           "title": "La cena con la reina Rutu Modan. Divertido.",
-          "inCollection": false
+          "inCollection": true,
+          "slug": "la-cena-con-la-reina-7562"
         },
         {
           "title": "Si yo fuera mayor Eva Janikovsky. Divertido.",
@@ -424,7 +3998,8 @@
         },
         {
           "title": "Frederick Leo Lionni.",
-          "inCollection": false
+          "inCollection": true,
+          "slug": "frederick-5911"
         },
         {
           "title": "El Bosco. La extraña historia de Hyeronimus. Thé Tjong-Khing. Aventuras.",
@@ -432,7 +4007,8 @@
         },
         {
           "title": "Un final inesperado. Jerome Camil. Divertido.",
-          "inCollection": false
+          "inCollection": true,
+          "slug": "un-final-inesperado-3822"
         },
         {
           "title": "Zorrito Editorial Pípara. Ilustraciones originales y bonitas.",
@@ -469,7 +4045,8 @@
       "booksInCollection": [
         {
           "title": "Cualquiera de Anthony Brown: Gorila o El cuento de los cerdos.",
-          "inCollection": false
+          "inCollection": true,
+          "slug": "gorila-6500"
         },
         {
           "title": "cuentos de mamá osa Kitty Crowther. (Indispensable)",
@@ -477,7 +4054,8 @@
         },
         {
           "title": "Arnold Lobel: Historia de ratones Sapo y Sepo o Búho en casa. (De lo mejor que hay en literatura infantil) para leer todas las noches.",
-          "inCollection": false
+          "inCollection": true,
+          "slug": "buho-en-casa-9996"
         },
         {
           "title": "Cuatro romances Imapla. Poético.",
@@ -497,7 +4075,8 @@
         },
         {
           "title": "La cena con la reina Rutu Modan. Divertido.",
-          "inCollection": false
+          "inCollection": true,
+          "slug": "la-cena-con-la-reina-7562"
         },
         {
           "title": "Si yo fuera mayor Eva Janikovsky. Divertido.",
@@ -509,7 +4088,8 @@
         },
         {
           "title": "Dos ratones de Sergio Ruzzier.",
-          "inCollection": false
+          "inCollection": true,
+          "slug": "dos-ratones-3894"
         },
         {
           "title": "¿Yo y mi gato Satoshi Kitamura.",
@@ -521,7 +4101,8 @@
         },
         {
           "title": "Frederick Leo Lionni.",
-          "inCollection": false
+          "inCollection": true,
+          "slug": "frederick-5911"
         },
         {
           "title": "El Bosco. La extraña historia de Hyeronimus. Thé Tjong-Khing. Aventuras.",
@@ -529,7 +4110,8 @@
         },
         {
           "title": "Un final inesperado. Jerome Camil. Divertido.",
-          "inCollection": false
+          "inCollection": true,
+          "slug": "un-final-inesperado-3822"
         },
         {
           "title": "Zorrito Editorial Pípara. Ilustraciones originales y bonitas. (Este para un poco mayor también vale, o para filosofar)",
@@ -565,26 +4147,247 @@
         },
         {
           "title": "“Gotitas” shinsuke yositake. O cualquiera de este autor como “piensa” o “ese robot soy yo”",
-          "inCollection": false
+          "inCollection": true,
+          "slug": "gotitas-7420"
         }
       ]
     }
   ],
-  "frequentAuthors": [],
+  "frequentAuthors": [
+    {
+      "name": "Maurice Sendak",
+      "count": 5,
+      "books": [
+        "Miguel / Pierre (Spanish Edition)",
+        "Chancho-Pancho",
+        "Al Otro Lado"
+      ]
+    },
+    {
+      "name": "Jon Klassen",
+      "count": 3,
+      "books": [
+        "La calavera",
+        "El lobo, el pato y el ratón",
+        "Yo quiero mi gorro (Spanish Edition)"
+      ]
+    },
+    {
+      "name": "Mar Benegas",
+      "count": 3,
+      "books": [
+        "Que Sonaran Las Camas? (Spanish Edition)",
+        "Cosas Que Parecen Cosas",
+        "Oso y Ratón"
+      ]
+    },
+    {
+      "name": "Astrid Lindgren",
+      "count": 3,
+      "books": [
+        "Mi mundo perdido",
+        "Mío, mi querido Mío",
+        "Pippi la niña más fuerte del mundo"
+      ]
+    },
+    {
+      "name": "Arnold Lobel",
+      "count": 3,
+      "books": [
+        "El cerdito",
+        "Historias de ratones / Mouse Tales (Libros Para Sonar / Books to Dream) (Spanish Edition)",
+        "Búho en Casa"
+      ]
+    },
+    {
+      "name": "Manuel Marsol",
+      "count": 2,
+      "books": [
+        "Duelo al sol",
+        "Yôkai"
+      ]
+    },
+    {
+      "name": "Equipo Kókinos",
+      "count": 2,
+      "books": [
+        "Mi mundo perdido",
+        "Mío, mi querido Mío"
+      ]
+    },
+    {
+      "name": "Mac Barnett",
+      "count": 2,
+      "books": [
+        "El lobo, el pato y el ratón",
+        "Porque sí"
+      ]
+    },
+    {
+      "name": "César Sánchez Rodríguez",
+      "count": 2,
+      "books": [
+        "Melancolía",
+        "Yo quiero un perro: ¡¡El que sea, me da igual!!"
+      ]
+    },
+    {
+      "name": "Joana Carro Pérez",
+      "count": 2,
+      "books": [
+        "Melancolía",
+        "Yo quiero un perro: ¡¡El que sea, me da igual!!"
+      ]
+    },
+    {
+      "name": "María Pascual de la Torre",
+      "count": 2,
+      "books": [
+        "¿Así o así?",
+        "¡Malacatú!"
+      ]
+    },
+    {
+      "name": "Tomi Ungerer",
+      "count": 2,
+      "books": [
+        "Rufus el Murcielago Que Adoraba Los Colores",
+        "Los Tres Bandidos"
+      ]
+    },
+    {
+      "name": "Margaret Wild",
+      "count": 2,
+      "books": [
+        "Zorro",
+        "Beso, Beso (Spanish Edition)"
+      ]
+    },
+    {
+      "name": "Ana Cristina Herreros",
+      "count": 2,
+      "books": [
+        "La asombrosa y verdadera historia de un ratón llamado Pérez",
+        "El hombre cebú y la hermana pequeña: y otros cuentos de las niñas de Madagascar"
+      ]
+    },
+    {
+      "name": "Mar Benegas Ortiz",
+      "count": 2,
+      "books": [
+        "A juego lento: Taller de poesía",
+        "44 poemas para leer con niños"
+      ]
+    },
+    {
+      "name": "Shinsuke Yoshitake",
+      "count": 2,
+      "books": [
+        "Gotitas",
+        "Piensa"
+      ]
+    },
+    {
+      "name": "Gustavo Roldán",
+      "count": 2,
+      "books": [
+        "Historias de Conejo y Elefante",
+        "Historias de Conejo y Elefante"
+      ]
+    },
+    {
+      "name": "Esther Rubio Muñoz",
+      "count": 2,
+      "books": [
+        "Pippi la niña más fuerte del mundo",
+        "Domingo"
+      ]
+    },
+    {
+      "name": "Gloria Fuertes",
+      "count": 2,
+      "books": [
+        "Acertijos, Chistes y Canciones",
+        "Cuentos de Humor"
+      ]
+    },
+    {
+      "name": "Anthony Browne",
+      "count": 2,
+      "books": [
+        "El Libro de los Cerdos",
+        "Gorila"
+      ]
+    },
+    {
+      "name": "John Burningham",
+      "count": 2,
+      "books": [
+        "La excursión del señor Gumpy",
+        "Would You Rather? (Red Fox Picture Books)"
+      ]
+    },
+    {
+      "name": "Kazuno  Kohara",
+      "count": 2,
+      "books": [
+        "La biblioteca nocturna (Spanish Edition)",
+        "La casa encantada (Spanish Edition)"
+      ]
+    },
+    {
+      "name": "Oliver Jeffers",
+      "count": 2,
+      "books": [
+        "Estamos aquí: Notas para vivir en el planeta Tierra (Álbumes) (Spanish Edition)",
+        "Hay un fantasma en esta casa"
+      ]
+    },
+    {
+      "name": "Kitty Crowther",
+      "count": 2,
+      "books": [
+        "Yo quiero un perro: ¡¡El que sea, me da igual!!",
+        "Madre Medusa (Spanish Edition)"
+      ]
+    },
+    {
+      "name": "María Isabel Sánchez Vegara",
+      "count": 2,
+      "books": [
+        "Pequeño&amp;Grande Salvador Dalí",
+        "Pequeño &amp; Grande Federico García Lorca (Spanish Edition)"
+      ]
+    },
+    {
+      "name": "Veronica Uribe",
+      "count": 2,
+      "books": [
+        "Siete ratones ciegos / Seven Blind Mice (Spanish Edition)",
+        "Beso, Beso (Spanish Edition)"
+      ]
+    }
+  ],
   "pichuCorner": {
     "featuredBookId": "book-9788417617141",
     "anecdote": "Este libro tiene una historia especial en nuestra familia...",
     "lastUpdated": "2025-12-30"
   },
   "stats": {
-    "totalBooks": 11,
-    "totalAuthors": 15,
+    "totalBooks": 121,
+    "totalAuthors": 148,
     "booksWithNotes": 6,
     "averageRating": 4.25,
     "booksByCountry": {
-      "España": 0,
+      "España": 17,
       "Costa Rica": 1,
-      "Internacional": 11
+      "Internacional": 104
+    },
+    "poeticCategories": {
+      "recentArrivals": 121,
+      "favorites": 2,
+      "travelers": 2,
+      "artBooks": 4
     }
   }
 }
