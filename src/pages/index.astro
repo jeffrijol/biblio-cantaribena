@@ -6,6 +6,7 @@ import CountdownTimer from "../components/Countdown/CountdownTimer.astro";
 import Snowflake from "../components/Countdown/Snowflake.astro";
 import BookPreview from "../components/Countdown/BookPreview.astro";
 import Typography from "../components/UI/Typography.astro";
+import TransitionPortal from "../components/TransitionPortal.astro";
 import content from "../data/countdown-content.json";
 import { getTimeUntilReveal, getHintForDay } from "../lib/utils";
 
@@ -144,7 +145,11 @@ const previewBooks = validCovers.slice(0, 4);
 					</Typography>
 					<CountdownTimer />
 					<Typography as="p" variant="caption" class="countdown-hint">
-						{content.countdownConfig.hintText}
+						{
+							timeLeft.hasArrived
+								? "¡La magia se ha revelado! Explora tu nueva biblioteca."
+								: content.countdownConfig.hintText
+						}
 					</Typography>
 					<div class="hints-preview">
 						{
@@ -202,6 +207,8 @@ const previewBooks = validCovers.slice(0, 4);
 				</div>
 			</div>
 		</footer>
+
+		<TransitionPortal />
 	</main>
 
 	<!-- Script para interactividad -->

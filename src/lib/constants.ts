@@ -1,6 +1,5 @@
 // src/lib/constants.ts
-export const REVEAL_DATE = new Date('2026-01-06T00:00:00'); // Día de Reyes
-
+export const REVEAL_DATE = new Date('2026-01-06T00:34:00'); // Día de Reyes
 export const COLORS = {
     primary: {
         light: '#E6F2FF',     // Celeste muy claro

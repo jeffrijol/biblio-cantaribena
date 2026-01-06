@@ -1,0 +1,158 @@
+---
+// Test page for the transition portal
+// Navigate to /test-portal to preview it
+import TransitionPortal from "../components/TransitionPortal.astro";
+import bookCovers from "../data/bookCovers.json";
+
+const validCovers = bookCovers
+    .filter((b) => b.hasCover && b.localUrl !== "/images/library-cover.svg")
+    .sort(() => Math.random() - 0.5);
+
+const previewBooks = validCovers.slice(0, 4);
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Test Portal - Biblioteca Cantaribeña</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 20px;
+                font-family: "Inter", sans-serif;
+                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+                color: white;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .test-controls {
+                text-align: center;
+                margin-bottom: 2rem;
+                padding: 2rem;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+                backdrop-filter: blur(10px);
+            }
+
+            h1 {
+                margin: 0 0 1rem 0;
+                font-size: 2rem;
+            }
+
+            p {
+                margin: 0 0 1.5rem 0;
+                opacity: 0.8;
+            }
+
+            .btn {
+                padding: 0.75rem 1.5rem;
+                border-radius: 8px;
+                border: none;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                margin: 0.5rem;
+                transition: all 0.3s ease;
+            }
+
+            .btn-primary {
+                background: linear-gradient(135deg, #ffb703 0%, #fb8500 100%);
+                color: white;
+            }
+
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba(255, 183, 3, 0.3);
+            }
+
+            .btn-secondary {
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .btn-secondary:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+
+            .info {
+                margin-top: 1rem;
+                padding: 1rem;
+                background: rgba(34, 211, 238, 0.1);
+                border-left: 3px solid #22d3ee;
+                border-radius: 4px;
+                text-align: left;
+                max-width: 500px;
+            }
+
+            code {
+                background: rgba(0, 0, 0, 0.3);
+                padding: 0.2rem 0.5rem;
+                border-radius: 4px;
+                font-family: "Courier New", monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="test-controls">
+            <h1>🧪 Test Portal de Transición</h1>
+            <p>
+                Prueba el portal de los Reyes Magos sin esperar a la fecha de
+                revelación
+            </p>
+
+            <button class="btn btn-primary" id="showPortal">
+                ✨ Mostrar Portal
+            </button>
+            <button class="btn btn-secondary" id="resetPortal">
+                🔄 Resetear Estado
+            </button>
+
+            <div class="info">
+                <strong>💡 Consejos:</strong><br />
+                • Haz clic en "Mostrar Portal" para verlo instantáneamente<br />
+                • Usa "Resetear Estado" si ya lo cerraste y quieres verlo de nuevo<br
+                />
+                • En consola: <code>localStorage.removeItem('portalShown')</code
+                > para resetear manualmente
+            </div>
+        </div>
+
+        <TransitionPortal />
+
+        <script>
+            // @ts-nocheck
+            const showBtn = document.getElementById("showPortal");
+            const resetBtn = document.getElementById("resetPortal");
+            const portal = document.getElementById("transitionPortal");
+
+            showBtn?.addEventListener("click", () => {
+                if (portal) {
+                    portal.style.display = "block";
+                    setTimeout(() => {
+                        portal.classList.add("visible");
+                    }, 100);
+                }
+            });
+
+            resetBtn?.addEventListener("click", () => {
+                localStorage.removeItem("portalShown");
+                if (portal) {
+                    portal.classList.remove("visible");
+                    setTimeout(() => {
+                        portal.style.display = "none";
+                    }, 800);
+                }
+                alert(
+                    '✅ Estado del portal reseteado. Haz clic en "Mostrar Portal" para verlo de nuevo.',
+                );
+            });
+        </script>
+    </body>
+</html>
