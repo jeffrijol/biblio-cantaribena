@@ -1,7 +1,7 @@
 ---
 import BibliotecaLayout from "../../layouts/BibliotecaLayout.astro";
 import PichuCorner from "../../components/Biblioteca/PichuCorner.astro";
-import AgeRecommendations from "../../components/Biblioteca/AgeRecommendations.astro";
+import InteractiveAgeTree from "../../components/Biblioteca/InteractiveAgeTree.astro";
 import CollectionPreview from "../../components/Biblioteca/CollectionPreview.astro";
 import FrequentAuthors from "../../components/Biblioteca/FrequentAuthors.astro";
 import RandomBookPicker from "../../components/Biblioteca/RandomBookPicker.astro";
@@ -68,7 +68,7 @@ import RandomBookPicker from "../../components/Biblioteca/RandomBookPicker.astro
 
         <!-- 4. Age Recommendations (Row 4) -->
         <div class="grid-item age-area">
-            <AgeRecommendations />
+            <InteractiveAgeTree compact={true} />
         </div>
     </div>
 </BibliotecaLayout>

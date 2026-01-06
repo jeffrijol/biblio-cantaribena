@@ -1,0 +1,340 @@
+---
+import BibliotecaLayout from "../layouts/BibliotecaLayout.astro";
+import InteractiveAgeTree from "../components/Biblioteca/InteractiveAgeTree.astro";
+---
+
+<BibliotecaLayout title="Recomendaciones por Edad">
+    <div class="recomendaciones-page">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-icon">🌳</span>
+                    Árbol del Crecimiento Lector
+                </h1>
+                <p class="hero-description">
+                    Un viaje mágico a través de las páginas de la infancia. Cada
+                    edad tiene sus tesoros literarios, descubre los libros
+                    perfectos para cada etapa del crecimiento.
+                </p>
+                <div class="hero-breadcrumbs">
+                    <a href="/">Inicio</a>
+                    <span class="separator">›</span>
+                    <a href="/biblioteca">Biblioteca</a>
+                    <span class="separator">›</span>
+                    <span class="current">Recomendaciones</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Árbol Interactivo -->
+        <section class="tree-section">
+            <InteractiveAgeTree compact={false} />
+        </section>
+
+        <!-- Sección informativa -->
+        <section class="info-section">
+            <div class="info-container">
+                <div class="info-card">
+                    <div class="info-icon">✅</div>
+                    <h3>En nuestra colección</h3>
+                    <p>
+                        Los libros marcados con ✅ están actualmente en nuestra
+                        biblioteca. Haz clic para ver más detalles, portadas y
+                        reseñas.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🔍</div>
+                    <h3>Por descubrir</h3>
+                    <p>
+                        Los libros marcados con 🔍 son recomendaciones que aún
+                        no forman parte de nuestra colección, pero están en
+                        nuestra lista de deseos.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🌱</div>
+                    <h3>Creciendo juntos</h3>
+                    <p>
+                        Nuestro árbol crece constantemente. Las recomendaciones
+                        se basan en lecturas compartidas y el disfrute de los
+                        pequeños cantaribeños.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>¿Quieres explorar más?</h2>
+                <p>
+                    Descubre toda nuestra colección de libros infantiles y
+                    juveniles
+                </p>
+                <div class="cta-buttons">
+                    <a href="/biblioteca" class="cta-button primary">
+                        Ver toda la biblioteca
+                    </a>
+                    <a
+                        href="/biblioteca#pichu-corner"
+                        class="cta-button secondary"
+                    >
+                        Visitar el Rincón de Pichu
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</BibliotecaLayout>
+
+<style>
+    .recomendaciones-page {
+        min-height: 100vh;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        background: linear-gradient(
+            135deg,
+            rgba(var(--primary-rgb), 0.1) 0%,
+            rgba(var(--secondary-rgb), 0.1) 100%
+        );
+        padding: 4rem 2rem 3rem;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .hero-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero-icon {
+        font-size: 1em;
+        animation: sway 3s ease-in-out infinite;
+    }
+
+    @keyframes sway {
+        0%,
+        100% {
+            transform: rotate(-2deg);
+        }
+        50% {
+            transform: rotate(2deg);
+        }
+    }
+
+    .hero-description {
+        font-family: var(--font-body);
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        line-height: 1.6;
+        color: var(--text-color);
+        opacity: 0.9;
+        margin-bottom: 2rem;
+    }
+
+    .hero-breadcrumbs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--text-color);
+        opacity: 0.7;
+    }
+
+    .hero-breadcrumbs a {
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+    }
+
+    .hero-breadcrumbs a:hover {
+        opacity: 0.7;
+        text-decoration: underline;
+    }
+
+    .hero-breadcrumbs .separator {
+        opacity: 0.5;
+    }
+
+    .hero-breadcrumbs .current {
+        font-weight: 600;
+    }
+
+    /* Tree Section */
+    .tree-section {
+        padding: 3rem 2rem;
+        background: var(--background-color);
+    }
+
+    /* Info Section */
+    .info-section {
+        padding: 4rem 2rem;
+        background: var(--surface-color);
+    }
+
+    .info-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .info-card {
+        background: var(--background-color);
+        padding: 2rem;
+        border-radius: 16px;
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+
+    .info-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .info-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .info-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.3rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .info-card p {
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--text-color);
+        opacity: 0.8;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        padding: 4rem 2rem;
+        background: linear-gradient(
+            135deg,
+            rgba(var(--primary-rgb), 0.05) 0%,
+            rgba(var(--secondary-rgb), 0.05) 100%
+        );
+        text-align: center;
+    }
+
+    .cta-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .cta-content h2 {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .cta-content p {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        color: var(--text-color);
+        opacity: 0.8;
+        margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .cta-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        font-family: var(--font-body);
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow);
+    }
+
+    .cta-button.primary {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    .cta-button.primary:hover {
+        background: var(--secondary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .cta-button.secondary {
+        background: white;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+    }
+
+    .cta-button.secondary:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero-section {
+            padding: 3rem 1.5rem 2rem;
+        }
+
+        .tree-section {
+            padding: 2rem 1rem;
+        }
+
+        .info-section {
+            padding: 3rem 1.5rem;
+        }
+
+        .info-container {
+            gap: 1.5rem;
+        }
+
+        .cta-section {
+            padding: 3rem 1.5rem;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+        }
+
+        .cta-button {
+            width: 100%;
+        }
+    }
+</style>

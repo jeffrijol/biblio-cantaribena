@@ -1,0 +1,1018 @@
+[
+  {
+    "age": "4 años",
+    "ageRange": "4",
+    "totalBooks": 23,
+    "inCollectionCount": 10,
+    "toDiscoverCount": 13,
+    "booksInCollection": [
+      {
+        "title": "Gorila",
+        "author": "Cualquiera de Anthony Brown",
+        "note": "Cualquiera de Anthony Brown: \"\" o \"El cuento de los cerdos\".",
+        "inCollection": true,
+        "slug": "gorila-6500",
+        "cover": null,
+        "collectionData": {
+          "title": "Gorila",
+          "publisher": "Fondo de Cultura Económica"
+        }
+      },
+      {
+        "title": "Madre Medusa",
+        "author": null,
+        "note": "Kitty Crowther.",
+        "inCollection": true,
+        "slug": "madre-medusa-spanish-edition-0027",
+        "cover": null,
+        "collectionData": {
+          "title": "Madre Medusa (Spanish Edition)",
+          "publisher": "LECTORUM PUBLICATIONS INC."
+        }
+      },
+      {
+        "title": "La cena con la reina",
+        "author": null,
+        "note": "Rutu Modan. Divertido.",
+        "inCollection": true,
+        "slug": "la-cena-con-la-reina-7562",
+        "cover": null,
+        "collectionData": {
+          "title": "La cena con la reina",
+          "publisher": "Fulgencio Pimentel S.L."
+        }
+      },
+      {
+        "title": "Si yo fuera mayor",
+        "author": null,
+        "note": "Eva Janikovsky. Divertido.",
+        "inCollection": true,
+        "slug": "si-yo-fuera-mayor-3479",
+        "cover": null,
+        "collectionData": {
+          "title": "Si yo fuera mayor...",
+          "publisher": "COLOFON, S.A."
+        }
+      },
+      {
+        "title": "La casa encantada",
+        "author": null,
+        "note": "de Kazuno Kohara.",
+        "inCollection": true,
+        "slug": "la-casa-encantada-spanish-edition-4928",
+        "cover": null,
+        "collectionData": {
+          "title": "La casa encantada (Spanish Edition)",
+          "publisher": "Obelisco"
+        }
+      },
+      {
+        "title": "Frederick",
+        "author": null,
+        "note": "Leo Lionni.",
+        "inCollection": true,
+        "slug": "frederick-5911",
+        "cover": null,
+        "collectionData": {
+          "title": "Frederick",
+          "publisher": "Tecolote"
+        }
+      },
+      {
+        "title": "Un final inesperado",
+        "author": null,
+        "note": "Jerome Camil. Divertido.",
+        "inCollection": true,
+        "slug": "un-final-inesperado-3822",
+        "cover": null,
+        "collectionData": {
+          "title": "Un final inesperado",
+          "publisher": "Tramuntana Editorial"
+        }
+      },
+      {
+        "title": "Los carpinchos",
+        "author": null,
+        "note": "Ed Kalandraka.",
+        "inCollection": true,
+        "slug": "los-carpinchos-spanish-edition-spanish-hardcover-february-1-2020-0089",
+        "cover": null,
+        "collectionData": {
+          "title": "Los carpinchos (Spanish Edition)\n\n\n\n(Spanish) Hardcover – February 1, 2020",
+          "publisher": ""
+        }
+      },
+      {
+        "title": "El moco",
+        "author": null,
+        "note": "Ed. Lóguez. Divertido.",
+        "inCollection": true,
+        "slug": "el-moco-rosa-y-manzana-spanish-edition-spanish-hardcover-january-1-2005-4937",
+        "cover": null,
+        "collectionData": {
+          "title": "El moco (Rosa y manzana) (Spanish Edition)\n\n\n\n(Spanish) Hardcover – January 1, 2005",
+          "publisher": ""
+        }
+      },
+      {
+        "title": "Malacatú",
+        "author": null,
+        "note": "Ed. A Buen Paso.",
+        "inCollection": true,
+        "slug": "malacatu-4648",
+        "cover": null,
+        "collectionData": {
+          "title": "¡Malacatú!",
+          "publisher": "A buen paso editorial S.L."
+        }
+      }
+    ],
+    "booksToDiscover": [
+      {
+        "title": "Historia de ratones",
+        "author": "Arnold Lobel",
+        "note": "Arnold Lobel: \"\" \"Sapo y Sepo\" o \"Búho en casa\".",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Cuatro romances",
+        "author": null,
+        "note": "Imapla. Poético.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "¿Mau iz io?",
+        "author": null,
+        "note": "Carson Ellis. Naturaleza.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Ocultos en el bosque",
+        "author": null,
+        "note": "Mitsumasa Anno. Naturaleza, ilustraciones preciosas para buscar animales.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Ur: libro de lluvia",
+        "author": null,
+        "note": "Elena Odriozola. Para jugar en días de lluvia.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Amandina",
+        "author": null,
+        "note": "de Sergio Ruzzier.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "¿Yo y mi gato",
+        "author": null,
+        "note": "Satoshi Kitamura.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Yokai",
+        "author": null,
+        "note": "Manuel Marsol.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "El Bosco. La extraña historia de Hyeronimus.",
+        "author": null,
+        "note": "Thé Tjong-Khing. Aventuras.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Zorrito",
+        "author": null,
+        "note": "Editorial Pípara. Ilustraciones originales y bonitas.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "En la selva",
+        "author": null,
+        "note": "Ed. A buen paso.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Los 3 erizos",
+        "author": null,
+        "note": "Javier Saez Castan.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Harold y el lápiz morado",
+        "author": null,
+        "note": "Crockett Johnson. MARAVILLOSO.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      }
+    ],
+    "allBooks": [
+      {
+        "title": "Gorila",
+        "author": "Cualquiera de Anthony Brown",
+        "note": "Cualquiera de Anthony Brown: \"\" o \"El cuento de los cerdos\".",
+        "inCollection": true,
+        "slug": "gorila-6500",
+        "cover": null,
+        "collectionData": {
+          "title": "Gorila",
+          "publisher": "Fondo de Cultura Económica"
+        }
+      },
+      {
+        "title": "Madre Medusa",
+        "author": null,
+        "note": "Kitty Crowther.",
+        "inCollection": true,
+        "slug": "madre-medusa-spanish-edition-0027",
+        "cover": null,
+        "collectionData": {
+          "title": "Madre Medusa (Spanish Edition)",
+          "publisher": "LECTORUM PUBLICATIONS INC."
+        }
+      },
+      {
+        "title": "Historia de ratones",
+        "author": "Arnold Lobel",
+        "note": "Arnold Lobel: \"\" \"Sapo y Sepo\" o \"Búho en casa\".",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Cuatro romances",
+        "author": null,
+        "note": "Imapla. Poético.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "¿Mau iz io?",
+        "author": null,
+        "note": "Carson Ellis. Naturaleza.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Ocultos en el bosque",
+        "author": null,
+        "note": "Mitsumasa Anno. Naturaleza, ilustraciones preciosas para buscar animales.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Ur: libro de lluvia",
+        "author": null,
+        "note": "Elena Odriozola. Para jugar en días de lluvia.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "La cena con la reina",
+        "author": null,
+        "note": "Rutu Modan. Divertido.",
+        "inCollection": true,
+        "slug": "la-cena-con-la-reina-7562",
+        "cover": null,
+        "collectionData": {
+          "title": "La cena con la reina",
+          "publisher": "Fulgencio Pimentel S.L."
+        }
+      },
+      {
+        "title": "Si yo fuera mayor",
+        "author": null,
+        "note": "Eva Janikovsky. Divertido.",
+        "inCollection": true,
+        "slug": "si-yo-fuera-mayor-3479",
+        "cover": null,
+        "collectionData": {
+          "title": "Si yo fuera mayor...",
+          "publisher": "COLOFON, S.A."
+        }
+      },
+      {
+        "title": "La casa encantada",
+        "author": null,
+        "note": "de Kazuno Kohara.",
+        "inCollection": true,
+        "slug": "la-casa-encantada-spanish-edition-4928",
+        "cover": null,
+        "collectionData": {
+          "title": "La casa encantada (Spanish Edition)",
+          "publisher": "Obelisco"
+        }
+      },
+      {
+        "title": "Amandina",
+        "author": null,
+        "note": "de Sergio Ruzzier.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "¿Yo y mi gato",
+        "author": null,
+        "note": "Satoshi Kitamura.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Yokai",
+        "author": null,
+        "note": "Manuel Marsol.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Frederick",
+        "author": null,
+        "note": "Leo Lionni.",
+        "inCollection": true,
+        "slug": "frederick-5911",
+        "cover": null,
+        "collectionData": {
+          "title": "Frederick",
+          "publisher": "Tecolote"
+        }
+      },
+      {
+        "title": "El Bosco. La extraña historia de Hyeronimus.",
+        "author": null,
+        "note": "Thé Tjong-Khing. Aventuras.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Un final inesperado",
+        "author": null,
+        "note": "Jerome Camil. Divertido.",
+        "inCollection": true,
+        "slug": "un-final-inesperado-3822",
+        "cover": null,
+        "collectionData": {
+          "title": "Un final inesperado",
+          "publisher": "Tramuntana Editorial"
+        }
+      },
+      {
+        "title": "Zorrito",
+        "author": null,
+        "note": "Editorial Pípara. Ilustraciones originales y bonitas.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "En la selva",
+        "author": null,
+        "note": "Ed. A buen paso.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Los carpinchos",
+        "author": null,
+        "note": "Ed Kalandraka.",
+        "inCollection": true,
+        "slug": "los-carpinchos-spanish-edition-spanish-hardcover-february-1-2020-0089",
+        "cover": null,
+        "collectionData": {
+          "title": "Los carpinchos (Spanish Edition)\n\n\n\n(Spanish) Hardcover – February 1, 2020",
+          "publisher": ""
+        }
+      },
+      {
+        "title": "Los 3 erizos",
+        "author": null,
+        "note": "Javier Saez Castan.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "El moco",
+        "author": null,
+        "note": "Ed. Lóguez. Divertido.",
+        "inCollection": true,
+        "slug": "el-moco-rosa-y-manzana-spanish-edition-spanish-hardcover-january-1-2005-4937",
+        "cover": null,
+        "collectionData": {
+          "title": "El moco (Rosa y manzana) (Spanish Edition)\n\n\n\n(Spanish) Hardcover – January 1, 2005",
+          "publisher": ""
+        }
+      },
+      {
+        "title": "Malacatú",
+        "author": null,
+        "note": "Ed. A Buen Paso.",
+        "inCollection": true,
+        "slug": "malacatu-4648",
+        "cover": null,
+        "collectionData": {
+          "title": "¡Malacatú!",
+          "publisher": "A buen paso editorial S.L."
+        }
+      },
+      {
+        "title": "Harold y el lápiz morado",
+        "author": null,
+        "note": "Crockett Johnson. MARAVILLOSO.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      }
+    ]
+  },
+  {
+    "age": "4 años",
+    "ageRange": "4",
+    "totalBooks": 25,
+    "inCollectionCount": 11,
+    "toDiscoverCount": 14,
+    "booksInCollection": [
+      {
+        "title": "Gorila",
+        "author": "Cualquiera de Anthony Brown",
+        "note": "Cualquiera de Anthony Brown: \"\" o \"El cuento de los cerdos\".",
+        "inCollection": true,
+        "slug": "gorila-6500",
+        "cover": null,
+        "collectionData": {
+          "title": "Gorila",
+          "publisher": "Fondo de Cultura Económica"
+        }
+      },
+      {
+        "title": "La cena con la reina",
+        "author": null,
+        "note": "Rutu Modan. Divertido.",
+        "inCollection": true,
+        "slug": "la-cena-con-la-reina-7562",
+        "cover": null,
+        "collectionData": {
+          "title": "La cena con la reina",
+          "publisher": "Fulgencio Pimentel S.L."
+        }
+      },
+      {
+        "title": "Si yo fuera mayor",
+        "author": null,
+        "note": "Eva Janikovsky. Divertido.",
+        "inCollection": true,
+        "slug": "si-yo-fuera-mayor-3479",
+        "cover": null,
+        "collectionData": {
+          "title": "Si yo fuera mayor...",
+          "publisher": "COLOFON, S.A."
+        }
+      },
+      {
+        "title": "La casa encantada",
+        "author": null,
+        "note": "de Kazuno Kohara.",
+        "inCollection": true,
+        "slug": "la-casa-encantada-spanish-edition-4928",
+        "cover": null,
+        "collectionData": {
+          "title": "La casa encantada (Spanish Edition)",
+          "publisher": "Obelisco"
+        }
+      },
+      {
+        "title": "Dos ratones",
+        "author": null,
+        "note": "de Sergio Ruzzier.",
+        "inCollection": true,
+        "slug": "dos-ratones-3894",
+        "cover": null,
+        "collectionData": {
+          "title": "Dos Ratones",
+          "publisher": "A Buen Paso S.C.P."
+        }
+      },
+      {
+        "title": "Frederick",
+        "author": null,
+        "note": "Leo Lionni.",
+        "inCollection": true,
+        "slug": "frederick-5911",
+        "cover": null,
+        "collectionData": {
+          "title": "Frederick",
+          "publisher": "Tecolote"
+        }
+      },
+      {
+        "title": "Un final inesperado",
+        "author": null,
+        "note": "Jerome Camil. Divertido.",
+        "inCollection": true,
+        "slug": "un-final-inesperado-3822",
+        "cover": null,
+        "collectionData": {
+          "title": "Un final inesperado",
+          "publisher": "Tramuntana Editorial"
+        }
+      },
+      {
+        "title": "Los carpinchos",
+        "author": null,
+        "note": "Ed Kalandraka.",
+        "inCollection": true,
+        "slug": "los-carpinchos-spanish-edition-spanish-hardcover-february-1-2020-0089",
+        "cover": null,
+        "collectionData": {
+          "title": "Los carpinchos (Spanish Edition)\n\n\n\n(Spanish) Hardcover – February 1, 2020",
+          "publisher": ""
+        }
+      },
+      {
+        "title": "El moco",
+        "author": null,
+        "note": "Ed. Lóguez. Divertido.",
+        "inCollection": true,
+        "slug": "el-moco-rosa-y-manzana-spanish-edition-spanish-hardcover-january-1-2005-4937",
+        "cover": null,
+        "collectionData": {
+          "title": "El moco (Rosa y manzana) (Spanish Edition)\n\n\n\n(Spanish) Hardcover – January 1, 2005",
+          "publisher": ""
+        }
+      },
+      {
+        "title": "Malacatú",
+        "author": null,
+        "note": "Ed. A Buen Paso.",
+        "inCollection": true,
+        "slug": "malacatu-4648",
+        "cover": null,
+        "collectionData": {
+          "title": "¡Malacatú!",
+          "publisher": "A buen paso editorial S.L."
+        }
+      },
+      {
+        "title": "“Gotitas” shinsuke yositake",
+        "author": null,
+        "note": "O cualquiera de este autor como “piensa” o “ese robot soy yo”",
+        "inCollection": true,
+        "slug": "gotitas-7420",
+        "cover": null,
+        "collectionData": {
+          "title": "Gotitas",
+          "publisher": "Pastel de Luna"
+        }
+      }
+    ],
+    "booksToDiscover": [
+      {
+        "title": "cuentos de mamá osa",
+        "author": null,
+        "note": "Kitty Crowther. (Indispensable)",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Historia de ratones",
+        "author": "Arnold Lobel",
+        "note": "Arnold Lobel: \"\" \"Sapo y Sepo\" o \"Búho en casa\". (De lo mejor que hay en literatura infantil) para leer todas las noches.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Cuatro romances",
+        "author": null,
+        "note": "Imapla. Poético.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "¿Mau iz io?",
+        "author": null,
+        "note": "Carson Ellis. Naturaleza.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Ocultos en el bosque",
+        "author": null,
+        "note": "Mitsumasa Anno. Naturaleza, ilustraciones preciosas para buscar animales.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Ur: libro de lluvia",
+        "author": null,
+        "note": "Elena Odriozola. Para jugar en días de lluvia.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "¿Yo y mi gato",
+        "author": null,
+        "note": "Satoshi Kitamura.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Yokai",
+        "author": null,
+        "note": "Manuel Marsol.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "El Bosco. La extraña historia de Hyeronimus.",
+        "author": null,
+        "note": "Thé Tjong-Khing. Aventuras.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Zorrito",
+        "author": null,
+        "note": "Editorial Pípara. Ilustraciones originales y bonitas. (Este para un poco mayor también vale, o para filosofar)",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "En la selva",
+        "author": null,
+        "note": "Ed. A buen paso.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Los 3 erizos",
+        "author": null,
+        "note": "Javier Saez Castan.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Harold y el lápiz morado",
+        "author": null,
+        "note": "Crockett Johnson. MARAVILLOSO.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "“el jardín del señor ruraru” Hiroshi ito",
+        "author": null,
+        "note": "(Les encanta)",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      }
+    ],
+    "allBooks": [
+      {
+        "title": "Gorila",
+        "author": "Cualquiera de Anthony Brown",
+        "note": "Cualquiera de Anthony Brown: \"\" o \"El cuento de los cerdos\".",
+        "inCollection": true,
+        "slug": "gorila-6500",
+        "cover": null,
+        "collectionData": {
+          "title": "Gorila",
+          "publisher": "Fondo de Cultura Económica"
+        }
+      },
+      {
+        "title": "cuentos de mamá osa",
+        "author": null,
+        "note": "Kitty Crowther. (Indispensable)",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Historia de ratones",
+        "author": "Arnold Lobel",
+        "note": "Arnold Lobel: \"\" \"Sapo y Sepo\" o \"Búho en casa\". (De lo mejor que hay en literatura infantil) para leer todas las noches.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Cuatro romances",
+        "author": null,
+        "note": "Imapla. Poético.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "¿Mau iz io?",
+        "author": null,
+        "note": "Carson Ellis. Naturaleza.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Ocultos en el bosque",
+        "author": null,
+        "note": "Mitsumasa Anno. Naturaleza, ilustraciones preciosas para buscar animales.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Ur: libro de lluvia",
+        "author": null,
+        "note": "Elena Odriozola. Para jugar en días de lluvia.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "La cena con la reina",
+        "author": null,
+        "note": "Rutu Modan. Divertido.",
+        "inCollection": true,
+        "slug": "la-cena-con-la-reina-7562",
+        "cover": null,
+        "collectionData": {
+          "title": "La cena con la reina",
+          "publisher": "Fulgencio Pimentel S.L."
+        }
+      },
+      {
+        "title": "Si yo fuera mayor",
+        "author": null,
+        "note": "Eva Janikovsky. Divertido.",
+        "inCollection": true,
+        "slug": "si-yo-fuera-mayor-3479",
+        "cover": null,
+        "collectionData": {
+          "title": "Si yo fuera mayor...",
+          "publisher": "COLOFON, S.A."
+        }
+      },
+      {
+        "title": "La casa encantada",
+        "author": null,
+        "note": "de Kazuno Kohara.",
+        "inCollection": true,
+        "slug": "la-casa-encantada-spanish-edition-4928",
+        "cover": null,
+        "collectionData": {
+          "title": "La casa encantada (Spanish Edition)",
+          "publisher": "Obelisco"
+        }
+      },
+      {
+        "title": "Dos ratones",
+        "author": null,
+        "note": "de Sergio Ruzzier.",
+        "inCollection": true,
+        "slug": "dos-ratones-3894",
+        "cover": null,
+        "collectionData": {
+          "title": "Dos Ratones",
+          "publisher": "A Buen Paso S.C.P."
+        }
+      },
+      {
+        "title": "¿Yo y mi gato",
+        "author": null,
+        "note": "Satoshi Kitamura.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Yokai",
+        "author": null,
+        "note": "Manuel Marsol.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Frederick",
+        "author": null,
+        "note": "Leo Lionni.",
+        "inCollection": true,
+        "slug": "frederick-5911",
+        "cover": null,
+        "collectionData": {
+          "title": "Frederick",
+          "publisher": "Tecolote"
+        }
+      },
+      {
+        "title": "El Bosco. La extraña historia de Hyeronimus.",
+        "author": null,
+        "note": "Thé Tjong-Khing. Aventuras.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Un final inesperado",
+        "author": null,
+        "note": "Jerome Camil. Divertido.",
+        "inCollection": true,
+        "slug": "un-final-inesperado-3822",
+        "cover": null,
+        "collectionData": {
+          "title": "Un final inesperado",
+          "publisher": "Tramuntana Editorial"
+        }
+      },
+      {
+        "title": "Zorrito",
+        "author": null,
+        "note": "Editorial Pípara. Ilustraciones originales y bonitas. (Este para un poco mayor también vale, o para filosofar)",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "En la selva",
+        "author": null,
+        "note": "Ed. A buen paso.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "Los carpinchos",
+        "author": null,
+        "note": "Ed Kalandraka.",
+        "inCollection": true,
+        "slug": "los-carpinchos-spanish-edition-spanish-hardcover-february-1-2020-0089",
+        "cover": null,
+        "collectionData": {
+          "title": "Los carpinchos (Spanish Edition)\n\n\n\n(Spanish) Hardcover – February 1, 2020",
+          "publisher": ""
+        }
+      },
+      {
+        "title": "Los 3 erizos",
+        "author": null,
+        "note": "Javier Saez Castan.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "El moco",
+        "author": null,
+        "note": "Ed. Lóguez. Divertido.",
+        "inCollection": true,
+        "slug": "el-moco-rosa-y-manzana-spanish-edition-spanish-hardcover-january-1-2005-4937",
+        "cover": null,
+        "collectionData": {
+          "title": "El moco (Rosa y manzana) (Spanish Edition)\n\n\n\n(Spanish) Hardcover – January 1, 2005",
+          "publisher": ""
+        }
+      },
+      {
+        "title": "Malacatú",
+        "author": null,
+        "note": "Ed. A Buen Paso.",
+        "inCollection": true,
+        "slug": "malacatu-4648",
+        "cover": null,
+        "collectionData": {
+          "title": "¡Malacatú!",
+          "publisher": "A buen paso editorial S.L."
+        }
+      },
+      {
+        "title": "Harold y el lápiz morado",
+        "author": null,
+        "note": "Crockett Johnson. MARAVILLOSO.",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "“el jardín del señor ruraru” Hiroshi ito",
+        "author": null,
+        "note": "(Les encanta)",
+        "inCollection": false,
+        "slug": null,
+        "cover": null,
+        "collectionData": null
+      },
+      {
+        "title": "“Gotitas” shinsuke yositake",
+        "author": null,
+        "note": "O cualquiera de este autor como “piensa” o “ese robot soy yo”",
+        "inCollection": true,
+        "slug": "gotitas-7420",
+        "cover": null,
+        "collectionData": {
+          "title": "Gotitas",
+          "publisher": "Pastel de Luna"
+        }
+      }
+    ]
+  }
+]
